@@ -7,7 +7,7 @@ pos[0] = dialogue.x + DIALOGUE_PADDING;
 pos[1] = dialogue.y + DIALOGUE_PADDING + dialogue.text_height + DIALOGUE_PADDING;
 
 var tmp_option;
-for(var i = 0; i < ds_list_size(dialogue.options); i += 1) {
+for (var i = 0; i < ds_list_size(dialogue.options); i += 1) {
     tmp_option = ds_list_find_value(dialogue.options, i);
     pos[1] += tmp_option.height + DIALOGUE_PADDING;
 }

@@ -2,10 +2,10 @@
 var scenario_id = argument0;
 
 var dialogue = instance_create(
-    get_horizontal_center_from_width(DIALOGUE_WIDTH),
-    get_vertical_center_from_height(DIALOGUE_HEIGHT),
-    o_dialogue
-);
+                   get_horizontal_center_from_width(DIALOGUE_WIDTH),
+                   get_vertical_center_from_height(DIALOGUE_HEIGHT),
+                   o_dialogue
+               );
 
 var dialogue_text;
 

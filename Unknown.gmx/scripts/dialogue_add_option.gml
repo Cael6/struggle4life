@@ -12,7 +12,7 @@ var option = instance_create(
     o_dialogue_option
 );
 
-with(option) {
+with (option) {
     set_dialogue_option(
         option_text,
         option_action,

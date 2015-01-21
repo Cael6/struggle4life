@@ -1,3 +1,3 @@
-if(keyboard_check_pressed(keypress)) {
+if (keyboard_check_pressed(keypress)) {
     execute_self_action();
 }

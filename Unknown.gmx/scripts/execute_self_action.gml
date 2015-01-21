@@ -1,8 +1,11 @@
-c_log("executing_self_action with action; " + string(is_real(action)) + " and arguments: " + string(arguments), C_LOG__DEBUG);
+c_log("executing_self_action with action; " 
+          + string(is_real(action)) + " and arguments: " 
+          + string(arguments), C_LOG__DEBUG
+);
 
-if(self.visible && self.enabled) {
-    if(action) {
-        if(arguments != false) {
+if (self.visible && self.enabled) {
+    if (action) {
+        if (arguments != false) {
             script_execute(action);
        } else {
             script_execute(action, arguments);
