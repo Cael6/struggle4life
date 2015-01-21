@@ -9,7 +9,7 @@ var dialogue = instance_create(
 
 var dialogue_text;
 
-switch(scenario_id) {
+switch (scenario_id) {
 
     //Each scenario should have an id in Macros
 
@@ -17,7 +17,7 @@ switch(scenario_id) {
     
     
         var dialogue_text = "This is the test dialogue.##Select an option below to see example option action.";
-        with(dialogue) {
+        with (dialogue) {
             set_dialogue(dialogue_text);
         }
         
@@ -28,7 +28,7 @@ switch(scenario_id) {
     default:
         c_log("Got to default dialogue scenario with scenario_id: " + scenario_id, C_LOG__ERROR);
         var dialogue_text = "Something went wrong with the scenario generator##Please tell a dev!";
-        with(dialogue) {
+        with (dialogue) {
             set_dialogue(dialogue_text);
         }
         
