@@ -18,6 +18,9 @@ shoes_sprite = -1;
 //Weapon object associated to the character
 weapon = -1;
 
+//Pistol object associated to the character
+pistol = -1;
+
 //Health of character
 health = -1;
 

@@ -4,6 +4,8 @@ aoe_sprite = argument1;
 cooldown = argument2;
 name = argument3;
 character = argument4;
+is_pistol = "pistol" == name;
+draw_function = argument5;
 
 curr_cooldown = cooldown;
-visible = false;
+visible = true;
