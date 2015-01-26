@@ -58,7 +58,8 @@
     <instance objName="o_label_pants" x="192" y="416" name="inst_E3874926" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_label_shoes" x="192" y="480" name="inst_292D8813" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_label_gun" x="192" y="544" name="inst_FD920CF4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_gun_aoe" x="704" y="544" name="inst_725C0375" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_button_check" x="864" y="640" name="inst_3245B4A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_gun_aoe" x="736" y="544" name="inst_CE888959" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

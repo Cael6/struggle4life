@@ -127,16 +127,25 @@ with (body_button_next) {
     );
 }
 
-//shoes button 
+//guns button 
 var body_button_back = instance_create(160, 544, o_button_back)
 var body_button_next = instance_create(384, 544, o_button_next)
 
-/*
 with(body_button_back){
-    set_o_button_back(instance_find(o_character, 0), instance_find(o_label_shoes, 0), update_o_button_back, "SHOES");
+    set_o_button_back(
+        instance_find(o_character, 0),
+        instance_find(o_label_gun, 0), 
+        update_o_button_back_guns,
+        "GUNS"
+    );
 }
 with(body_button_next){
-    set_o_button_next(instance_find(o_character, 0), instance_find(o_label_shoes, 0), update_o_button_next, "SHOES");
-}*/
+    set_o_button_next(
+        instance_find(o_character, 0),
+        instance_find(o_label_gun, 0),
+        update_o_button_next_guns,
+        "GUNS"
+    );
+}
 
 draw_sprite(shotgun.aoe_sprite, image_index, 500, 500);
