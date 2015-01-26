@@ -41,6 +41,11 @@
       </sprites>
       <sprites name="pistol">
         <sprite>sprites\s_pistol_aoe</sprite>
+        <sprite>sprites\s_pistol</sprite>
+      </sprites>
+      <sprites name="sniper">
+        <sprite>sprites\s_sniper</sprite>
+        <sprite>sprites\s_sniper_aoe</sprite>
       </sprites>
     </sprites>
     <sprites name="button">
@@ -177,8 +182,20 @@
         <script>scripts\init_weapon.gml</script>
         <script>scripts\update_weapon.gml</script>
         <script>scripts\set_weapon.gml</script>
-        <script>scripts\create_shotgun.gml</script>
         <script>scripts\fire_weapon.gml</script>
+        <script>scripts\draw_weapon.gml</script>
+        <scripts name="shotgun">
+          <script>scripts\create_shotgun.gml</script>
+          <script>scripts\draw_shotgun.gml</script>
+        </scripts>
+        <scripts name="sniper">
+          <script>scripts\draw_sniper.gml</script>
+          <script>scripts\create_sniper.gml</script>
+        </scripts>
+        <scripts name="pistol">
+          <script>scripts\create_pistol.gml</script>
+          <script>scripts\draw_pistol.gml</script>
+        </scripts>
       </scripts>
       <script>scripts\init_object.gml</script>
     </scripts>
@@ -191,6 +208,10 @@
     </scripts>
     <script>scripts\get_scenario_dialogue.gml</script>
     <script>scripts\init_variables.gml</script>
+    <script>scripts\deselect_character.gml</script>
+    <scripts name="math">
+      <script>scripts\extend_past_screen.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_default_12</font>
@@ -248,7 +269,7 @@
     <room>rooms\r_credits</room>
     <room>rooms\r_char_create</room>
   </rooms>
-  <constants number="56">
+  <constants number="58">
     <constant name="BUTTON_FONT">f_cabin_sketch_lg</constant>
     <constant name="BUTTON_HEIGHT">32</constant>
     <constant name="BUTTON_LINE_SEP">20</constant>
@@ -262,6 +283,9 @@
     <constant name="C_LOG__INFO">1</constant>
     <constant name="C_LOG__WARN">3</constant>
     <constant name="C_LOG_LEVEL">C_LOG__ALL</constant>
+    <constant name="CHARACTER_HEALTH">20</constant>
+    <constant name="CHARACTER_STATE_BATTLE">1</constant>
+    <constant name="CHARACTER_STATE_DISPLAY">2</constant>
     <constant name="CREDITS_PADDING">40</constant>
     <constant name="CREDITS_SCROLL_SPEED">1</constant>
     <constant name="CREDITS_TEXT_COLOR">make_color_rgb(250,250,250)</constant>
@@ -300,11 +324,10 @@
     <constant name="ROOM_HEIGHT">768</constant>
     <constant name="ROOM_WIDTH">1024</constant>
     <constant name="SCENARIO_COUNT">1</constant>
-    <constant name="CHARACTER_HEALTH">20</constant>
     <constant name="WEAPON_COOLDOWN">60</constant>
+    <constant name="WEAPON_PISTOL_COOLDOWN">45</constant>
     <constant name="WEAPON_SHOTGUN_COOLDOWN">30</constant>
-    <constant name="CHARACTER_STATE_BATTLE">1</constant>
-    <constant name="CHARACTER_STATE_DISPLAY">2</constant>
+    <constant name="WEAPON_SNIPER_COOLDOWN">60</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

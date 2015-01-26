@@ -22,3 +22,5 @@ height = sprite_get_height(body_sprite);
 health = CHARACTER_HEALTH;
 
 mb_left_action = select_character;
+
+pistol = create_pistol(self.id);
