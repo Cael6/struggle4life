@@ -65,7 +65,7 @@
         <arguments>
           <argument>
             <kind>9</kind>
-            <script>update_exit_button</script>
+            <script>set_button_exit</script>
           </argument>
           <argument>
             <kind>0</kind>

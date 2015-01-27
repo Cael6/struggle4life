@@ -65,7 +65,7 @@
         <arguments>
           <argument>
             <kind>9</kind>
-            <script>update_r_credits_button</script>
+            <script>set_button_r_credits</script>
           </argument>
           <argument>
             <kind>0</kind>

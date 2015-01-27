@@ -52,7 +52,7 @@
   </views>
   <instances>
     <instance objName="o_controller_r_credits" x="0" y="0" name="inst_B4547808" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_button_r_test" x="800" y="704" name="inst_CEC42059" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_button_r_start" x="800" y="704" name="inst_21244F7B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -65,7 +65,7 @@
         <arguments>
           <argument>
             <kind>9</kind>
-            <script>update_r_test_button</script>
+            <script>set_button_r_test</script>
           </argument>
           <argument>
             <kind>0</kind>

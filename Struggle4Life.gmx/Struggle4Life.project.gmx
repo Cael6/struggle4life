@@ -15,6 +15,7 @@
       <sprite>sprites\s_r_test_controller</sprite>
       <sprite>sprites\s_r_credits_controller</sprite>
       <sprite>sprites\s_r_char_create</sprite>
+      <sprite>sprites\s_r_battle_controller</sprite>
     </sprites>
     <sprites name="character">
       <sprite>sprites\s_body_1</sprite>
@@ -78,19 +79,19 @@
   <scripts name="scripts">
     <scripts name="buttons">
       <script>scripts\init_o_button.gml</script>
-      <script>scripts\update_o_button.gml</script>
+      <script>scripts\set_o_button.gml</script>
       <script>scripts\draw_o_button.gml</script>
       <scripts name="r_test">
-        <script>scripts\update_r_test_button.gml</script>
+        <script>scripts\set_button_r_test.gml</script>
       </scripts>
       <scripts name="exit">
-        <script>scripts\update_exit_button.gml</script>
+        <script>scripts\set_button_exit.gml</script>
       </scripts>
       <scripts name="r_credits">
-        <script>scripts\update_r_credits_button.gml</script>
+        <script>scripts\set_button_r_credits.gml</script>
       </scripts>
       <scripts name="r_char_create">
-        <script>scripts\update_r_char_create.gml</script>
+        <script>scripts\set_button_r_char_create.gml</script>
         <scripts name="o_button_next">
           <script>scripts\init_o_button_next.gml</script>
           <script>scripts\set_o_button_next.gml</script>
@@ -104,6 +105,12 @@
           <script>scripts\update_o_button_back_guns.gml</script>
         </scripts>
         <script>scripts\left_click_o_button_check.gml</script>
+      </scripts>
+      <scripts name="r_battle">
+        <script>scripts\set_button_r_battle.gml</script>
+      </scripts>
+      <scripts name="r_start">
+        <script>scripts\set_button_r_start.gml</script>
       </scripts>
     </scripts>
     <scripts name="common">
@@ -142,6 +149,10 @@
       </scripts>
       <scripts name="r_create_char">
         <script>scripts\init_controller_r_create_char.gml</script>
+      </scripts>
+      <scripts name="r_battle">
+        <script>scripts\init_controller_r_battle.gml</script>
+        <script>scripts\update_controller_r_battle.gml</script>
       </scripts>
     </scripts>
     <scripts name="labels">
@@ -235,8 +246,9 @@
       <script>scripts\goto_r_credits.gml</script>
       <script>scripts\goto_r_test.gml</script>
       <script>scripts\goto_r_debug.gml</script>
-      <script>scripts\goto_r_start_room.gml</script>
+      <script>scripts\goto_r_start.gml</script>
       <script>scripts\goto_r_char_create.gml</script>
+      <script>scripts\goto_r_battle.gml</script>
     </scripts>
     <scripts name="math">
       <script>scripts\extend_past_screen.gml</script>
@@ -260,6 +272,7 @@
       <object>objects\o_controller_r_start_room</object>
       <object>objects\o_controller_r_credits</object>
       <object>objects\o_controller_r_char_create</object>
+      <object>objects\o_controller_r_battle</object>
     </objects>
     <objects name="dialogue">
       <object>objects\o_dialogue</object>
@@ -270,7 +283,9 @@
       <object>objects\o_button_exit</object>
       <object>objects\o_button_r_test</object>
       <object>objects\o_button_credits</object>
+      <object>objects\o_button_r_battle</object>
       <object>objects\o_button_char_create</object>
+      <object>objects\o_button_r_start</object>
       <object>objects\o_button_next</object>
       <object>objects\o_button_back</object>
       <object>objects\o_button_check</object>
@@ -290,25 +305,26 @@
       <object>objects\o_map</object>
       <object>objects\o_map_point</object>
     </objects>
+    <objects name="infected">
+      <object>objects\o_runner</object>
+    </objects>
     <object>objects\o_object</object>
     <object>objects\o_character</object>
     <object>objects\o_weapon</object>
     <object>objects\o_gun_aoe</object>
-    <objects name="infected">
-      <object>objects\o_runner</object>
-    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_debug</room>
-    <room>rooms\r_start_room</room>
+    <room>rooms\r_start</room>
     <room>rooms\r_test</room>
     <room>rooms\r_credits</room>
     <room>rooms\r_char_create</room>
+    <room>rooms\r_battle</room>
   </rooms>
   <constants number="62">
     <constant name="ENEMY_RUNNER_HEALTH">10</constant>
     <constant name="ENEMY_RUNNER_ATTACK">5</constant>
-    <constant name="BUTTON_FONT">f_cabin_sketch_lg</constant>
+    <constant name="BUTTON_FONT">f_oswald</constant>
     <constant name="BUTTON_HEIGHT">32</constant>
     <constant name="BUTTON_LINE_SEP">20</constant>
     <constant name="BUTTON_PADDING">7</constant>
