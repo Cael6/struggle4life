@@ -1,5 +1,4 @@
 //r_test init
-get_scenario_dialogue(0);
 
 var character_1 = instance_create(320, 320, o_character);
 var shotgun = create_shotgun(character_1);

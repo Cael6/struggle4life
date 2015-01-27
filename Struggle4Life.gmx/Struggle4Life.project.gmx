@@ -238,12 +238,12 @@
       <script>scripts\goto_r_start_room.gml</script>
       <script>scripts\goto_r_char_create.gml</script>
     </scripts>
-    <script>scripts\get_scenario_dialogue.gml</script>
-    <script>scripts\init_variables.gml</script>
-    <script>scripts\deselect_character.gml</script>
     <scripts name="math">
       <script>scripts\extend_past_screen.gml</script>
     </scripts>
+    <script>scripts\get_scenario_dialogue.gml</script>
+    <script>scripts\init_variables.gml</script>
+    <script>scripts\deselect_character.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_default_12</font>
