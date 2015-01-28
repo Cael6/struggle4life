@@ -45,14 +45,14 @@ with (character_3) {
     );
 }
 
-var runner_1 
+var runner;
 for(i = 0; i < 10; i += 1){
-    runner_1 = instance_create(ROOM_WIDTH - (50 * i), 50 + (50 * i), o_runner);
-    with (runner_1) {
+    runner = instance_create(ROOM_WIDTH - (50 * i), 50 + (50 * i), o_runner);
+    with (runner) {
         set_runner(
             s_runner,
             s_runner_hover,
-            1
+            0
         );
     }
 }

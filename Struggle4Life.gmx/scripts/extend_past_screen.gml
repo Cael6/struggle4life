@@ -1,15 +1,14 @@
-var pos_start = argument0;
-var pos_end = argument1;
+var x1 = argument0;
+var y1 = argument1;
+var x2 = argument2;
+var y2 = argument3;
 
-var dx = pos_end[0] - pos_start[0];
-var dy = pos_end[1] - pos_start[1];
-
-var length = sqrt(sqr(dx) + sqr(dy));
+var angle = point_direction(x1,y1, x2, y2);
 var room_max = sqrt(sqr(ROOM_WIDTH) + sqr(ROOM_HEIGHT));
-var extend_length = room_max/length;
 
-var extended;
-extended[0] = pos_start[0] + dx * extend_length;
-extended[1] = pos_start[1] + dy * extend_length;
+var extended = array_1d(
+    x1 + lengthdir_x(room_max, angle),
+    y1 + lengthdir_y(room_max, angle)
+);
 
 return extended;

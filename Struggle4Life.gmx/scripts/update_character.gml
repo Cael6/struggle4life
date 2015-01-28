@@ -10,8 +10,14 @@ if (selected) {
     }
     
     if (mouse_check_button_released(mb_left)) {
-        with (weapon) {
-            fire_weapon();
+        if (using_weapon) {
+            with (weapon) {
+                fire_weapon();
+            }
+        } else {
+            with (pistol) {
+                fire_weapon();
+            }
         }
     }
 }

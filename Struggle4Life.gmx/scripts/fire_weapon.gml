@@ -1,13 +1,29 @@
 //if collise destroy innstance
 var i = 0;
+var character = self.character;
 
-if(name = "shotgun"){
+if (name == "pistol") {
+    with (o_runner) {
+        if (
+            point_in_rectangle(
+                mouse_x,
+                mouse_y,
+                self.x,
+                self.y,
+                self.x + self.width,
+                self.y + self.height
+            )
+        ) {
+            damage_unit(WEAPON_PISTOL_DAMAGE);
+        }
+    }
+} else if (name = "shotgun") {
     while(true){
         instance = instance_find(o_runner, i);
         if(instance > 0){
            if(collision_circle(mouse_x,mouse_y, 16, instance,true,false)){
                 with(instance){
-                    instance_destroy()
+                    damage_unit(WEAPON_SHOTGUN_DAMAGE);
                 }
            }
         }
@@ -16,29 +32,29 @@ if(name = "shotgun"){
         }
         i++;
     }
-}
-else if(name = "sniper"){
-    var pos_start;
-    var pos_end;
-    pos_start[0] = self.character.x + self.character.width / 2;
-    pos_start[1] = self.character.y + self.character.height / 2;
-    pos_end[0] = mouse_x;
-    pos_end[1] = mouse_y;
-    var extended_line = extend_past_screen(pos_start, pos_end);
+} else if(name = "sniper") {
+    var extended_line = extend_past_screen(
+        obj_get_center_x(character),
+        obj_get_center_y(character),
+        mouse_x,
+        mouse_y
+    );
     
-    while(true){
-        instance = instance_find(o_runner, i);
-        if(instance > 0){
-           if(collision_line( pos_start[0], pos_start[1], extended_line[0],extended_line[1],instance,true, false) > -1){
-                with(instance){
-                    instance_destroy()
-                }
-           }
+    with (o_runner) {
+        if (
+            collision_line(
+                obj_get_center_x(character), 
+                obj_get_center_y(character),
+                extended_line[0],
+                extended_line[1],
+                self.id,
+                false,
+                true
+            )
+        ) {
+            damage_unit(WEAPON_SNIPER_DAMAGE);
         }
-        else{
-            break;
-        }
-        i++;
+                   
     }
 }
 
