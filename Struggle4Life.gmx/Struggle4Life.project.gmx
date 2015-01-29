@@ -126,7 +126,6 @@
       <script>scripts\check_left_click.gml</script>
       <script>scripts\execute_action.gml</script>
       <script>scripts\run_action.gml</script>
-      <script>scripts\select_object.gml</script>
     </scripts>
     <scripts name="controllers">
       <script>scripts\init_room.gml</script>
@@ -234,10 +233,6 @@
           <script>scripts\draw_framethrower.gml</script>
         </scripts>
       </scripts>
-      <script>scripts\init_object.gml</script>
-      <script>scripts\damage_unit.gml</script>
-      <script>scripts\obj_get_center_x.gml</script>
-      <script>scripts\obj_get_center_y.gml</script>
       <scripts name="infected">
         <scripts name="o_runner">
           <script>scripts\draw_runner.gml</script>
@@ -247,7 +242,13 @@
           <script>scripts\left_click_runner.gml</script>
         </scripts>
         <script>scripts\init_infected.gml</script>
+        <script>scripts\update_infected.gml</script>
       </scripts>
+      <script>scripts\init_object.gml</script>
+      <script>scripts\damage_unit.gml</script>
+      <script>scripts\obj_get_center_x.gml</script>
+      <script>scripts\obj_get_center_y.gml</script>
+      <script>scripts\select_object.gml</script>
     </scripts>
     <scripts name="room change">
       <script>scripts\goto_r_credits.gml</script>
@@ -261,6 +262,8 @@
       <script>scripts\extend_past_screen.gml</script>
       <script>scripts\line_intersect_line.gml</script>
       <script>scripts\line_in_rectangle.gml</script>
+      <script>scripts\circle_intersect_rectangle.gml</script>
+      <script>scripts\circle_intersect_line.gml</script>
     </scripts>
     <scripts name="utils">
       <script>scripts\array_1d.gml</script>

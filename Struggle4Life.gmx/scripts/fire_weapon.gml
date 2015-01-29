@@ -18,17 +18,22 @@ if (name == "pistol") {
         }
     }
 } else if (name = "shotgun") {
-    while(true){
-        instance = instance_find(o_runner, i);
-        if(instance > 0){
-           if(collision_circle(mouse_x,mouse_y, 16, instance,true,false)){
-                damage_unit(instance,WEAPON_SHOTGUN_DAMAGE);
-           }
+    var shotgun_radius = self.radius;
+    with (o_infected) {
+        
+        if(
+            circle_intersect_rectangle(
+                self.x,
+                self.y,
+                self.x + self.width,
+                self.y + self.height,
+                mouse_x,
+                mouse_y,
+                shotgun_radius
+            )
+        ){
+            damage_unit(self.id,WEAPON_SHOTGUN_DAMAGE);
         }
-        else{
-            break;
-        }
-        i++;
     }
 } else if(name = "sniper") {
     var extended_line = extend_past_screen(

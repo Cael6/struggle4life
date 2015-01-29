@@ -26,7 +26,7 @@ switch(text_instance.s_list[next_sprite, 1]){
         new_gun = create_sniper(character);
         break;
     case "ASSULT":
-        new_gun = create_assultrifle(character);    
+        new_gun = create_assaultrifle(character);    
         break;
     case "FRAME":
          new_gun = create_framethrower(character);   

@@ -19,3 +19,5 @@ health = -1
 cooldown = -1
 attackrange = -1
 alive = true;
+
+gun_hover = false;
