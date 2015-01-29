@@ -225,26 +225,29 @@
           <script>scripts\create_pistol.gml</script>
           <script>scripts\draw_pistol.gml</script>
         </scripts>
-        <scripts name="assult">
-          <script>scripts\create_assultrifle.gml</script>
-          <script>scripts\draw_assultrifle.gml</script>
+        <scripts name="assault">
+          <script>scripts\create_assaultrifle.gml</script>
+          <script>scripts\draw_assaultrifle.gml</script>
         </scripts>
         <scripts name="framethrower">
           <script>scripts\create_framethrower.gml</script>
           <script>scripts\draw_framethrower.gml</script>
         </scripts>
       </scripts>
-      <scripts name="o_runner">
-        <script>scripts\draw_runner.gml</script>
-        <script>scripts\init_runner.gml</script>
-        <script>scripts\update_runner.gml</script>
-        <script>scripts\set_runner.gml</script>
-        <script>scripts\left_click_runner.gml</script>
-      </scripts>
       <script>scripts\init_object.gml</script>
       <script>scripts\damage_unit.gml</script>
       <script>scripts\obj_get_center_x.gml</script>
       <script>scripts\obj_get_center_y.gml</script>
+      <scripts name="infected">
+        <scripts name="o_runner">
+          <script>scripts\draw_runner.gml</script>
+          <script>scripts\init_runner.gml</script>
+          <script>scripts\update_runner.gml</script>
+          <script>scripts\set_runner.gml</script>
+          <script>scripts\left_click_runner.gml</script>
+        </scripts>
+        <script>scripts\init_infected.gml</script>
+      </scripts>
     </scripts>
     <scripts name="room change">
       <script>scripts\goto_r_credits.gml</script>
@@ -316,6 +319,7 @@
     </objects>
     <objects name="infected">
       <object>objects\o_runner</object>
+      <object>objects\o_infected</object>
     </objects>
     <object>objects\o_object</object>
     <object>objects\o_character</object>
