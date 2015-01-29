@@ -424,7 +424,7 @@
     <constant name="WEAPON_SNIPER_COOLDOWN">60</constant>
     <constant name="WEAPON_SNIPER_DAMAGE">2.5</constant>
     <constant name="WEAPON_ASSAULT_RANGE">2</constant>
-    <constant name="WEAPON_FLAMETHROWER_RANGE">2</constant>
+    <constant name="WEAPON_FLAMETHROWER_RANGE">1</constant>
     <constant name="WEAPON_PISTOL_RANGE">3</constant>
     <constant name="WEAPON_SHOTGUN_RANGE">2</constant>
     <constant name="WEAPON_SNIPER_RANGE">3</constant>

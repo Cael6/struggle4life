@@ -1,6 +1,7 @@
 var infected_collided = false;
 var i = 0;
 var pistol = self.id;
+
 with (o_infected) {
     if (
         point_in_rectangle(

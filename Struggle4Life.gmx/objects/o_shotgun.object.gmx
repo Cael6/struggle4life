@@ -3,7 +3,7 @@
   <spriteName>s_shotgun</spriteName>
   <solid>0</solid>
   <visible>0</visible>
-  <depth>20</depth>
+  <depth>11</depth>
   <persistent>0</persistent>
   <parentName>o_weapon</parentName>
   <maskName>&lt;undefined&gt;</maskName>

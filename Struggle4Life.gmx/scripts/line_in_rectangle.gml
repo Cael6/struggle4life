@@ -28,7 +28,6 @@ if (
         rectangle[3]
     )
 ){ //check left line
-    c_log("line intersected x1y1 - x1y2", C_LOG__DEBUG);
     return true;
 } else if (
     line_intersect_line(
@@ -42,7 +41,6 @@ if (
         rectangle[3]
     )
 ) { //check bottom line
-    c_log("line intersected x1y2 - x2y2", C_LOG__DEBUG);
     return true;
 } else if (
     line_intersect_line(
@@ -56,7 +54,6 @@ if (
         rectangle[3]
     )
 ) { //check right line
-    c_log("line intersected x2y1 - x2y2", C_LOG__DEBUG);
     return true;
 }
 return false;

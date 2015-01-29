@@ -18,6 +18,8 @@ if (self.object_index == o_sniper) {
     var angle = point_direction(x1, y1, x2, y2);
     target_x = x1 + lengthdir_x(max_distance, angle);
     target_y = y1 + lengthdir_y(max_distance, angle);
+    
+    window_mouse_set(target_x, target_y);
 } else {
     target_x = mouse_x;
     target_y = mouse_y;

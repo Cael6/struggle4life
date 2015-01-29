@@ -12,6 +12,6 @@ with (flamethrower) {
         WEAPON_FLAMETHROWER_RANGE
     );
 }
-radius = WEAPON_FLAMETHROWER_RANGE * WEAPON_RANGE_DISTANCE;
+flamethrower.radius = WEAPON_FLAMETHROWER_RANGE * WEAPON_RANGE_DISTANCE;
 
-return framethrower;
+return flamethrower;
