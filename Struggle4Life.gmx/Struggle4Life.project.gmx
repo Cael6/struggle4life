@@ -44,13 +44,13 @@
         <sprite>sprites\s_pistol_aoe</sprite>
         <sprite>sprites\s_pistol</sprite>
       </sprites>
-      <sprites name="assultrifle">
-        <sprite>sprites\s_assultrifle</sprite>
-        <sprite>sprites\s_assultrifle_aoe</sprite>
+      <sprites name="assault rifle">
+        <sprite>sprites\s_assault_rifle</sprite>
+        <sprite>sprites\s_assault_rifle_aoe</sprite>
       </sprites>
-      <sprites name="framethrower">
-        <sprite>sprites\s_framethrower</sprite>
-        <sprite>sprites\s_framethrower_aoe</sprite>
+      <sprites name="flamethrower">
+        <sprite>sprites\s_flamethrower</sprite>
+        <sprite>sprites\s_flamethrower_aoe</sprite>
       </sprites>
       <sprites name="sniper">
         <sprite>sprites\s_sniper</sprite>
@@ -198,7 +198,7 @@
         <script>scripts\map_points_all_connect.gml</script>
         <script>scripts\map_create_random_points.gml</script>
       </scripts>
-      <scripts name="o_character">
+      <scripts name="character">
         <script>scripts\init_character.gml</script>
         <script>scripts\update_character.gml</script>
         <script>scripts\draw_character.gml</script>
@@ -206,32 +206,43 @@
         <script>scripts\select_character.gml</script>
         <script>scripts\deselect_character.gml</script>
       </scripts>
-      <scripts name="o_weapon">
-        <script>scripts\init_weapon.gml</script>
-        <script>scripts\update_weapon.gml</script>
-        <script>scripts\set_weapon.gml</script>
-        <script>scripts\fire_weapon.gml</script>
-        <script>scripts\draw_weapon.gml</script>
+      <scripts name="weapon">
+        <scripts name="assault">
+          <script>scripts\set_assault_rifle.gml</script>
+          <script>scripts\draw_assault_rifle.gml</script>
+          <script>scripts\check_collision_assault.gml</script>
+          <script>scripts\update_assault_rifle.gml</script>
+        </scripts>
+        <scripts name="flamethrower">
+          <script>scripts\set_flamethrower.gml</script>
+          <script>scripts\draw_flamethrower.gml</script>
+          <script>scripts\check_collision_flamethrower.gml</script>
+          <script>scripts\update_flamethrower.gml</script>
+        </scripts>
+        <scripts name="pistol">
+          <script>scripts\set_pistol.gml</script>
+          <script>scripts\draw_pistol.gml</script>
+          <script>scripts\check_collision_pistol.gml</script>
+          <script>scripts\update_pistol.gml</script>
+        </scripts>
         <scripts name="shotgun">
-          <script>scripts\create_shotgun.gml</script>
+          <script>scripts\set_shotgun.gml</script>
           <script>scripts\draw_shotgun.gml</script>
+          <script>scripts\check_collision_shotgun.gml</script>
+          <script>scripts\update_shotgun.gml</script>
         </scripts>
         <scripts name="sniper">
           <script>scripts\draw_sniper.gml</script>
-          <script>scripts\create_sniper.gml</script>
+          <script>scripts\set_sniper.gml</script>
+          <script>scripts\check_collision_sniper.gml</script>
+          <script>scripts\update_sniper.gml</script>
         </scripts>
-        <scripts name="pistol">
-          <script>scripts\create_pistol.gml</script>
-          <script>scripts\draw_pistol.gml</script>
-        </scripts>
-        <scripts name="assault">
-          <script>scripts\create_assaultrifle.gml</script>
-          <script>scripts\draw_assaultrifle.gml</script>
-        </scripts>
-        <scripts name="framethrower">
-          <script>scripts\create_framethrower.gml</script>
-          <script>scripts\draw_framethrower.gml</script>
-        </scripts>
+        <script>scripts\draw_weapon.gml</script>
+        <script>scripts\fire_weapon.gml</script>
+        <script>scripts\init_weapon.gml</script>
+        <script>scripts\weapon_update_target.gml</script>
+        <script>scripts\set_weapon.gml</script>
+        <script>scripts\update_weapon.gml</script>
       </scripts>
       <scripts name="infected">
         <scripts name="o_runner">
@@ -239,7 +250,6 @@
           <script>scripts\init_runner.gml</script>
           <script>scripts\update_runner.gml</script>
           <script>scripts\set_runner.gml</script>
-          <script>scripts\left_click_runner.gml</script>
         </scripts>
         <script>scripts\init_infected.gml</script>
         <script>scripts\update_infected.gml</script>
@@ -264,6 +274,7 @@
       <script>scripts\line_in_rectangle.gml</script>
       <script>scripts\circle_intersect_rectangle.gml</script>
       <script>scripts\circle_intersect_line.gml</script>
+      <script>scripts\distance_between_points.gml</script>
     </scripts>
     <scripts name="utils">
       <script>scripts\array_1d.gml</script>
@@ -324,9 +335,16 @@
       <object>objects\o_runner</object>
       <object>objects\o_infected</object>
     </objects>
+    <objects name="weapon">
+      <object>objects\o_assault_rifle</object>
+      <object>objects\o_flamethrower</object>
+      <object>objects\o_pistol</object>
+      <object>objects\o_shotgun</object>
+      <object>objects\o_sniper</object>
+      <object>objects\o_weapon</object>
+    </objects>
     <object>objects\o_object</object>
     <object>objects\o_character</object>
-    <object>objects\o_weapon</object>
     <object>objects\o_gun_aoe</object>
   </objects>
   <rooms name="rooms">
@@ -337,7 +355,7 @@
     <room>rooms\r_char_create</room>
     <room>rooms\r_battle</room>
   </rooms>
-  <constants number="67">
+  <constants number="73">
     <constant name="BUTTON_FONT">f_oswald</constant>
     <constant name="BUTTON_HEIGHT">32</constant>
     <constant name="BUTTON_LINE_SEP">20</constant>
@@ -395,16 +413,22 @@
     <constant name="ROOM_WIDTH">1024</constant>
     <constant name="SCENARIO_COUNT">1</constant>
     <constant name="WEAPON_ASSAULT_COOLDOWN">45</constant>
-    <constant name="WEAPON_COOLDOWN">60</constant>
-    <constant name="WEAPON_FRAMETHROWER_COOLDOWN">15</constant>
-    <constant name="WEAPON_PISTOL_COOLDOWN">45</constant>
-    <constant name="WEAPON_SHOTGUN_COOLDOWN">30</constant>
-    <constant name="WEAPON_SNIPER_COOLDOWN">60</constant>
-    <constant name="WEAPON_PISTOL_DAMAGE">1</constant>
-    <constant name="WEAPON_SHOTGUN_DAMAGE">1</constant>
-    <constant name="WEAPON_SNIPER_DAMAGE">2.5</constant>
-    <constant name="WEAPON_FLAMETHROWER_DAMAGE">4</constant>
     <constant name="WEAPON_ASSAULT_DAMAGE">1</constant>
+    <constant name="WEAPON_COOLDOWN">60</constant>
+    <constant name="WEAPON_FLAMETHROWER_DAMAGE">4</constant>
+    <constant name="WEAPON_FLAMETHROWER_COOLDOWN">15</constant>
+    <constant name="WEAPON_PISTOL_COOLDOWN">45</constant>
+    <constant name="WEAPON_PISTOL_DAMAGE">1</constant>
+    <constant name="WEAPON_SHOTGUN_COOLDOWN">30</constant>
+    <constant name="WEAPON_SHOTGUN_DAMAGE">1</constant>
+    <constant name="WEAPON_SNIPER_COOLDOWN">60</constant>
+    <constant name="WEAPON_SNIPER_DAMAGE">2.5</constant>
+    <constant name="WEAPON_ASSAULT_RANGE">2</constant>
+    <constant name="WEAPON_FLAMETHROWER_RANGE">2</constant>
+    <constant name="WEAPON_PISTOL_RANGE">3</constant>
+    <constant name="WEAPON_SHOTGUN_RANGE">2</constant>
+    <constant name="WEAPON_SNIPER_RANGE">3</constant>
+    <constant name="WEAPON_RANGE_DISTANCE">sqrt(sqr(ROOM_WIDTH) + sqr(ROOM_HEIGHT))/3</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

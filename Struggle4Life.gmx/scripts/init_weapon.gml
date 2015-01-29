@@ -21,3 +21,16 @@ draw_function = false;
 
 //Whether or not anything will be drawn for the weapon
 drawing = false;
+
+//How many range units the weapon can fire.
+range = -1;
+
+//The target position after range limitations implemented.
+target_x = -1;
+target_y = -1;
+
+//Function to run when checking collision
+check_collision = -1;
+
+//The amount of damage the weapon does when firing
+damage = -1;

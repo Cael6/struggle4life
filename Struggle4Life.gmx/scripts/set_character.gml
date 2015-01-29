@@ -23,4 +23,4 @@ health = CHARACTER_HEALTH;
 
 mb_left_action = select_character;
 
-pistol = create_pistol(self.id);
+pistol = set_pistol(self.id);

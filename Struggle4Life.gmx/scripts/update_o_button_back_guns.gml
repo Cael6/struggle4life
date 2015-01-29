@@ -19,16 +19,16 @@ character = instance_find(o_character, 0);
 var new_gun = 0;
 switch(text_instance.s_list[next_sprite, 1]){
     case "SHOTGUN":
-        new_gun = create_shotgun(character);
+        new_gun = set_shotgun(character);
         break;
     case "SNIPER":
-        new_gun = create_sniper(character);
+        new_gun = set_sniper(character);
         break;
     case "ASSULT":
-        new_gun = create_assaultrifle(character);    
+        new_gun = set_assault_rifle(character);    
         break;
     case "FRAME":
-         new_gun = create_framethrower(character);   
+         new_gun = set_flamethrower(character);   
         break;
     
     
@@ -44,7 +44,7 @@ with(weapon){
 //update aoe
 weapon_aoe = instance_find(o_gun_aoe, 0);
 weapon_aoe.sprite_index = new_gun.aoe_sprite;
-if(weapon_aoe.sprite_index = s_framethrower_aoe){
+if(weapon_aoe.sprite_index = s_flamethrower_aoe){
     weapon_aoe.x = 672;
     weapon_aoe.y = 512;
     weapon_aoe.image_yscale = 0.5;

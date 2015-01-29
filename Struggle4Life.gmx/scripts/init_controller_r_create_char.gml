@@ -2,7 +2,7 @@
 
 //Make character
 var character_1 = instance_create(736, 256, o_character);
-var shotgun = create_shotgun(character_1);
+var shotgun = set_shotgun(character_1);
 
 with (character_1) {
     set_character(

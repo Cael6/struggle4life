@@ -1,7 +1,7 @@
 //r_test init
 
 var character_1 = instance_create(320, 320, o_character);
-var shotgun = create_shotgun(character_1);
+var shotgun = set_shotgun(character_1);
 
 with (character_1) {
     set_character(
@@ -16,7 +16,7 @@ with (character_1) {
 }
 
 var character_2 = instance_create(394, 340, o_character);
-var shotgun = create_shotgun(character_2);
+var shotgun = set_shotgun(character_2);
 
 with (character_2) {
     set_character(
@@ -31,7 +31,7 @@ with (character_2) {
 }
 
 var character_3 = instance_create(480, 360, o_character);
-var sniper = create_sniper(character_3);
+var sniper = set_sniper(character_3);
 
 with (character_3) {
     set_character(

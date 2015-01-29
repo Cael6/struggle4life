@@ -5,7 +5,8 @@ cooldown = argument2;
 name = argument3;
 character = argument4;
 is_pistol = "pistol" == name;
-draw_function = argument5;
+check_collision = argument5;
+range = argument6;
 
 curr_cooldown = cooldown;
 visible = true;
