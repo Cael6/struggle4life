@@ -17,3 +17,4 @@ width = sprite_get_width(body_sprite);
 height = sprite_get_height(body_sprite);
 
 mb_left_action = left_click_runner;
+alive = true;

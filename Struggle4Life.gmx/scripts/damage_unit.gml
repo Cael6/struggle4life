@@ -1,2 +1,4 @@
 //for now just destroy
-instance_destroy();
+var unit = argument0;
+var damage = argument1;
+unit.alive = false;

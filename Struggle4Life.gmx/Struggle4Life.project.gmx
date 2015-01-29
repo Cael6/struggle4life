@@ -205,6 +205,7 @@
         <script>scripts\draw_character.gml</script>
         <script>scripts\set_character.gml</script>
         <script>scripts\select_character.gml</script>
+        <script>scripts\deselect_character.gml</script>
       </scripts>
       <scripts name="o_weapon">
         <script>scripts\init_weapon.gml</script>
@@ -255,15 +256,15 @@
     </scripts>
     <scripts name="math">
       <script>scripts\extend_past_screen.gml</script>
+      <script>scripts\line_intersect_line.gml</script>
+      <script>scripts\line_in_rectangle.gml</script>
     </scripts>
-    <script>scripts\get_scenario_dialogue.gml</script>
-    <script>scripts\init_variables.gml</script>
-    <script>scripts\deselect_character.gml</script>
-    <script>scripts\line_in_rectangle.gml</script>
     <scripts name="utils">
       <script>scripts\array_1d.gml</script>
       <script>scripts\array_2d.gml</script>
     </scripts>
+    <script>scripts\get_scenario_dialogue.gml</script>
+    <script>scripts\init_variables.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_default_12</font>

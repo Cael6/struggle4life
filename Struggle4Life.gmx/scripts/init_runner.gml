@@ -18,3 +18,4 @@ dmg = -1
 health = -1
 cooldown = -1
 attackrange = -1
+alive = true;

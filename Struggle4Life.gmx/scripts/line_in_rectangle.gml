@@ -1,28 +1,64 @@
-//bool test_line_intersection(Line line, Vector2 bottom_left, Vector2 top_right, out float intersect_amount){
-var line = argument0;
-var rectangle;
-rectangle[0,0] = argument1;
-rectangle[0,1] = argument2;
-rectangle[1,0] = argument3;
-rectangle[1,1] = argument4;
+// Line
+//
+//       x2y2
+//       /
+//      /
+//     /
+//  x1y1
+//
+// Rectangle
+//
+// x1y1 ---- x2y1
+//  |         |
+//  |         |
+//  |         |
+// x1y2 ---- x2y2
+var line = array_1d(argument0, argument1, argument2, argument3);
+var rectangle = array_1d(argument4, argument5, argument6, argument7);
 
-
-if(rectangle[1,0] < line[0,0]){
-    // player is not intersecting line.
-    return false;
-}
-
-if(rectangle[0,0] > line[1,0]){
-    // player is not intersecting line.
-    return false;
-}
-
-if(rectangle[1,0] < line[1,1]){
-    // bottom of player is below line 0, and player is intersecting line
-    intersect_amount = line.Y - bottom_left.Y;
+if ( 
+    line_intersect_line(
+        line[0],
+        line[1],
+        line[2],
+        line[3],
+        rectangle[0],
+        rectangle[1],
+        rectangle[0],
+        rectangle[3]
+    )
+){ //check left line
+    c_log("line intersected x1y1 - x1y2", C_LOG__DEBUG);
+    return true;
+} else if (
+    line_intersect_line(
+        line[0],
+        line[1],
+        line[2],
+        line[3],
+        rectangle[0],
+        rectangle[3],
+        rectangle[2],
+        rectangle[3]
+    )
+) { //check bottom line
+    c_log("line intersected x1y2 - x2y2", C_LOG__DEBUG);
+    return true;
+} else if (
+    line_intersect_line(
+        line[0],
+        line[1],
+        line[2],
+        line[3],
+        rectangle[2],
+        rectangle[1],
+        rectangle[2],
+        rectangle[3]
+    )
+) { //check right line
+    c_log("line intersected x2y1 - x2y2", C_LOG__DEBUG);
     return true;
 }
-
-// player is not intersecting line.
 return false;
+
 
