@@ -355,7 +355,7 @@
     <room>rooms\r_char_create</room>
     <room>rooms\r_battle</room>
   </rooms>
-  <constants number="73">
+  <constants number="74">
     <constant name="BUTTON_FONT">f_oswald</constant>
     <constant name="BUTTON_HEIGHT">32</constant>
     <constant name="BUTTON_LINE_SEP">20</constant>
@@ -429,6 +429,7 @@
     <constant name="WEAPON_SHOTGUN_RANGE">2</constant>
     <constant name="WEAPON_SNIPER_RANGE">3</constant>
     <constant name="WEAPON_RANGE_DISTANCE">sqrt(sqr(ROOM_WIDTH) + sqr(ROOM_HEIGHT))/3</constant>
+    <constant name="WEAPON_ASSAULT_SHOTS_PER_RELOAD">3</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

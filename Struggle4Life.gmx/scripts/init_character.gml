@@ -43,7 +43,7 @@ hover_sprite = -1;
 state = -1;
 
 //True if using weapon over pistol
-using_weapon = false;
+using_weapon = true;
 
 width = -1;
 height = -1;
