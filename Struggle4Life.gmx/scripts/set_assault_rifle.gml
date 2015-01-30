@@ -15,5 +15,6 @@ with (assault_rifle) {
 
 assault_rifle.shots_before_reload = WEAPON_ASSAULT_SHOTS_PER_RELOAD;
 assault_rifle.shots_left = assault_rifle.shots_before_reload;
+assault_rifle.damage = WEAPON_ASSAULT_DAMAGE;
 
 return assault_rifle;

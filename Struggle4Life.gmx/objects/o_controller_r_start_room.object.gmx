@@ -65,7 +65,7 @@
         <arguments>
           <argument>
             <kind>9</kind>
-            <script>init_controller_r_start_room</script>
+            <script>init_controller_r_start</script>
           </argument>
           <argument>
             <kind>0</kind>
@@ -147,7 +147,7 @@
         <arguments>
           <argument>
             <kind>9</kind>
-            <script>update_controller_r_start_room</script>
+            <script>update_controller_r_start</script>
           </argument>
           <argument>
             <kind>0</kind>

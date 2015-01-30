@@ -138,13 +138,14 @@
         <script>scripts\init_controller_r_debug.gml</script>
         <script>scripts\update_controller_r_debug.gml</script>
       </scripts>
-      <scripts name="r_start_room">
-        <script>scripts\init_controller_r_start_room.gml</script>
-        <script>scripts\update_controller_r_start_room.gml</script>
+      <scripts name="r_start">
+        <script>scripts\init_controller_r_start.gml</script>
+        <script>scripts\update_controller_r_start.gml</script>
       </scripts>
       <scripts name="r_test">
         <script>scripts\init_controller_r_test.gml</script>
         <script>scripts\update_controller_r_test.gml</script>
+        <script>scripts\draw_controller_r_test.gml</script>
       </scripts>
       <scripts name="r_create_char">
         <script>scripts\init_controller_r_create_char.gml</script>
@@ -253,6 +254,7 @@
         </scripts>
         <script>scripts\init_infected.gml</script>
         <script>scripts\update_infected.gml</script>
+        <script>scripts\draw_infected.gml</script>
       </scripts>
       <script>scripts\init_object.gml</script>
       <script>scripts\damage_unit.gml</script>
@@ -355,7 +357,7 @@
     <room>rooms\r_char_create</room>
     <room>rooms\r_battle</room>
   </rooms>
-  <constants number="74">
+  <constants number="79">
     <constant name="BUTTON_FONT">f_oswald</constant>
     <constant name="BUTTON_HEIGHT">32</constant>
     <constant name="BUTTON_LINE_SEP">20</constant>
@@ -397,8 +399,13 @@
     <constant name="DIALOGUE_TEXT_ALPHA">1</constant>
     <constant name="DIALOGUE_TEXT_COLOR">make_colour_rgb(250,250,250)</constant>
     <constant name="DIALOGUE_WIDTH">480</constant>
-    <constant name="ENEMY_RUNNER_ATTACK">5</constant>
-    <constant name="ENEMY_RUNNER_HEALTH">10</constant>
+    <constant name="ENEMY_RUNNER_SPEED">1</constant>
+    <constant name="ENEMY_RUNNER_ATTACK">2</constant>
+    <constant name="ENEMY_RUNNER_HEALTH">4</constant>
+    <constant name="ENEMY_BRUISER_ATTACK">4</constant>
+    <constant name="ENEMY_BRUISER_HEALTH">10</constant>
+    <constant name="ENEMY_SPITTER_ATTACK">1</constant>
+    <constant name="ENEMY_SPITTER_HEALTH">2</constant>
     <constant name="MAP_HEIGHT">300</constant>
     <constant name="MAP_LEAST_POINTS">16</constant>
     <constant name="MAP_MAX_DISTANCE_BETWEEN_CONNECTED_POINTS">100</constant>
@@ -414,22 +421,22 @@
     <constant name="SCENARIO_COUNT">1</constant>
     <constant name="WEAPON_ASSAULT_COOLDOWN">45</constant>
     <constant name="WEAPON_ASSAULT_DAMAGE">1</constant>
+    <constant name="WEAPON_ASSAULT_RANGE">2</constant>
+    <constant name="WEAPON_ASSAULT_SHOTS_PER_RELOAD">3</constant>
     <constant name="WEAPON_COOLDOWN">60</constant>
-    <constant name="WEAPON_FLAMETHROWER_DAMAGE">4</constant>
     <constant name="WEAPON_FLAMETHROWER_COOLDOWN">15</constant>
+    <constant name="WEAPON_FLAMETHROWER_DAMAGE">4</constant>
+    <constant name="WEAPON_FLAMETHROWER_RANGE">1</constant>
     <constant name="WEAPON_PISTOL_COOLDOWN">45</constant>
     <constant name="WEAPON_PISTOL_DAMAGE">1</constant>
+    <constant name="WEAPON_PISTOL_RANGE">3</constant>
+    <constant name="WEAPON_RANGE_DISTANCE">sqrt(sqr(ROOM_WIDTH) + sqr(ROOM_HEIGHT))/3</constant>
     <constant name="WEAPON_SHOTGUN_COOLDOWN">30</constant>
     <constant name="WEAPON_SHOTGUN_DAMAGE">1</constant>
+    <constant name="WEAPON_SHOTGUN_RANGE">2</constant>
     <constant name="WEAPON_SNIPER_COOLDOWN">60</constant>
     <constant name="WEAPON_SNIPER_DAMAGE">2.5</constant>
-    <constant name="WEAPON_ASSAULT_RANGE">2</constant>
-    <constant name="WEAPON_FLAMETHROWER_RANGE">1</constant>
-    <constant name="WEAPON_PISTOL_RANGE">3</constant>
-    <constant name="WEAPON_SHOTGUN_RANGE">2</constant>
     <constant name="WEAPON_SNIPER_RANGE">3</constant>
-    <constant name="WEAPON_RANGE_DISTANCE">sqrt(sqr(ROOM_WIDTH) + sqr(ROOM_HEIGHT))/3</constant>
-    <constant name="WEAPON_ASSAULT_SHOTS_PER_RELOAD">3</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

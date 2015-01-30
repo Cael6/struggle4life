@@ -13,4 +13,6 @@ with (pistol) {
     );
 }
 
+pistol.damage = WEAPON_PISTOL_DAMAGE;
+
 return pistol;

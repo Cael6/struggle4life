@@ -11,7 +11,8 @@ with (character_1) {
         s_pants_1, 
         s_shoes_1, 
         shotgun, 
-        s_char_hover
+        s_char_hover,
+        "1"
     );
 }
 
@@ -26,7 +27,8 @@ with (character_2) {
         s_pants_2, 
         s_shoes_2, 
         flamethrower, 
-        s_char_hover
+        s_char_hover,
+        "2"
     );
 }
 
@@ -41,7 +43,8 @@ with (character_3) {
         s_pants_3, 
         s_shoes_3, 
         sniper, 
-        s_char_hover
+        s_char_hover,
+        "3"
     );
 }
 
@@ -56,18 +59,32 @@ with (character_4) {
         s_pants_3, 
         s_shoes_1, 
         ar, 
-        s_char_hover
+        s_char_hover,
+        "4"
     );
 }
 
-var runner;
-for(i = 0; i < 10; i += 1){
-    runner = instance_create(ROOM_WIDTH - (50 * i), 50 + (50 * i), o_runner);
+randomize();
+
+var runner, runner_x, runner_y;
+for (i = 0; i < 10; i += 1) {
+    var top = irandom(1);
+    
+    if (top) {
+        runner_x = irandom(ROOM_WIDTH);
+        runner_y = -irandom(ROOM_HEIGHT);
+    } else {
+        runner_x = ROOM_WIDTH + irandom(ROOM_WIDTH);
+        runner_y = irandom(ROOM_HEIGHT - sprite_get_height(s_runner));
+    }
+    
+    runner = instance_create(runner_x, runner_y, o_runner);
+    
     with (runner) {
         set_runner(
             s_runner,
             s_runner_hover,
-            0
+            1
         );
     }
 }

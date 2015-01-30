@@ -15,9 +15,10 @@ height = -1;
 
 o_speed = -1
 dmg = -1
-health = -1
+hp = -1
+max_hp = -1;
 cooldown = -1
-attackrange = -1
+range = -1
 alive = true;
 
 gun_hover = false;

@@ -7,7 +7,8 @@ hover_sprite = argument1;
 //(I just made some up so delete unnecessary variables later.)
 o_speed = argument2;
 dmg = ENEMY_RUNNER_ATTACK;
-health = ENEMY_RUNNER_HEALTH;
+hp = ENEMY_RUNNER_HEALTH;
+max_hp = ENEMY_RUNNER_HEALTH;
 cooldown = 60;
 attackrange = 0;
 

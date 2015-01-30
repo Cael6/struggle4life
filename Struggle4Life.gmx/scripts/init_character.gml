@@ -22,7 +22,9 @@ weapon = -1;
 pistol = -1;
 
 //Health of character
-health = -1;
+hp = -1;
+
+max_hp = -1;
 
 //Boolean to be checked at times to kill the character
 alive = true;
@@ -47,3 +49,9 @@ using_weapon = true;
 
 width = -1;
 height = -1;
+
+//Key to press to select character
+keypress = -1;
+
+//key to display for character
+display_key = "1";

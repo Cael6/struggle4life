@@ -13,4 +13,5 @@ with (shotgun) {
     );
 }
 shotgun.radius = 32;
+shotgun.damage = WEAPON_SHOTGUN_DAMAGE;
 return shotgun;

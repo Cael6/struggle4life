@@ -13,4 +13,6 @@ with (sniper) {
     );
 }
 
+sniper.damage = WEAPON_SNIPER_DAMAGE;
+
 return sniper;

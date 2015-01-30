@@ -13,5 +13,6 @@ with (flamethrower) {
     );
 }
 flamethrower.radius = WEAPON_FLAMETHROWER_RANGE * WEAPON_RANGE_DISTANCE;
+flamethrower.damage = WEAPON_FLAMETHROWER_DAMAGE;
 
 return flamethrower;

@@ -12,7 +12,8 @@ with (character_1) {
         s_pants_1, 
         s_shoes_1, 
         shotgun, 
-        s_char_hover
+        s_char_hover,
+        "1"
     );
 }
 

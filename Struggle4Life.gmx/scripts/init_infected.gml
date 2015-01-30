@@ -18,17 +18,10 @@ shoes_sprite = -1;
 //Weapon object associated to the infected
 weapon = -1;
 
-//Health of infected
-health = -1;
-
-//Boolean to be checked at times to kill the character
+hp = -1
+max_hp = -1;
 alive = true;
-
-//sprite to show when hovered
 hover_sprite = -1;
-
-//The state of the infected
 state = -1;
-
 width = -1;
 height = -1;
