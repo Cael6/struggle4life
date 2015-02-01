@@ -6,8 +6,9 @@ body_sprite = -1
 //sprite to show when hovered
 hover_sprite = -1;
 
-o_speed = ENEMY_RUNNER_SPEED;
-hp = ENEMY_RUNNER_HEALTH;
-max_hp = ENEMY_RUNNER_HEALTH;
-alive = true;
+
+o_speed = ENEMY_BRUISER_SPEED;
+hp = ENEMY_BRUISER_HEALTH;
+max_hp = ENEMY_BRUISER_HEALTH;
+
 gun_hover = false;

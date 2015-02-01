@@ -67,7 +67,7 @@ with (character_4) {
 randomize();
 
 var runner, runner_x, runner_y;
-for (i = 0; i < 10; i += 1) {
+for (i = 0; i < 100; i += 1) {
     var top = irandom(1);
     
     if (top) {
@@ -78,13 +78,12 @@ for (i = 0; i < 10; i += 1) {
         runner_y = irandom(ROOM_HEIGHT - sprite_get_height(s_runner));
     }
     
-    runner = instance_create(runner_x, runner_y, o_runner);
+    runner = instance_create(runner_x, runner_y, o_bruiser);
     
     with (runner) {
-        set_runner(
-            s_runner,
-            s_runner_hover,
-            1
+        set_bruiser(
+            s_bruiser,
+            s_runner_hover
         );
     }
 }

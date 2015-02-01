@@ -65,6 +65,8 @@
     </sprites>
     <sprites name="infected">
       <sprite>sprites\s_runner</sprite>
+      <sprite>sprites\s_bruiser</sprite>
+      <sprite>sprites\s_spitter</sprite>
       <sprite>sprites\s_runner_hover</sprite>
       <sprite>sprites\s_b</sprite>
     </sprites>
@@ -238,6 +240,18 @@
           <script>scripts\check_collision_sniper.gml</script>
           <script>scripts\update_sniper.gml</script>
         </scripts>
+        <scripts name="spitter">
+          <script>scripts\set_spitter_mouth.gml</script>
+          <script>scripts\draw_spitter_mouth.gml</script>
+          <script>scripts\check_collision_spitter_mouth.gml</script>
+          <script>scripts\update_spitter_mouth.gml</script>
+        </scripts>
+        <scripts name="runner">
+          <script>scripts\set_runner_bite.gml</script>
+          <script>scripts\draw_runner_bite.gml</script>
+          <script>scripts\check_collision_runner_bite.gml</script>
+          <script>scripts\update_runner_bite.gml</script>
+        </scripts>
         <script>scripts\draw_weapon.gml</script>
         <script>scripts\fire_weapon.gml</script>
         <script>scripts\init_weapon.gml</script>
@@ -251,6 +265,18 @@
           <script>scripts\init_runner.gml</script>
           <script>scripts\update_runner.gml</script>
           <script>scripts\set_runner.gml</script>
+        </scripts>
+        <scripts name="o_bruiser">
+          <script>scripts\draw_bruiser.gml</script>
+          <script>scripts\init_bruiser.gml</script>
+          <script>scripts\update_bruiser.gml</script>
+          <script>scripts\set_bruiser.gml</script>
+        </scripts>
+        <scripts name="o_spitter">
+          <script>scripts\draw_spitter.gml</script>
+          <script>scripts\init_spitter.gml</script>
+          <script>scripts\update_spitter.gml</script>
+          <script>scripts\set_spitter.gml</script>
         </scripts>
         <script>scripts\init_infected.gml</script>
         <script>scripts\update_infected.gml</script>
@@ -284,6 +310,7 @@
     </scripts>
     <script>scripts\get_scenario_dialogue.gml</script>
     <script>scripts\init_variables.gml</script>
+    <script>scripts\draw_controller_r_start.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_default_12</font>
@@ -297,7 +324,7 @@
       <object>objects\o_controller_r</object>
       <object>objects\o_controller_r_debug</object>
       <object>objects\o_controller_r_test</object>
-      <object>objects\o_controller_r_start_room</object>
+      <object>objects\o_controller_r_start</object>
       <object>objects\o_controller_r_credits</object>
       <object>objects\o_controller_r_char_create</object>
       <object>objects\o_controller_r_battle</object>
@@ -336,6 +363,8 @@
     <objects name="infected">
       <object>objects\o_runner</object>
       <object>objects\o_infected</object>
+      <object>objects\o_bruiser</object>
+      <object>objects\o_spitter</object>
     </objects>
     <objects name="weapon">
       <object>objects\o_assault_rifle</object>
@@ -343,6 +372,9 @@
       <object>objects\o_pistol</object>
       <object>objects\o_shotgun</object>
       <object>objects\o_sniper</object>
+      <object>objects\o_spitter_mouth</object>
+      <object>objects\o_runner_bite</object>
+      <object>objects\o_bruiser_fist</object>
       <object>objects\o_weapon</object>
     </objects>
     <object>objects\o_object</object>
@@ -357,7 +389,7 @@
     <room>rooms\r_char_create</room>
     <room>rooms\r_battle</room>
   </rooms>
-  <constants number="79">
+  <constants number="90">
     <constant name="BUTTON_FONT">f_oswald</constant>
     <constant name="BUTTON_HEIGHT">32</constant>
     <constant name="BUTTON_LINE_SEP">20</constant>
@@ -402,8 +434,10 @@
     <constant name="ENEMY_RUNNER_SPEED">1</constant>
     <constant name="ENEMY_RUNNER_ATTACK">2</constant>
     <constant name="ENEMY_RUNNER_HEALTH">4</constant>
+    <constant name="ENEMY_BRUISER_SPEED">1/3</constant>
     <constant name="ENEMY_BRUISER_ATTACK">4</constant>
     <constant name="ENEMY_BRUISER_HEALTH">10</constant>
+    <constant name="ENEMY_SPITTER_SPEED">1</constant>
     <constant name="ENEMY_SPITTER_ATTACK">1</constant>
     <constant name="ENEMY_SPITTER_HEALTH">2</constant>
     <constant name="MAP_HEIGHT">300</constant>
@@ -437,6 +471,15 @@
     <constant name="WEAPON_SNIPER_COOLDOWN">60</constant>
     <constant name="WEAPON_SNIPER_DAMAGE">2.5</constant>
     <constant name="WEAPON_SNIPER_RANGE">3</constant>
+    <constant name="WEAPON_SPITTER_DAMAGE">1</constant>
+    <constant name="WEAPON_SPITTER_RANGE">1.5</constant>
+    <constant name="WEAPON_SPITTER_COOLDOWN">120</constant>
+    <constant name="WEAPON_RUNNER_DAMAGE">4</constant>
+    <constant name="WEAPON_RUNNER_RANGE">-2</constant>
+    <constant name="WEAPON_RUNNER_COOLDOWN">-2</constant>
+    <constant name="WEAPON_BRUISER_DAMAGE">4</constant>
+    <constant name="WEAPON_BRUISER_RANGE">-2</constant>
+    <constant name="WEAPON_BRUISER_COOLDOWN">-2</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

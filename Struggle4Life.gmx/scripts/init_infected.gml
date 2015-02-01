@@ -18,10 +18,12 @@ shoes_sprite = -1;
 //Weapon object associated to the infected
 weapon = -1;
 
+//Whether the infected is busy eating
+is_eating = false;
+
 hp = -1
 max_hp = -1;
 alive = true;
 hover_sprite = -1;
-state = -1;
-width = -1;
-height = -1;
+gun_hover = false;
+o_speed = -1;

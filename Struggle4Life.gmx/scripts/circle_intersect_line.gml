@@ -22,7 +22,7 @@ var py = y1 + position * dy;
 
 var m = point_distance(px, py, cx, cy) / r;
 
-if (m > 1) {
+if (m >= 1 || m <= -1) {
     return false;
 }
 
