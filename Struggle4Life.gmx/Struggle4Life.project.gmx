@@ -70,6 +70,9 @@
       <sprite>sprites\s_runner_hover</sprite>
       <sprite>sprites\s_b</sprite>
     </sprites>
+    <sprites name="textbox">
+      <sprite>sprites\s_textbox</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_road_1</background>
@@ -106,7 +109,8 @@
           <script>scripts\update_o_button_back.gml</script>
           <script>scripts\update_o_button_back_guns.gml</script>
         </scripts>
-        <script>scripts\left_click_o_button_check.gml</script>
+        <script>scripts\left_click_o_button_startgame.gml</script>
+        <script>scripts\set_o_button_startgame.gml</script>
       </scripts>
       <scripts name="r_battle">
         <script>scripts\set_button_r_battle.gml</script>
@@ -151,6 +155,7 @@
       </scripts>
       <scripts name="r_create_char">
         <script>scripts\init_controller_r_create_char.gml</script>
+        <script>scripts\character_creation.gml</script>
       </scripts>
       <scripts name="r_battle">
         <script>scripts\init_controller_r_battle.gml</script>
@@ -311,6 +316,14 @@
     <script>scripts\get_scenario_dialogue.gml</script>
     <script>scripts\init_variables.gml</script>
     <script>scripts\draw_controller_r_start.gml</script>
+    <scripts name="textbox">
+      <script>scripts\o_textbox_init.gml</script>
+    </scripts>
+    <scripts name="shape">
+      <script>scripts\draw_rec.gml</script>
+      <script>scripts\init_rec.gml</script>
+      <script>scripts\set_rec.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_default_12</font>
@@ -343,7 +356,7 @@
       <object>objects\o_button_r_start</object>
       <object>objects\o_button_next</object>
       <object>objects\o_button_back</object>
-      <object>objects\o_button_check</object>
+      <object>objects\o_button_startgame</object>
     </objects>
     <objects name="label">
       <objects name="character">
@@ -380,6 +393,11 @@
     <object>objects\o_object</object>
     <object>objects\o_character</object>
     <object>objects\o_gun_aoe</object>
+    <object>objects\o_rectangle</object>
+    <objects name="textbox">
+      <object>objects\o_text</object>
+      <object>objects\o_textbox</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_debug</room>

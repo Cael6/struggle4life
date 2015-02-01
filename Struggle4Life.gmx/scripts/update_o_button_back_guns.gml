@@ -15,7 +15,7 @@ text_instance.s_current = next_sprite;
 text_instance.text = text_instance.s_list[next_sprite,0]
 
 //Update sprite
-character = instance_find(o_character, 0);
+character = charcter_instance;
 var new_gun = 0;
 switch(text_instance.s_list[next_sprite, 1]){
     case "SHOTGUN":
@@ -33,14 +33,14 @@ switch(text_instance.s_list[next_sprite, 1]){
     
     
 }
-character.weapon = new_gun;
-
 //Delete previous weapon object
-weapon = instance_find(o_weapon, 0);
-with(weapon){
+with(character.weapon){
     instance_destroy();
 }
 
+//Set New weapon
+character.weapon = new_gun;
+/*
 //update aoe
 weapon_aoe = instance_find(o_gun_aoe, 0);
 weapon_aoe.sprite_index = new_gun.aoe_sprite;
@@ -55,4 +55,4 @@ else{
     weapon_aoe.y = 544;
     weapon_aoe.image_yscale = 1;
     weapon_aoe.image_xscale = 1;
-}
+}*/

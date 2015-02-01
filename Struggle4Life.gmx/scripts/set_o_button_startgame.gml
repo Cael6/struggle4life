@@ -1,7 +1,7 @@
 set_o_button(
-    "Main Menu",
+    "Begin",
     BUTTON_WIDTH,
     BUTTON_HEIGHT,
     BUTTON_TEXT_COLOR,
-    goto_r_start
+    left_click_o_button_startgame
 );
