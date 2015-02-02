@@ -27,3 +27,5 @@ alive = true;
 hover_sprite = -1;
 gun_hover = false;
 o_speed = -1;
+
+target = -1;

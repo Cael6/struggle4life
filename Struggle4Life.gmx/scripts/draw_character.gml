@@ -12,7 +12,7 @@ if(using_weapon) {
 
 if (state == CHARACTER_STATE_BATTLE) {
     draw_set_alpha(1);
-    draw_set_color(make_color_rgb(50, 50, 50));
+    draw_set_color(c_white);
     draw_set_font(f_oswald);
     var key_string_width = string_width(display_key);
     var key_string_height = string_height(display_key);
@@ -36,6 +36,20 @@ draw_healthbar(
     make_color_rgb(0, 0, 0),
     make_color_rgb(0,0,150),
     make_color_rgb(0,0,150),
+    0,
+    false,
+    false
+);
+
+draw_healthbar(
+    x,
+    y - 20,
+    x + width,
+    y - 10,
+    hp / max_hp * 100,
+    make_color_rgb(0, 0, 0),
+    make_color_rgb(0, 255, 0),
+    make_color_rgb(0, 255, 0),
     0,
     false,
     false

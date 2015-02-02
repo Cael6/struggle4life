@@ -22,9 +22,9 @@ weapon = -1;
 pistol = -1;
 
 //Health of character
-hp = -1;
+hp = CHARACTER_HEALTH;
 
-max_hp = -1;
+max_hp = CHARACTER_HEALTH;
 
 //Boolean to be checked at times to kill the character
 alive = true;

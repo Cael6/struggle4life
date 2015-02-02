@@ -21,8 +21,6 @@ state = CHARACTER_STATE_BATTLE;
 width = sprite_get_width(body_sprite);
 height = sprite_get_height(body_sprite);
 
-hp = CHARACTER_HEALTH;
-
 mb_left_action = select_character;
 
 pistol = set_pistol(self.id);

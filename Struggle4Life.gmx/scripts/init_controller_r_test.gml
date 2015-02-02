@@ -66,8 +66,8 @@ with (character_4) {
 
 randomize();
 
-var runner, runner_x, runner_y;
-for (i = 0; i < 100; i += 1) {
+var runner, runner_x, runner_y, runner_bite;
+for (i = 0; i < 200; i += 1) {
     var top = irandom(1);
     
     if (top) {
@@ -78,12 +78,15 @@ for (i = 0; i < 100; i += 1) {
         runner_y = irandom(ROOM_HEIGHT - sprite_get_height(s_runner));
     }
     
-    runner = instance_create(runner_x, runner_y, o_bruiser);
+    runner = instance_create(runner_x, runner_y, o_runner);
+    
+    runner_bite = set_runner_bite(runner);
     
     with (runner) {
-        set_bruiser(
-            s_bruiser,
-            s_runner_hover
+        set_runner(
+            s_runner,
+            s_runner_hover,
+            runner_bite
         );
     }
 }
