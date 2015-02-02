@@ -1,5 +1,8 @@
 //define character
 
+//Name of the character
+name = "";
+
 //Sprite for the character's body
 body_sprite = -1;
 

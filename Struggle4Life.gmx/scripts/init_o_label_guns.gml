@@ -8,7 +8,7 @@ s_list = make_sprite_list(
              "Shot gun", "SHOTGUN",
              "Sniper Rifle", "SNIPER",
              "Assult Rifle", "ASSULT",
-             "Frame Thrower", "FRAME",
+             "Flame Thrower", "FLAME",
          );
 s_max = array_length_2d(s_list, 0) + 1;
 
