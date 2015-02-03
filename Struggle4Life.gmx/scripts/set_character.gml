@@ -24,4 +24,5 @@ character.height = sprite_get_height(character.body_sprite);
 
 character.mb_left_action = select_character;
 
-character.pistol = set_pistol(self.id);
+character.pistol = instance_create(0, 0, o_pistol);
+character.pistol.character = character;

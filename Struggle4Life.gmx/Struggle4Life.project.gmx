@@ -326,14 +326,17 @@
         <script>scripts\infected_find_target.gml</script>
       </scripts>
       <scripts name="resources">
-        <script>scripts\init_resource.gml</script>
-        <script>scripts\draw_resource.gml</script>
         <scripts name="ammo">
           <script>scripts\init_resource_ammo.gml</script>
         </scripts>
         <scripts name="fuel">
           <script>scripts\init_resource_fuel.gml</script>
         </scripts>
+        <script>scripts\init_resource.gml</script>
+        <script>scripts\draw_resource.gml</script>
+        <script>scripts\get_resource_count.gml</script>
+        <script>scripts\get_resource_from_id.gml</script>
+        <script>scripts\change_resource_amount.gml</script>
       </scripts>
       <script>scripts\init_object.gml</script>
       <script>scripts\obj_get_center_x.gml</script>
