@@ -59,6 +59,9 @@
       <sprites name="runner bite">
         <sprite>sprites\s_runner_bite_aoe</sprite>
       </sprites>
+      <sprites name="spitter mouth">
+        <sprite>sprites\s_spitter_mouth_aoe</sprite>
+      </sprites>
     </sprites>
     <sprites name="button">
       <sprite>sprites\s_button</sprite>
@@ -75,6 +78,10 @@
     </sprites>
     <sprites name="textbox">
       <sprite>sprites\s_textbox</sprite>
+    </sprites>
+    <sprites name="resources">
+      <sprite>sprites\s_resource_ammo</sprite>
+      <sprite>sprites\s_resource_fuel</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -99,7 +106,6 @@
         <script>scripts\set_button_r_credits.gml</script>
       </scripts>
       <scripts name="r_char_create">
-        <script>scripts\set_button_r_char_create.gml</script>
         <scripts name="o_button_next">
           <script>scripts\init_o_button_next.gml</script>
           <script>scripts\set_o_button_next.gml</script>
@@ -112,6 +118,7 @@
           <script>scripts\update_o_button_back.gml</script>
           <script>scripts\update_o_button_back_guns.gml</script>
         </scripts>
+        <script>scripts\set_button_r_char_create.gml</script>
         <script>scripts\left_click_o_button_startgame.gml</script>
         <script>scripts\set_o_button_startgame.gml</script>
       </scripts>
@@ -196,6 +203,11 @@
       <script>scripts\circle_intersect_line.gml</script>
       <script>scripts\distance_between_points.gml</script>
     </scripts>
+    <scripts name="shape">
+      <script>scripts\draw_rec.gml</script>
+      <script>scripts\init_rec.gml</script>
+      <script>scripts\set_rec.gml</script>
+    </scripts>
     <scripts name="objects">
       <scripts name="dialogue">
         <scripts name="dialogue_option">
@@ -238,42 +250,49 @@
           <script>scripts\draw_assault_rifle.gml</script>
           <script>scripts\check_collision_assault.gml</script>
           <script>scripts\update_assault_rifle.gml</script>
+          <script>scripts\init_assault_rifle.gml</script>
         </scripts>
         <scripts name="flamethrower">
           <script>scripts\set_flamethrower.gml</script>
           <script>scripts\draw_flamethrower.gml</script>
           <script>scripts\check_collision_flamethrower.gml</script>
           <script>scripts\update_flamethrower.gml</script>
+          <script>scripts\init_flamethrower.gml</script>
         </scripts>
         <scripts name="pistol">
           <script>scripts\set_pistol.gml</script>
           <script>scripts\draw_pistol.gml</script>
           <script>scripts\check_collision_pistol.gml</script>
           <script>scripts\update_pistol.gml</script>
+          <script>scripts\init_pistol.gml</script>
         </scripts>
         <scripts name="shotgun">
           <script>scripts\set_shotgun.gml</script>
           <script>scripts\draw_shotgun.gml</script>
           <script>scripts\check_collision_shotgun.gml</script>
           <script>scripts\update_shotgun.gml</script>
+          <script>scripts\init_shotgun.gml</script>
         </scripts>
         <scripts name="sniper">
           <script>scripts\draw_sniper.gml</script>
           <script>scripts\set_sniper.gml</script>
           <script>scripts\check_collision_sniper.gml</script>
           <script>scripts\update_sniper.gml</script>
+          <script>scripts\init_sniper.gml</script>
         </scripts>
         <scripts name="spitter">
           <script>scripts\set_spitter_mouth.gml</script>
           <script>scripts\draw_spitter_mouth.gml</script>
           <script>scripts\check_collision_spitter_mouth.gml</script>
           <script>scripts\update_spitter_mouth.gml</script>
+          <script>scripts\init_spitter_mouth.gml</script>
         </scripts>
         <scripts name="runner">
           <script>scripts\set_runner_bite.gml</script>
           <script>scripts\draw_runner_bite.gml</script>
           <script>scripts\check_collision_runner_bite.gml</script>
           <script>scripts\update_runner_bite.gml</script>
+          <script>scripts\init_runner_bite.gml</script>
         </scripts>
         <script>scripts\draw_weapon.gml</script>
         <script>scripts\fire_weapon.gml</script>
@@ -306,6 +325,16 @@
         <script>scripts\draw_infected.gml</script>
         <script>scripts\infected_find_target.gml</script>
       </scripts>
+      <scripts name="resources">
+        <script>scripts\init_resource.gml</script>
+        <script>scripts\draw_resource.gml</script>
+        <scripts name="ammo">
+          <script>scripts\init_resource_ammo.gml</script>
+        </scripts>
+        <scripts name="fuel">
+          <script>scripts\init_resource_fuel.gml</script>
+        </scripts>
+      </scripts>
       <script>scripts\init_object.gml</script>
       <script>scripts\obj_get_center_x.gml</script>
       <script>scripts\damage_unit.gml</script>
@@ -325,14 +354,6 @@
       <script>scripts\array_2d.gml</script>
     </scripts>
     <script>scripts\init_variables.gml</script>
-    <scripts name="textbox">
-      <script>scripts\o_textbox_init.gml</script>
-    </scripts>
-    <scripts name="shape">
-      <script>scripts\draw_rec.gml</script>
-      <script>scripts\init_rec.gml</script>
-      <script>scripts\set_rec.gml</script>
-    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_default_12</font>
@@ -342,6 +363,10 @@
     <font>fonts\f_cabin_sketch_lg</font>
   </fonts>
   <objects name="objects">
+    <objects name="textbox">
+      <object>objects\o_text</object>
+      <object>objects\o_textbox</object>
+    </objects>
     <objects name="controllers">
       <object>objects\o_controller_r</object>
       <object>objects\o_controller_r_debug</object>
@@ -399,14 +424,15 @@
       <object>objects\o_bruiser_fist</object>
       <object>objects\o_weapon</object>
     </objects>
+    <objects name="resources">
+      <object>objects\o_resource</object>
+      <object>objects\o_resource_ammo</object>
+      <object>objects\o_resource_fuel</object>
+    </objects>
     <object>objects\o_object</object>
     <object>objects\o_character</object>
     <object>objects\o_gun_aoe</object>
     <object>objects\o_rectangle</object>
-    <objects name="textbox">
-      <object>objects\o_text</object>
-      <object>objects\o_textbox</object>
-    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_debug</room>
@@ -416,7 +442,7 @@
     <room>rooms\r_char_create</room>
     <room>rooms\r_game</room>
   </rooms>
-  <constants number="93">
+  <constants number="105">
     <constant name="BUTTON_FONT">f_oswald</constant>
     <constant name="BUTTON_HEIGHT">32</constant>
     <constant name="BUTTON_LINE_SEP">20</constant>
@@ -510,6 +536,18 @@
     <constant name="SCENARIO_GAME_OVER">1</constant>
     <constant name="SCENARIO_SAFE_ZONE">3</constant>
     <constant name="SCENARIO_GAME_START">2</constant>
+    <constant name="RESOURCE_WIDTH">100</constant>
+    <constant name="RESOURCE_HEIGHT">40</constant>
+    <constant name="RESOURCE_AMMO_START">6</constant>
+    <constant name="RESOURCE_FUEL_START">4</constant>
+    <constant name="RESOURCE_AMMO_X">7</constant>
+    <constant name="RESOURCE_AMMO_Y">7</constant>
+    <constant name="RESOURCE_FUEL_X">114</constant>
+    <constant name="RESOURCE_FUEL_Y">7</constant>
+    <constant name="RESOURCE_AMMO">1</constant>
+    <constant name="RESOURCE_FUEL">2</constant>
+    <constant name="RESOURCE_NONE">0</constant>
+    <constant name="WEAPON_SHOTGUN_RADIUS">32</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

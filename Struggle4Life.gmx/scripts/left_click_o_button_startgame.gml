@@ -24,4 +24,4 @@ while(true){
 }
 
 
-goto_r_test();
+goto_r_game();

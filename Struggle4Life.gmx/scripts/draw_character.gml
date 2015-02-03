@@ -4,11 +4,15 @@ draw_sprite(shirt_sprite, image_index, x, y);
 draw_sprite(pants_sprite, image_index, x, y);
 draw_sprite(shoes_sprite, image_index, x, y);
 
-if(using_weapon) {
-    draw_sprite(weapon.sprite_index, image_index, x, y);
+var curr_weapon;
+
+if (using_weapon) {
+    curr_weapon = weapon;
 } else {
-    draw_sprite(pistol.sprite_index, image_index, x, y);
+    curr_weapon = pistol;
 }
+
+draw_sprite(curr_weapon.sprite_index, image_index, x, y);
 
 if (state == CHARACTER_STATE_BATTLE) {
     draw_set_alpha(1);
@@ -17,14 +21,6 @@ if (state == CHARACTER_STATE_BATTLE) {
     var key_string_width = string_width(display_key);
     var key_string_height = string_height(display_key);
     draw_text(x - key_string_width - 7, y - key_string_height - 7, display_key);
-}
-
-var curr_weapon;
-
-if (using_weapon) {
-    curr_weapon = weapon;
-} else {
-    curr_weapon = pistol;
 }
 
 draw_healthbar(

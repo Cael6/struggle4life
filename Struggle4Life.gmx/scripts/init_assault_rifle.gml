@@ -1,0 +1,10 @@
+aoe_sprite = s_assault_rifle_aoe;
+cooldown = WEAPON_ASSAULT_COOLDOWN;
+name = "Assault Rifle";
+is_pistol = false;
+range = WEAPON_ASSAULT_RANGE;
+check_collision = check_collision_assault;
+resource_type = RESOURCE_AMMO;
+damage = WEAPON_ASSAULT_DAMAGE;
+shots_before_reload = WEAPON_ASSAULT_SHOTS_PER_RELOAD;
+shots_left = WEAPON_ASSAULT_SHOTS_PER_RELOAD;

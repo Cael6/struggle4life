@@ -18,7 +18,6 @@ if (!is_eating) {
         with (weapon) {
             fire_weapon();
         }
-        c_log("Character attacked hp remaining: " + string(target.hp), C_LOG__DEBUG);
         if (!target.alive) {
             is_eating = true;
             speed = 0;

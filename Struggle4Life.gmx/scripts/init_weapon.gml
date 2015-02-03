@@ -5,7 +5,8 @@ aoe_sprite = -1;
 cooldown = -1;
 
 //The current cooldown before the weapon can attack.
-curr_cooldown = -1;
+//All weapons start off cooldown
+curr_cooldown = 0;
 
 //The name of the weapon
 name = "";
@@ -15,9 +16,6 @@ character = false;
 
 //Whether or not the weapon is a pistol
 is_pistol = false;
-
-//The function to run on draw
-draw_function = false;
 
 //Whether or not anything will be drawn for the weapon
 drawing = false;
@@ -32,5 +30,20 @@ target_y = -1;
 //Function to run when checking collision
 check_collision = -1;
 
+//The id for the type of resource
+resource_type = -1;
+
 //The amount of damage the weapon does when firing
 damage = -1;
+
+//TODO: fix this in fire_weapon
+//The number of shots before the weapon has to reload
+shots_before_reload = 1;
+
+//The current number of shots before reload
+shots_left = 1;
+
+//The radius of the weapon aoe
+radius = -1;
+
+visible = true;
