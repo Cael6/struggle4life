@@ -62,6 +62,9 @@
       <sprites name="spitter mouth">
         <sprite>sprites\s_spitter_mouth_aoe</sprite>
       </sprites>
+      <sprites name="bruiser fist">
+        <sprite>sprites\s_bruiser_fist_aoe</sprite>
+      </sprites>
     </sprites>
     <sprites name="button">
       <sprite>sprites\s_button</sprite>
@@ -72,6 +75,7 @@
     <sprites name="infected">
       <sprite>sprites\s_runner</sprite>
       <sprite>sprites\s_bruiser</sprite>
+      <sprite>sprites\s_bruiser_hover</sprite>
       <sprite>sprites\s_spitter</sprite>
       <sprite>sprites\s_runner_hover</sprite>
       <sprite>sprites\s_b</sprite>
@@ -287,6 +291,12 @@
           <script>scripts\update_runner_bite.gml</script>
           <script>scripts\init_runner_bite.gml</script>
         </scripts>
+        <scripts name="bruiser">
+          <script>scripts\check_collision_bruiser_fist.gml</script>
+          <script>scripts\draw_bruiser_fist.gml</script>
+          <script>scripts\update_bruiser_fist.gml</script>
+          <script>scripts\init_bruiser_fist.gml</script>
+        </scripts>
         <script>scripts\draw_weapon.gml</script>
         <script>scripts\fire_weapon.gml</script>
         <script>scripts\init_weapon.gml</script>
@@ -299,13 +309,11 @@
           <script>scripts\draw_runner.gml</script>
           <script>scripts\init_runner.gml</script>
           <script>scripts\update_runner.gml</script>
-          <script>scripts\set_runner.gml</script>
         </scripts>
         <scripts name="o_bruiser">
           <script>scripts\draw_bruiser.gml</script>
           <script>scripts\init_bruiser.gml</script>
           <script>scripts\update_bruiser.gml</script>
-          <script>scripts\set_bruiser.gml</script>
         </scripts>
         <scripts name="o_spitter">
           <script>scripts\draw_spitter.gml</script>
@@ -512,7 +520,7 @@
     <constant name="WEAPON_PISTOL_COOLDOWN">45</constant>
     <constant name="WEAPON_PISTOL_DAMAGE">1</constant>
     <constant name="WEAPON_PISTOL_RANGE">3</constant>
-    <constant name="WEAPON_RANGE_DISTANCE">sqrt(sqr(ROOM_WIDTH) + sqr(ROOM_HEIGHT))/3</constant>
+    <constant name="WEAPON_RANGE_DISTANCE">400</constant>
     <constant name="WEAPON_SHOTGUN_COOLDOWN">30</constant>
     <constant name="WEAPON_SHOTGUN_DAMAGE">1</constant>
     <constant name="WEAPON_SHOTGUN_RANGE">2</constant>

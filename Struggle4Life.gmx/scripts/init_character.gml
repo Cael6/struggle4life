@@ -58,3 +58,5 @@ keypress = -1;
 
 //key to display for character
 display_key = "1";
+
+selected = false;

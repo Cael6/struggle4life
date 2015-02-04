@@ -12,3 +12,8 @@ max_hp = ENEMY_RUNNER_HEALTH;
 
 width = sprite_get_width(body_sprite);
 height = sprite_get_height(body_sprite);
+
+//create weapon
+//Can create here because weapons are static to infected.
+weapon = instance_create(0, 0, o_runner_bite);
+weapon.character = self.id;

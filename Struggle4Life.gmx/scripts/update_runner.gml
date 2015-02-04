@@ -20,8 +20,8 @@ if (!is_eating) {
         }
         if (!target.alive) {
             is_eating = true;
-            speed = 0;
         }
+        speed = 0;
     } else {
         move_towards_point(target.x, target.y, o_speed);
     }

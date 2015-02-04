@@ -1,8 +1,30 @@
-//look for character
-var random_num = random_range(0, 2);
-charcter_instance = instance_find(o_character, random_num)
-move_towards_point(charcter_instance.x, charcter_instance.y, o_speed)
-
-if (!alive) {
-    instance_destroy();
+if (!is_eating) {
+    if (-1 == target) {
+        infected_find_target();
+    }
+    
+    if (
+        rectangle_in_rectangle(
+            target.x,
+            target.y,
+            target.x + target.width,
+            target.y + target.height,
+            x,
+            y,
+            x + width,
+            y + height
+        )
+    ) { //in range
+        with (weapon) {
+            fire_weapon();
+        }
+        if (!target.alive) {
+            is_eating = true;
+        }
+        speed = 0;
+    } else {
+        move_towards_point(target.x, target.y, o_speed);
+    }
+} else {
+    //eat some more
 }
