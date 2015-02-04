@@ -8,7 +8,7 @@ set_character(
     s_shirt_1, 
     s_pants_1, 
     s_shoes_1, 
-    set_shotgun(character_1), 
+    shotgun, 
     s_char_hover,
     "1",
     character_1
@@ -79,7 +79,7 @@ for (i = 0; i < 20; i += 1) {
     
     runner = instance_create(runner_x, runner_y, o_runner);
     
-    runner_bite = set_runner_bite(runner);
+    runner_bite = instance_create(0, 0, o_runner_bite);
     
     with (runner) {
         set_runner(
@@ -88,6 +88,7 @@ for (i = 0; i < 20; i += 1) {
             runner_bite
         );
     }
+    runner_bite.character = runner;
 }
 
 ammo = instance_create(0,0, o_resource_ammo);

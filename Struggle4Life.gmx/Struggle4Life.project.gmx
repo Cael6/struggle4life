@@ -246,28 +246,24 @@
       </scripts>
       <scripts name="weapon">
         <scripts name="assault">
-          <script>scripts\set_assault_rifle.gml</script>
           <script>scripts\draw_assault_rifle.gml</script>
           <script>scripts\check_collision_assault.gml</script>
           <script>scripts\update_assault_rifle.gml</script>
           <script>scripts\init_assault_rifle.gml</script>
         </scripts>
         <scripts name="flamethrower">
-          <script>scripts\set_flamethrower.gml</script>
           <script>scripts\draw_flamethrower.gml</script>
           <script>scripts\check_collision_flamethrower.gml</script>
           <script>scripts\update_flamethrower.gml</script>
           <script>scripts\init_flamethrower.gml</script>
         </scripts>
         <scripts name="pistol">
-          <script>scripts\set_pistol.gml</script>
           <script>scripts\draw_pistol.gml</script>
           <script>scripts\check_collision_pistol.gml</script>
           <script>scripts\update_pistol.gml</script>
           <script>scripts\init_pistol.gml</script>
         </scripts>
         <scripts name="shotgun">
-          <script>scripts\set_shotgun.gml</script>
           <script>scripts\draw_shotgun.gml</script>
           <script>scripts\check_collision_shotgun.gml</script>
           <script>scripts\update_shotgun.gml</script>
@@ -275,20 +271,17 @@
         </scripts>
         <scripts name="sniper">
           <script>scripts\draw_sniper.gml</script>
-          <script>scripts\set_sniper.gml</script>
           <script>scripts\check_collision_sniper.gml</script>
           <script>scripts\update_sniper.gml</script>
           <script>scripts\init_sniper.gml</script>
         </scripts>
         <scripts name="spitter">
-          <script>scripts\set_spitter_mouth.gml</script>
           <script>scripts\draw_spitter_mouth.gml</script>
           <script>scripts\check_collision_spitter_mouth.gml</script>
           <script>scripts\update_spitter_mouth.gml</script>
           <script>scripts\init_spitter_mouth.gml</script>
         </scripts>
         <scripts name="runner">
-          <script>scripts\set_runner_bite.gml</script>
           <script>scripts\draw_runner_bite.gml</script>
           <script>scripts\check_collision_runner_bite.gml</script>
           <script>scripts\update_runner_bite.gml</script>

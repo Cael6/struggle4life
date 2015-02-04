@@ -10,6 +10,9 @@ if (resource_type == RESOURCE_NONE || get_resource_count(resource_type) > 0) {
     }
     
     if (character.object_index == o_character) {
+        if (self.shots_left == self.shots_before_reload) {
+            change_resource_amount(resource_type, -1);
+        }
         if (self.shots_left > 1) {
             self.shots_left -= 1;
         } else {
@@ -18,7 +21,6 @@ if (resource_type == RESOURCE_NONE || get_resource_count(resource_type) > 0) {
                 deselect_character();
             }
             self.curr_cooldown = self.cooldown;
-            change_resource_amount(resource_type, -1);
         }
     }
 } else if (get_resource_count(resource_type) <= 0) {

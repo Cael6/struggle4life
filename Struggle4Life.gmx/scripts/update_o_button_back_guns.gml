@@ -19,20 +19,20 @@ character = charcter_instance;
 var new_gun = 0;
 switch(text_instance.s_list[next_sprite, 1]){
     case "SHOTGUN":
-        new_gun = set_shotgun(character);
+        new_gun = instance_create(0, 0, o_shotgun);
         break;
     case "SNIPER":
-        new_gun = set_sniper(character);
+        new_gun = instance_create(0, 0, o_sniper);
         break;
     case "ASSULT":
-        new_gun = set_assault_rifle(character);    
+        new_gun = instance_create(0, 0, o_assault_rifle);
         break;
-    case "FRAME":
-         new_gun = set_flamethrower(character);   
+    case "FLAME":
+        new_gun = instance_create(0, 0, o_flamethrower); 
         break;
-    
-    
 }
+
+new_gun.character = character;
 //Delete previous weapon object
 with(character.weapon){
     instance_destroy();

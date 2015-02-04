@@ -13,3 +13,16 @@ draw_sprite(
     x + width - sprite_get_width(resource_icon) - 7,
     y + height / 2 - sprite_get_height(resource_icon) / 2
 );
+
+if (glb_selected != noone) {
+    if (glb_selected.weapon.resource_type == resource_type 
+        && glb_selected.using_weapon) {
+        if (glb_selected.weapon.shots_before_reload == glb_selected.weapon.shots_left) {
+            draw_text(
+                x + 7 + string_width(string(amount)),
+                y + height / 2 - text_height / 2,
+                " - 1"
+            );
+        }
+    }
+}

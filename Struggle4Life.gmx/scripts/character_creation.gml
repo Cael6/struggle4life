@@ -43,7 +43,8 @@ var character_1 = instance_create((start_width + char_w_adjust),
                                   (start_height + char_h_adjust), 
                                   o_character
                   );
-var shotgun = set_shotgun(character_1);
+var shotgun = instance_create(0, 0, o_shotgun);
+shotgun.character = character_1;
 
 set_character(
     s_body_1, 
