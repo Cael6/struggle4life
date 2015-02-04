@@ -65,30 +65,33 @@ ar.character = character_4;
 
 randomize();
 
-var runner, runner_x, runner_y, runner_bite;
+var infected, infected_x, infected_y, infected_weapon, infected_oi,
+    infected_weapon_oi;
 for (i = 0; i < 20; i += 1) {
+    var random_infected_spawner = irandom(1);
     var top = irandom(1);
     
     if (top) {
-        runner_x = irandom(ROOM_WIDTH);
-        runner_y = -irandom(ROOM_HEIGHT);
+        infected_x = irandom(ROOM_WIDTH);
+        infected_y = -irandom(ROOM_HEIGHT);
     } else {
-        runner_x = ROOM_WIDTH + irandom(ROOM_WIDTH);
-        runner_y = irandom(ROOM_HEIGHT - sprite_get_height(s_runner));
+        infected_x = ROOM_WIDTH + irandom(ROOM_WIDTH);
+        infected_y = irandom(ROOM_HEIGHT - sprite_get_height(s_runner));
     }
     
-    runner = instance_create(runner_x, runner_y, o_runner);
-    
-    runner_bite = instance_create(0, 0, o_runner_bite);
-    
-    with (runner) {
-        set_runner(
-            s_runner,
-            s_runner_hover,
-            runner_bite
-        );
+    if(random_infected_spawner) {
+        infected_oi = o_runner;
+        infected_weapon_oi = o_runner_bite;
+    } else {
+        infected_oi = o_spitter;
+        infected_weapon_oi = o_spitter_mouth;
     }
-    runner_bite.character = runner;
+    
+    infected = instance_create(infected_x, infected_y, infected_oi);
+    infected_weapon = instance_create(0, 0, infected_weapon_oi);
+    
+    infected.weapon = infected_weapon;
+    infected_weapon.character = infected;
 }
 
 ammo = instance_create(0,0, o_resource_ammo);

@@ -311,7 +311,6 @@
           <script>scripts\draw_spitter.gml</script>
           <script>scripts\init_spitter.gml</script>
           <script>scripts\update_spitter.gml</script>
-          <script>scripts\set_spitter.gml</script>
         </scripts>
         <script>scripts\init_infected.gml</script>
         <script>scripts\update_infected.gml</script>

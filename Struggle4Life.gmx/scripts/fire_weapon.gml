@@ -22,6 +22,8 @@ if (resource_type == RESOURCE_NONE || get_resource_count(resource_type) > 0) {
             }
             self.curr_cooldown = self.cooldown;
         }
+    } else {
+        self.curr_cooldown = self.cooldown;
     }
 } else if (get_resource_count(resource_type) <= 0) {
     //TODO: shake cursor and resource count or some other way 
