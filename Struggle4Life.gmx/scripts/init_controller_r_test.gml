@@ -68,7 +68,7 @@ randomize();
 var infected, infected_x, infected_y, infected_weapon, infected_oi,
     infected_weapon_oi;
 for (i = 0; i < 20; i += 1) {
-    var random_infected_spawner = irandom(2);
+    var random_infected_spawner = irandom(4);
     var top = irandom(1);
     
     if (top) {
@@ -88,6 +88,12 @@ for (i = 0; i < 20; i += 1) {
             break;
         case 2:
             infected_oi = o_bruiser;
+            break;
+        case 3:
+            infected_oi = o_sprinter;
+            break;
+        case 4:
+            infected_oi = o_shooter;
             break;
     }
     

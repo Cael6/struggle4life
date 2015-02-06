@@ -304,27 +304,6 @@
         <script>scripts\set_weapon.gml</script>
         <script>scripts\update_weapon.gml</script>
       </scripts>
-      <scripts name="infected">
-        <scripts name="o_runner">
-          <script>scripts\draw_runner.gml</script>
-          <script>scripts\init_runner.gml</script>
-          <script>scripts\update_runner.gml</script>
-        </scripts>
-        <scripts name="o_bruiser">
-          <script>scripts\draw_bruiser.gml</script>
-          <script>scripts\init_bruiser.gml</script>
-          <script>scripts\update_bruiser.gml</script>
-        </scripts>
-        <scripts name="o_spitter">
-          <script>scripts\draw_spitter.gml</script>
-          <script>scripts\init_spitter.gml</script>
-          <script>scripts\update_spitter.gml</script>
-        </scripts>
-        <script>scripts\init_infected.gml</script>
-        <script>scripts\update_infected.gml</script>
-        <script>scripts\draw_infected.gml</script>
-        <script>scripts\infected_find_target.gml</script>
-      </scripts>
       <scripts name="resources">
         <scripts name="ammo">
           <script>scripts\init_resource_ammo.gml</script>
@@ -337,6 +316,44 @@
         <script>scripts\get_resource_count.gml</script>
         <script>scripts\get_resource_from_id.gml</script>
         <script>scripts\change_resource_amount.gml</script>
+      </scripts>
+      <scripts name="ai">
+        <scripts name="infected">
+          <scripts name="o_runner">
+            <script>scripts\draw_runner.gml</script>
+            <script>scripts\init_runner.gml</script>
+            <script>scripts\update_runner.gml</script>
+          </scripts>
+          <scripts name="o_bruiser">
+            <script>scripts\draw_bruiser.gml</script>
+            <script>scripts\init_bruiser.gml</script>
+            <script>scripts\update_bruiser.gml</script>
+          </scripts>
+          <scripts name="o_spitter">
+            <script>scripts\draw_spitter.gml</script>
+            <script>scripts\init_spitter.gml</script>
+            <script>scripts\update_spitter.gml</script>
+          </scripts>
+          <script>scripts\init_infected.gml</script>
+          <script>scripts\update_infected.gml</script>
+          <script>scripts\draw_infected.gml</script>
+        </scripts>
+        <scripts name="marauders">
+          <scripts name="sprinter">
+            <script>scripts\update_sprinter.gml</script>
+            <script>scripts\draw_sprinter.gml</script>
+            <script>scripts\init_sprinter.gml</script>
+          </scripts>
+          <scripts name="shooter">
+            <script>scripts\init_shooter.gml</script>
+            <script>scripts\draw_shooter.gml</script>
+            <script>scripts\update_shooter.gml</script>
+          </scripts>
+          <script>scripts\draw_marauder.gml</script>
+          <script>scripts\update_marauder.gml</script>
+          <script>scripts\init_marauder.gml</script>
+        </scripts>
+        <script>scripts\ai_find_target.gml</script>
       </scripts>
       <script>scripts\init_object.gml</script>
       <script>scripts\obj_get_center_x.gml</script>
@@ -415,6 +432,8 @@
       <object>objects\o_infected</object>
       <object>objects\o_bruiser</object>
       <object>objects\o_spitter</object>
+      <object>objects\o_shooter</object>
+      <object>objects\o_sprinter</object>
     </objects>
     <objects name="weapon">
       <object>objects\o_assault_rifle</object>

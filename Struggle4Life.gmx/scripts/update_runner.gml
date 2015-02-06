@@ -1,6 +1,6 @@
 if (!is_eating) {
     if (-1 == target) {
-        infected_find_target();
+        ai_find_target();
     }
     
     if (

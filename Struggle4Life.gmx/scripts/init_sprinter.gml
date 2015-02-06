@@ -1,7 +1,7 @@
 //init of common variables for runner
 
 //Body Sprite
-body_sprite = s_runner;
+body_sprite = s_body_1;
 
 //sprite to show when hovered
 hover_sprite = s_runner_hover;
