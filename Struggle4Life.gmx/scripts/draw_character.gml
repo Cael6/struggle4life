@@ -21,35 +21,35 @@ if (state == CHARACTER_STATE_BATTLE) {
     var key_string_width = string_width(display_key);
     var key_string_height = string_height(display_key);
     draw_text(x - key_string_width - 7, y - key_string_height - 7, display_key);
+
+    draw_healthbar(
+        x,
+        y - 10,
+        x + width,
+        y,
+        curr_weapon.curr_cooldown/curr_weapon.cooldown * 100,
+        make_color_rgb(0, 0, 0),
+        make_color_rgb(0,0,150),
+        make_color_rgb(0,0,150),
+        0,
+        false,
+        false
+    );
+    
+    draw_healthbar(
+        x,
+        y - 20,
+        x + width,
+        y - 10,
+        hp / max_hp * 100,
+        make_color_rgb(0, 0, 0),
+        make_color_rgb(0, 255, 0),
+        make_color_rgb(0, 255, 0),
+        0,
+        false,
+        false
+    );
 }
-
-draw_healthbar(
-    x,
-    y - 10,
-    x + width,
-    y,
-    curr_weapon.curr_cooldown/curr_weapon.cooldown * 100,
-    make_color_rgb(0, 0, 0),
-    make_color_rgb(0,0,150),
-    make_color_rgb(0,0,150),
-    0,
-    false,
-    false
-);
-
-draw_healthbar(
-    x,
-    y - 20,
-    x + width,
-    y - 10,
-    hp / max_hp * 100,
-    make_color_rgb(0, 0, 0),
-    make_color_rgb(0, 255, 0),
-    make_color_rgb(0, 255, 0),
-    0,
-    false,
-    false
-);
     
 
 if (state == CHARACTER_STATE_BATTLE && hover) {
