@@ -17,7 +17,7 @@ with(button_1){
         BUTTON_WIDTH, 
         BUTTON_HEIGHT, 
         BUTTON_TEXT_COLOR, 
-        goto_r_game_with_adjust
+        goto_r_game
     );
     depth = 19;
 }
@@ -29,7 +29,7 @@ with(button_2){
         BUTTON_WIDTH, 
         BUTTON_HEIGHT, 
         BUTTON_TEXT_COLOR, 
-        goto_r_game_with_adjust
+        goto_r_game
     );
     depth = 19;
 }
@@ -42,7 +42,7 @@ if(map_type > 2){
             BUTTON_WIDTH, 
             BUTTON_HEIGHT, 
             BUTTON_TEXT_COLOR, 
-            goto_r_game_with_adjust
+            goto_r_game
         );
         depth = 19;
     }

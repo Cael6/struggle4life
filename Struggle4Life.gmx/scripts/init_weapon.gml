@@ -47,3 +47,7 @@ shots_left = 1;
 radius = -1;
 
 visible = true;
+
+muzzle_flash = o_muzzle_flash;
+
+persistent = true;

@@ -4,5 +4,5 @@ if (!check_characters_alive()) {
 }
 
 if (state == STATE_BATTLE && !check_enemies_alive()) {
-    get_scenario_dialogue(SCENARIO_SAFE_ZONE);
+    get_to_safe_zone();
 }

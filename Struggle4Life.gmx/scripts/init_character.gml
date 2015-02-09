@@ -60,3 +60,4 @@ keypress = -1;
 display_key = "1";
 
 selected = false;
+persistent = true;

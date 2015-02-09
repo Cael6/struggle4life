@@ -1,3 +1,4 @@
+destroy_dialogue();
 var success = irandom(1);
 
 if (success) {

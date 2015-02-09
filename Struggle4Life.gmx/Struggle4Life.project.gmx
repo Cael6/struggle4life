@@ -56,6 +56,7 @@
       <sprites name="sniper">
         <sprite>sprites\s_sniper</sprite>
         <sprite>sprites\s_sniper_aoe</sprite>
+        <sprite>sprites\s_sniper_muzzle_flash</sprite>
       </sprites>
       <sprites name="runner bite">
         <sprite>sprites\s_runner_bite_aoe</sprite>
@@ -322,6 +323,11 @@
         <script>scripts\weapon_update_target.gml</script>
         <script>scripts\set_weapon.gml</script>
         <script>scripts\update_weapon.gml</script>
+        <scripts name="muzzle flash">
+          <script>scripts\init_muzzle_flash.gml</script>
+          <script>scripts\update_muzzle_flash.gml</script>
+          <script>scripts\draw_muzzle_flash.gml</script>
+        </scripts>
       </scripts>
       <scripts name="resources">
         <scripts name="ammo">
@@ -395,7 +401,6 @@
       <script>scripts\goto_r_game.gml</script>
       <script>scripts\goto_r_main_map.gml</script>
       <scripts name="with_position_adjust">
-        <script>scripts\goto_r_game_with_adjust.gml</script>
         <script>scripts\goto_r_main_map_with_adjust.gml</script>
       </scripts>
     </scripts>
@@ -476,6 +481,9 @@
       <object>objects\o_runner_bite</object>
       <object>objects\o_bruiser_fist</object>
       <object>objects\o_weapon</object>
+      <objects name="muzzle flashes">
+        <object>objects\o_muzzle_flash</object>
+      </objects>
     </objects>
     <objects name="resources">
       <object>objects\o_resource</object>
@@ -516,8 +524,8 @@
     <constant name="C_LOG_LEVEL">C_LOG__ALL</constant>
     <constant name="CHARACTER_HEALTH">4</constant>
     <constant name="CHARACTER_POSITION_BATTLE_X">32</constant>
-    <constant name="CHARACTER_POSITION_BATTLE_Y">668</constant>
-    <constant name="CHARACTER_POSITION_MAP_INTERVAL">48</constant>
+    <constant name="CHARACTER_POSITION_BATTLE_Y">400</constant>
+    <constant name="CHARACTER_POSITION_MAP_INTERVAL">64</constant>
     <constant name="CHARACTER_POSITION_MAP_X">416</constant>
     <constant name="CHARACTER_POSITION_MAP_Y">672</constant>
     <constant name="CHARACTER_STATE_BATTLE">1</constant>

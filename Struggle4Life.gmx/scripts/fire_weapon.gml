@@ -10,6 +10,12 @@ if (resource_type == RESOURCE_NONE || get_resource_count(resource_type) > 0) {
     }
     
     if (character.object_index == o_character) {
+        //Create a muzzle flash
+        instance_create(
+            obj_get_center_x(character),
+            obj_get_center_y(character),
+            muzzle_flash
+        );
         if (self.shots_left == self.shots_before_reload) {
             change_resource_amount(resource_type, -1);
         }

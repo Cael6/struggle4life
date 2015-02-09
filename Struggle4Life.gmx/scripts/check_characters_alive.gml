@@ -5,4 +5,3 @@ with (o_character) {
 }
 
 return false;
-

@@ -9,3 +9,5 @@ name = "";
 
 width = RESOURCE_WIDTH;
 height = RESOURCE_HEIGHT;
+
+persistent = true;

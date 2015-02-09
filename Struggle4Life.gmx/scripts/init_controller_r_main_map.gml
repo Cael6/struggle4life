@@ -7,9 +7,15 @@ with(main_map){
     set_main_map(map_type);
 }
 
-//Make instances of ammo and fuel and set to persistent
-ammo = instance_create(0,0, o_resource_ammo);
-fuel = instance_create(0,0, o_resource_fuel);
+var char_x = CHARACTER_POSITION_MAP_X;
+var char_y = CHARACTER_POSITION_MAP_Y;
+var counter = 0;
+var character;
 
-ammo.persistent = true;
-fuel.persistent = true;
+for (var i = 0; i < array_length_1d(glb_characters); i += 1) {
+    character = glb_characters[i];
+    character.x = char_x;
+    character.y = char_y;
+    character.state = CHARACTER_STATE_DISPLAY;
+    char_x = char_x + CHARACTER_POSITION_MAP_INTERVAL;
+}

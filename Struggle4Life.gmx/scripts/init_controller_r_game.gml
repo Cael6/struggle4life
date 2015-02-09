@@ -5,15 +5,9 @@ var infected, infected_x, infected_y, infected_weapon, infected_oi,
     infected_weapon_oi;
 for (i = 0; i < 10; i += 1) {
     var random_infected_spawner = irandom(4);
-    var top = irandom(1);
     
-    if (top) {
-        infected_x = irandom(ROOM_WIDTH);
-        infected_y = -irandom(ROOM_HEIGHT);
-    } else {
-        infected_x = ROOM_WIDTH + irandom(ROOM_WIDTH);
-        infected_y = irandom(ROOM_HEIGHT - sprite_get_height(s_runner));
-    }
+    infected_x = ROOM_WIDTH + irandom(200);
+    infected_y = irandom_range(100, ROOM_HEIGHT - sprite_get_height(s_runner));
     
     switch (random_infected_spawner) {
         case 0:
@@ -36,5 +30,13 @@ for (i = 0; i < 10; i += 1) {
     infected = instance_create(infected_x, infected_y, infected_oi);
 }
 
-ammo = instance_create(0,0, o_resource_ammo);
-fuel = instance_create(0,0, o_resource_fuel);
+var char_x = CHARACTER_POSITION_BATTLE_X;
+var char_y = CHARACTER_POSITION_BATTLE_Y;
+
+for (var i = 0; i < array_length_1d(glb_characters); i += 1) {
+    character = glb_characters[i];
+    character.x = char_x;
+    character.y = char_y;
+    character.state = CHARACTER_STATE_BATTLE;
+    char_y = char_y + CHARACTER_POSITION_MAP_INTERVAL;
+}

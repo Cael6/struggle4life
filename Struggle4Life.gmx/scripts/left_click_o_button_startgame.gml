@@ -1,27 +1,26 @@
-char_x = CHARACTER_POSITION_MAP_X;
-char_y = CHARACTER_POSITION_MAP_Y;
-counter = 0;
+var char_x = CHARACTER_POSITION_MAP_X;
+var char_y = CHARACTER_POSITION_MAP_Y;
+var counter = 0;
+var character_instance = 0;
 
-while(true){
-    charcter_instance = instance_find(o_character, counter)
-    textbox_instance = instance_find(o_textbox, counter)
+while (true) {
+    character_instance = instance_find(o_character, counter);
     
-    if(charcter_instance > 0){
-        //Give instance to nect room
-        charcter_instance.x = char_x;
-        charcter_instance.y = char_y;
-        charcter_instance.state = CHARACTER_STATE_DISPLAY;
-        charcter_instance.persistent = true;
-        charcter_instance.weapon.persistent = true;
-        charcter_instance.pistol.persistent = true;
-        charcter_instance.name = textbox_instance.txt;
-    }
-    else{
+    if (character_instance < 1) {
         break;
     }
-    char_x = char_x + CHARACTER_POSITION_MAP_INTERVAL;
-    counter = counter + 1;
+    
+    textbox_instance = instance_find(o_textbox, counter);
+    
+    character_instance.name = textbox_instance.txt;
+    character_instance.depth -= counter;
+    glb_characters[counter] = character_instance;
+    counter += 1;
 }
 
+
+//Make instances of ammo and fuel
+ammo = instance_create(0,0, o_resource_ammo);
+fuel = instance_create(0,0, o_resource_fuel);
 
 goto_r_main_map();

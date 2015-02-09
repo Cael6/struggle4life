@@ -1,1 +1,1 @@
-
+destroy_dialogue();
