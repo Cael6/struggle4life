@@ -1,0 +1,1 @@
+get_scenario_dialogue(SCENARIO_SAFE_ZONE);
