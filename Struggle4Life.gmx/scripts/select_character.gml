@@ -1,4 +1,4 @@
-if (alive) {
+if (alive && state == CHARACTER_STATE_BATTLE) {
     var curr_weapon;
     
     if (using_weapon) {

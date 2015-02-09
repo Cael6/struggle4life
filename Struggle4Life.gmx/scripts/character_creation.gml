@@ -2,6 +2,7 @@
 //init script for r_create_char init
 var start_width = argument0;
 var start_height = argument1;
+var char_num = argument2;
 var rec_w_adjust = 318;
 var rec_h_adjust = 286;
 
@@ -54,7 +55,7 @@ set_character(
     s_shoes_1, 
     shotgun, 
     s_char_hover,
-    "1",
+    char_num,
     character_1
 );
 

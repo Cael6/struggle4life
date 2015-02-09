@@ -16,6 +16,7 @@
       <sprite>sprites\s_r_credits_controller</sprite>
       <sprite>sprites\s_r_char_create</sprite>
       <sprite>sprites\s_r_battle_controller</sprite>
+      <sprite>sprites\s_r_map_controller</sprite>
     </sprites>
     <sprites name="character">
       <sprite>sprites\s_body_1</sprite>
@@ -87,12 +88,15 @@
       <sprite>sprites\s_resource_ammo</sprite>
       <sprite>sprites\s_resource_fuel</sprite>
     </sprites>
+    <sprite>sprites\sprite52</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_road_1</background>
     <background>background\bg_dna</background>
     <background>background\bg_vial</background>
     <background>background\bg_create_char</background>
+    <background>background\bg_map_2</background>
+    <background>background\bg_map_3</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -175,6 +179,12 @@
       <scripts name="r_game">
         <script>scripts\init_controller_r_game.gml</script>
         <script>scripts\update_controller_r_game.gml</script>
+        <script>scripts\draw_controller_r_game.gml</script>
+      </scripts>
+      <scripts name="r_main_map">
+        <script>scripts\init_controller_r_main_map.gml</script>
+        <script>scripts\update_controller_r_main_map.gml</script>
+        <script>scripts\draw_controller_r_main_map.gml</script>
       </scripts>
     </scripts>
     <scripts name="game actions">
@@ -231,6 +241,9 @@
         <script>scripts\set_dialogue.gml</script>
         <script>scripts\dialogue_get_next_option_pos.gml</script>
         <script>scripts\dialogue_add_option.gml</script>
+        <scripts name="battle">
+          <script>scripts\show_dialog_battle_end.gml</script>
+        </scripts>
       </scripts>
       <scripts name="map">
         <scripts name="map_point">
@@ -366,6 +379,12 @@
       <script>scripts\damage_unit.gml</script>
       <script>scripts\select_object.gml</script>
       <script>scripts\obj_get_center_y.gml</script>
+      <scripts name="main_map">
+        <script>scripts\init_main_map.gml</script>
+        <script>scripts\update_main__map.gml</script>
+        <script>scripts\draw_main_map.gml</script>
+        <script>scripts\set_main_map.gml</script>
+      </scripts>
     </scripts>
     <scripts name="room change">
       <script>scripts\goto_r_credits.gml</script>
@@ -374,6 +393,11 @@
       <script>scripts\goto_r_start.gml</script>
       <script>scripts\goto_r_char_create.gml</script>
       <script>scripts\goto_r_game.gml</script>
+      <script>scripts\goto_r_main_map.gml</script>
+      <scripts name="with_position_adjust">
+        <script>scripts\goto_r_game_with_adjust.gml</script>
+        <script>scripts\goto_r_main_map_with_adjust.gml</script>
+      </scripts>
     </scripts>
     <scripts name="utils">
       <script>scripts\array_1d.gml</script>
@@ -401,6 +425,7 @@
       <object>objects\o_controller_r_credits</object>
       <object>objects\o_controller_r_char_create</object>
       <object>objects\o_controller_r_game</object>
+      <object>objects\o_controller_r_main_map</object>
     </objects>
     <objects name="dialogue">
       <object>objects\o_dialogue</object>
@@ -461,6 +486,9 @@
     <object>objects\o_character</object>
     <object>objects\o_gun_aoe</object>
     <object>objects\o_rectangle</object>
+    <objects name="main_map">
+      <object>objects\o_main_map</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_debug</room>
@@ -469,8 +497,10 @@
     <room>rooms\r_credits</room>
     <room>rooms\r_char_create</room>
     <room>rooms\r_game</room>
+    <room>rooms\r_main_map</room>
+    <room>rooms\r_battle_map</room>
   </rooms>
-  <constants number="109">
+  <constants number="114">
     <constant name="BUTTON_FONT">f_oswald</constant>
     <constant name="BUTTON_HEIGHT">32</constant>
     <constant name="BUTTON_LINE_SEP">20</constant>
@@ -485,6 +515,11 @@
     <constant name="C_LOG__WARN">3</constant>
     <constant name="C_LOG_LEVEL">C_LOG__ALL</constant>
     <constant name="CHARACTER_HEALTH">4</constant>
+    <constant name="CHARACTER_POSITION_BATTLE_X">32</constant>
+    <constant name="CHARACTER_POSITION_BATTLE_Y">668</constant>
+    <constant name="CHARACTER_POSITION_MAP_INTERVAL">48</constant>
+    <constant name="CHARACTER_POSITION_MAP_X">416</constant>
+    <constant name="CHARACTER_POSITION_MAP_Y">672</constant>
     <constant name="CHARACTER_STATE_BATTLE">1</constant>
     <constant name="CHARACTER_STATE_DISPLAY">2</constant>
     <constant name="CREDITS_PADDING">40</constant>
