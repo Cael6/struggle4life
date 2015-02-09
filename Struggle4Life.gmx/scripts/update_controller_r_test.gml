@@ -8,6 +8,12 @@ with (o_character) {
     }
 }
 
+//All defeated message
+if( instance_number(o_infected) <= 0){
+    show_dialog_battle_end();
+}
+
+//Game Over Message
 if (!one_alive) {
-    get_scenario_dialogue(1);
+    get_scenario_dialogue(SCENARIO_GAME_OVER);
 }
