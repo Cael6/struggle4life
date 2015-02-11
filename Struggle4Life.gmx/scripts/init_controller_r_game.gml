@@ -3,7 +3,7 @@ randomize();
 state = STATE_NOT_BATTLE;
 var infected, infected_x, infected_y, infected_weapon, infected_oi,
     infected_weapon_oi;
-for (i = 0; i < 10; i += 1) {
+for (i = 0; i < 40; i += 1) {
     var random_infected_spawner = irandom(4);
     
     infected_x = ROOM_WIDTH + irandom(200);

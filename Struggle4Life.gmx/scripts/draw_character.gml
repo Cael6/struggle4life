@@ -1,8 +1,4 @@
 draw_sprite(body_sprite, image_index, x, y);
-draw_sprite(head_sprite, image_index, x, y);
-draw_sprite(shirt_sprite, image_index, x, y);
-draw_sprite(pants_sprite, image_index, x, y);
-draw_sprite(shoes_sprite, image_index, x, y);
 
 var curr_weapon;
 
