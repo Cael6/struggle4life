@@ -81,6 +81,7 @@
       <sprite>sprites\s_spitter</sprite>
       <sprite>sprites\s_runner_hover</sprite>
       <sprite>sprites\s_b</sprite>
+      <sprite>sprites\sprite54</sprite>
     </sprites>
     <sprites name="textbox">
       <sprite>sprites\s_textbox</sprite>
@@ -540,7 +541,7 @@
     <constant name="CREDITS_TITLE_FONT">f_title</constant>
     <constant name="CREDITS_TITLE_LINE_SEP">40</constant>
     <constant name="CREDITS_TITLE">"Credits"</constant>
-    <constant name="DEBUG">false</constant>
+    <constant name="DEBUG">true</constant>
     <constant name="DIALOGUE_BACKGROUND_ALPHA">1</constant>
     <constant name="DIALOGUE_BACKGROUND_COLOR">make_colour_rgb(22,22,22)</constant>
     <constant name="DIALOGUE_FONT">f_default_12</constant>
