@@ -2,7 +2,11 @@
 
 //Randomly pick a map
 var main_map = instance_create(100,100,o_main_map)
-var map_type = irandom_range(2, 3)
+var map_type = irandom_range(1, 3)
+if(glb_level == 0){
+    map_type = 1;
+}
+
 with(main_map){
     set_main_map(map_type);
 }

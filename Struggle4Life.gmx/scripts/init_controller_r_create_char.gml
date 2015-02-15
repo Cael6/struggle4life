@@ -10,9 +10,10 @@ with(title){
 
 //Set character design box
 character_creation(64,64, "1")
+/*
 character_creation(640,64, "2")
 character_creation(64, 416, "3")
 character_creation(640, 416, "4")
-
+*/
 //Set start button
 var startButton = instance_create(ROOM_WIDTH/2 - 96, ROOM_HEIGHT/2 - 16,o_button_startgame);

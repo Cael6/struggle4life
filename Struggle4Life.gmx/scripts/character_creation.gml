@@ -44,8 +44,8 @@ var character_1 = instance_create((start_width + char_w_adjust),
                                   (start_height + char_h_adjust), 
                                   o_character
                   );
-var shotgun = instance_create(0, 0, o_shotgun);
-shotgun.character = character_1;
+var assault = instance_create(0, 0, o_assault_rifle);
+assault.character = character_1;
 
 set_character(
     s_body_1, 
@@ -53,7 +53,7 @@ set_character(
     s_shirt_1, 
     s_pants_1, 
     s_shoes_1, 
-    shotgun, 
+    assault, 
     s_char_hover,
     char_num,
     character_1
@@ -91,7 +91,7 @@ with (body_button_next) {
         "BODY"
     );
 }
-
+/*
 //head button 
 //update the position of the list 
 list_h_adjust = list_h_adjust + list_offset;
@@ -229,7 +229,7 @@ with (button_next) {
         "SHOES"
     );
 }
-
+*/
 //guns button 
 //update the position of the list 
 list_h_adjust = list_h_adjust + list_offset;
@@ -238,6 +238,7 @@ var guns_instance = instance_create((start_width + list_w_adjust),
                                     (start_height + list_h_adjust), 
                                     o_label_gun
                     )
+ /*
 var button_back = instance_create((start_width + list_w_adjust + o_back_adjust), 
                                   (start_height + list_h_adjust ), 
                                    o_button_back
@@ -246,7 +247,7 @@ var button_next = instance_create((start_width + list_w_adjust + o_next_adjust),
                                   (start_height + list_h_adjust), 
                                    o_button_next
                    )
-
+                   
 with(button_back){
     set_o_button_back(
         character_1,
@@ -262,4 +263,4 @@ with(button_next){
         update_o_button_next_guns,
         "GUNS"
     );
-}
+}*/
