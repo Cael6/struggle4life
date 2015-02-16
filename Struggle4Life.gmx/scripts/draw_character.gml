@@ -1,4 +1,4 @@
-draw_sprite(body_sprite, image_index, x, y);
+draw_sprite(char_sprite, image_index, x, y);
 
 var curr_weapon;
 

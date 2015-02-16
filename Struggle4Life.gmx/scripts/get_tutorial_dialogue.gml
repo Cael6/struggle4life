@@ -34,7 +34,7 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Continue", start_battle, '1');
+        dialogue_add_option(dialogue, "Continue", get_tutorial_dialogue, '1', SCENARIO_TUTORIAL_ROOM1_2);
         
         break;
         

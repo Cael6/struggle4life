@@ -61,15 +61,11 @@ var assault = instance_create(0, 0, o_assault_rifle);
 assault.character = character_1;
 
 set_character(
-    s_body_1, 
-    s_head_1, 
-    s_shirt_1, 
-    s_pants_1, 
-    s_shoes_1, 
-    assault, 
-    s_char_hover,
-    char_num,
-    character_1
+    character_1,
+    s_char_1, 
+    s_char_1_hover, 
+    assault,
+    char_num
 );
 
 character_1.state = CHARACTER_STATE_DISPLAY;

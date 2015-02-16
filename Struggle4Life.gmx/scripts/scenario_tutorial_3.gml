@@ -16,15 +16,11 @@ switch(scenario_step){
     var sniper = instance_create(0, 0, o_sniper);
     sniper.character = character;
     set_character(
-        s_body_1, 
-        s_head_1, 
-        s_shirt_1, 
-        s_pants_1, 
-        s_shoes_1, 
-        sniper, 
-        s_char_hover,
-        string(array_length_1d(glb_characters) + 1),
-        character
+        character,
+        s_char_3,
+        s_char_3_hover,
+        sniper,
+        string(array_length_1d(glb_characters) + 1)
     );
     character.state = CHARACTER_STATE_BATTLE;
     
@@ -113,4 +109,3 @@ switch(scenario_step){
         }
         break;
 }
-

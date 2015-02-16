@@ -1,8 +1,8 @@
 //dialogue_add_option(o_dialogue dialogue, string option_text, fn action, char keyboard)
-var dialogue = argument0;
-var option_text = argument1;
-var option_action = argument2;
-var keypress = argument3;
+var dialogue = argument[0];
+var option_text = argument[1];
+var option_action = argument[2];
+var keypress = argument[3];
 
 var next_pos = dialogue_get_next_option_pos(dialogue);
 
@@ -18,6 +18,11 @@ with (option) {
         option_action,
         keypress
     );
+}
+
+if (argument_count > 4) {
+    c_log("added arguments", C_LOG__DEBUG); 
+    option.arguments = argument[4];
 }
 
 ds_list_add(dialogue.options, option);

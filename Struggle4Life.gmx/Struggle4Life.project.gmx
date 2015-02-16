@@ -19,22 +19,12 @@
       <sprite>sprites\s_r_map_controller</sprite>
     </sprites>
     <sprites name="character">
-      <sprite>sprites\s_body_1</sprite>
-      <sprite>sprites\s_body_2</sprite>
-      <sprite>sprites\s_body_3</sprite>
-      <sprite>sprites\s_head_1</sprite>
-      <sprite>sprites\s_head_2</sprite>
-      <sprite>sprites\s_head_3</sprite>
-      <sprite>sprites\s_shirt_1</sprite>
-      <sprite>sprites\s_shirt_2</sprite>
-      <sprite>sprites\s_shirt_3</sprite>
-      <sprite>sprites\s_pants_1</sprite>
-      <sprite>sprites\s_pants_2</sprite>
-      <sprite>sprites\s_pants_3</sprite>
-      <sprite>sprites\s_shoes_1</sprite>
-      <sprite>sprites\s_shoes_2</sprite>
-      <sprite>sprites\s_shoes_3</sprite>
-      <sprite>sprites\s_char_hover</sprite>
+      <sprite>sprites\s_char_1</sprite>
+      <sprite>sprites\s_char_1_hover</sprite>
+      <sprite>sprites\s_char_2</sprite>
+      <sprite>sprites\s_char_2_hover</sprite>
+      <sprite>sprites\s_char_3</sprite>
+      <sprite>sprites\s_char_3_hover</sprite>
     </sprites>
     <sprites name="weapons">
       <sprites name="shotgun">
@@ -185,6 +175,7 @@
         <script>scripts\update_controller_r_game.gml</script>
         <script>scripts\draw_controller_r_game.gml</script>
         <script>scripts\state_is_battle.gml</script>
+        <script>scripts\set_state_is_battle.gml</script>
       </scripts>
       <scripts name="r_main_map">
         <script>scripts\init_controller_r_main_map.gml</script>

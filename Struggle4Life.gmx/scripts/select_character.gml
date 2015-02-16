@@ -1,4 +1,4 @@
-if (alive && state == CHARACTER_STATE_BATTLE) {
+if (alive) {
     var curr_weapon;
     
     if (using_weapon) {
@@ -9,6 +9,5 @@ if (alive && state == CHARACTER_STATE_BATTLE) {
     
     if (curr_weapon.curr_cooldown == 0) {
         select_object();
-        window_set_cursor(cr_none);
     }
 }

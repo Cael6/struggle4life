@@ -4,19 +4,7 @@
 name = "";
 
 //Sprite for the character's body
-body_sprite = -1;
-
-//Sprite to be drawn on the head
-head_sprite = -1;
-
-//Sprite to be drawn on the chest
-shirt_sprite = -1;
-
-//Sprite to be drawn on the legs
-pants_sprite = -1;
-
-//Sprite to be drawn on the feet
-shoes_sprite = -1;
+char_sprite = -1;
 
 //Weapon object associated to the character
 weapon = -1;

@@ -16,15 +16,11 @@ switch(scenario_step){
     var shotgun = instance_create(0, 0, o_shotgun);
     shotgun.character = character;
     set_character(
-        s_body_1, 
-        s_head_1, 
-        s_shirt_1, 
-        s_pants_1, 
-        s_shoes_1, 
-        shotgun, 
-        s_char_hover,
-        string(array_length_1d(glb_characters) + 1),
-        character
+        character,
+        s_char_2,
+        s_char_2_hover,
+        shotgun,
+        string(array_length_1d(glb_characters) + 1)
     );
     character.state = CHARACTER_STATE_BATTLE;
     
