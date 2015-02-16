@@ -91,6 +91,7 @@
       <sprite>sprites\s_resource_fuel</sprite>
     </sprites>
     <sprite>sprites\sprite52</sprite>
+    <sprite>sprites\s_r_scenario</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_road_1</background>

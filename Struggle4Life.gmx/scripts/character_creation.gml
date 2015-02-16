@@ -3,12 +3,17 @@
 var start_width = argument0;
 var start_height = argument1;
 var char_num = argument2;
-var rec_w_adjust = 318;
+var rec_w_adjust = 318*2;
 var rec_h_adjust = 286;
 
 //Textbox position
-var textbox_h_adjust = 32;
-var textbox_w_adjust = 128;
+//var textbox_h_adjust = 32;
+//var textbox_w_adjust = 128;
+var textlbl_h_adjust = 64;
+var textlbl_w_adjust = 64;
+
+var textbox_h_adjust = 80;
+var textbox_w_adjust = 128*2.5;
 
 //Character position
 var char_h_adjust = 96;
@@ -20,7 +25,7 @@ var o_next_adjust = 164;
 
 //list instances addjustment
 var list_h_adjust = 64;
-var list_w_adjust = 80;
+var list_w_adjust = 222;
 var list_offset = 32;
 
 //Make frame rectangle
@@ -34,6 +39,14 @@ with(rec){
 }
 
 //Make name inputbox
+var nameLbl = instance_create(start_width + textlbl_w_adjust,
+                              start_height + textlbl_h_adjust,
+                              o_label
+              );
+with(nameLbl) {
+    update_o_label("Name: ", BUTTON_WIDTH, BUTTON_HEIGHT, BUTTON_TEXT_COLOR);
+}
+              
 var textbox = instance_create((start_width + textbox_w_adjust) ,
                               (start_height + textbox_h_adjust) ,
                               o_textbox
@@ -62,6 +75,17 @@ set_character(
 character_1.state = CHARACTER_STATE_DISPLAY;
 
 //body button 
+list_h_adjust = list_h_adjust + list_offset;
+list_h_adjust = list_h_adjust + list_offset;
+
+var nameLbl = instance_create(start_width + textlbl_w_adjust,
+                              start_height + list_h_adjust,
+                              o_label
+              );
+with(nameLbl) {
+    update_o_label("Character: ", BUTTON_WIDTH, BUTTON_HEIGHT, BUTTON_TEXT_COLOR);
+}
+
 var body_instance = instance_create((start_width + list_w_adjust),
                                     (start_height + list_h_adjust), 
                                     o_label_body
@@ -230,6 +254,8 @@ with (button_next) {
     );
 }
 */
+
+/*
 //guns button 
 //update the position of the list 
 list_h_adjust = list_h_adjust + list_offset;
@@ -238,7 +264,7 @@ var guns_instance = instance_create((start_width + list_w_adjust),
                                     (start_height + list_h_adjust), 
                                     o_label_gun
                     )
- /*
+
 var button_back = instance_create((start_width + list_w_adjust + o_back_adjust), 
                                   (start_height + list_h_adjust ), 
                                    o_button_back
