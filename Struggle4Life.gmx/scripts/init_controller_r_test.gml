@@ -1,2 +1,5 @@
-instance_create(get_horizontal_center_from_width(ROOM_WIDTH), get_vertical_center_from_height(ROOM_HEIGHT),o_bruiser);
+var slice = instance_create(100, 100, o_9_slice);
 
+with (slice) {
+    set_9_slice(600, 900);
+}

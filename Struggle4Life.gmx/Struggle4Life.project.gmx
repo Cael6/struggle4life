@@ -87,6 +87,10 @@
     </sprites>
     <sprite>sprites\sprite52</sprite>
     <sprite>sprites\s_r_scenario</sprite>
+    <sprites name="UI">
+      <sprite>sprites\s_slider</sprite>
+      <sprite>sprites\s_9_bar</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_road_1</background>
@@ -429,6 +433,13 @@
         <script>scripts\scenario_tutorial_4.gml</script>
       </scripts>
     </scripts>
+    <scripts name="UI">
+      <scripts name="9-slice">
+        <script>scripts\draw_9_slice.gml</script>
+        <script>scripts\init_9_slice.gml</script>
+        <script>scripts\set_9_slice.gml</script>
+      </scripts>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_default_12</font>
@@ -519,6 +530,7 @@
       <object>objects\o_main_map</object>
     </objects>
     <object>objects\o_scenario</object>
+    <object>objects\o_9_slice</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_debug</room>
@@ -563,7 +575,7 @@
     <constant name="CREDITS_TITLE_FONT">f_title</constant>
     <constant name="CREDITS_TITLE_LINE_SEP">40</constant>
     <constant name="CREDITS_TITLE">"Credits"</constant>
-    <constant name="DEBUG">false</constant>
+    <constant name="DEBUG">true</constant>
     <constant name="DIALOGUE_BACKGROUND_ALPHA">1</constant>
     <constant name="DIALOGUE_BACKGROUND_COLOR">make_colour_rgb(22,22,22)</constant>
     <constant name="DIALOGUE_FONT">f_default_12</constant>
