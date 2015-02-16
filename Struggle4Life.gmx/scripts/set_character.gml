@@ -8,6 +8,7 @@
 //  hover_sprite);
 var character = argument8;
 character.body_sprite = argument0;
+// I think we don't need them but keep the code just in case we switch bacxk.
 character.head_sprite = argument1;
 character.shirt_sprite = argument2;
 character.pants_sprite = argument3;

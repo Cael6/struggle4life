@@ -41,6 +41,18 @@ switch (scenario_id) {
         
         break;
     
+    case SCENARIO_GAME_WIN:
+        
+        var dialogue_text = "Conguratation. You have succeed to escape from infected.";
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        dialogue_add_option(dialogue, "Credits", goto_r_credits, '1');
+        dialogue_add_option(dialogue, "Main Menu", goto_r_start, '2');
+        
+        break;
+    
     case SCENARIO_GAME_START:
         
         var dialogue_text = "Here we put some story elements that explain the setting, characters, etc.. There will only be a continue option for this dialogue.";
