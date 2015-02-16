@@ -1,6 +1,23 @@
 draw_set_alpha(0.9);
 draw_set_font(f_oswald);
-draw_set_color(make_color_rgb(20, 20, 20));
+
+var show_cost = false;
+
+if (glb_selected != noone) {
+    if (glb_selected.weapon.resource_type == resource_type 
+        && glb_selected.using_weapon) {
+        if (glb_selected.weapon.shots_before_reload == glb_selected.weapon.shots_left) {
+            show_cost = true;
+        }
+    }
+}
+
+if (show_cost) {
+    draw_set_color(make_color_rgb(180, 180, 20));
+} else {
+    draw_set_color(make_color_rgb(20, 20, 20));
+}
+
 draw_roundrect(x, y, x + width, y + height, false);
 
 draw_set_color(c_white);
@@ -14,15 +31,10 @@ draw_sprite(
     y + height / 2 - sprite_get_height(resource_icon) / 2
 );
 
-if (glb_selected != noone) {
-    if (glb_selected.weapon.resource_type == resource_type 
-        && glb_selected.using_weapon) {
-        if (glb_selected.weapon.shots_before_reload == glb_selected.weapon.shots_left) {
-            draw_text(
-                x + 7 + string_width(string(amount)),
-                y + height / 2 - text_height / 2,
-                " - 1"
-            );
-        }
-    }
+if (show_cost) {
+    draw_text(
+        x + 7 + string_width(string(amount)),
+        y + height / 2 - text_height / 2,
+        " - 1"
+    );
 }
