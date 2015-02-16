@@ -4,7 +4,7 @@ state = STATE_NOT_BATTLE;
 var infected, infected_x, infected_y, infected_weapon, infected_oi,
     infected_weapon_oi;
 for (i = 0; i < 40; i += 1) {
-    var random_infected_spawner = irandom(4);
+    var random_infected_spawner = irandom(2);
     
     infected_x = ROOM_WIDTH + irandom(200);
     infected_y = irandom_range(100, ROOM_HEIGHT - sprite_get_height(s_runner));
@@ -18,12 +18,6 @@ for (i = 0; i < 40; i += 1) {
             break;
         case 2:
             infected_oi = o_bruiser;
-            break;
-        case 3:
-            infected_oi = o_sprinter;
-            break;
-        case 4:
-            infected_oi = o_shooter;
             break;
     }
     

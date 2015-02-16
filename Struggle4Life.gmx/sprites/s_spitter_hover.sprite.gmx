@@ -20,6 +20,6 @@
   <width>65</width>
   <height>128</height>
   <frames>
-    <frame index="0">images\s_spitter_0.png</frame>
+    <frame index="0">images\s_spitter_hover_0.png</frame>
   </frames>
 </sprite>

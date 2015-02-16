@@ -4,7 +4,7 @@
 body_sprite = s_spitter;
 
 //sprite to show when hovered
-hover_sprite = s_runner_hover;
+hover_sprite = s_spitter_hover;
 
 o_speed = ENEMY_SPITTER_SPEED;
 hp = ENEMY_SPITTER_HEALTH;
