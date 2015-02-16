@@ -51,3 +51,5 @@ visible = true;
 muzzle_flash = o_muzzle_flash;
 
 persistent = true;
+
+fire_sound = false;

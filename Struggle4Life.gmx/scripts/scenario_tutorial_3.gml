@@ -23,6 +23,7 @@ switch(scenario_step){
         string(array_length_1d(glb_characters) + 1)
     );
     character.state = CHARACTER_STATE_BATTLE;
+    character.depth -= instance_number(o_character);
     
     glb_characters[array_length_1d(glb_characters)] = character;
     

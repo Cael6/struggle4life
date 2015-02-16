@@ -6,3 +6,4 @@ check_collision = check_collision_flamethrower;
 resource_type = RESOURCE_FUEL;
 damage = WEAPON_FLAMETHROWER_DAMAGE;
 radius = WEAPON_FLAMETHROWER_RANGE * WEAPON_RANGE_DISTANCE;
+fire_sound = so_ar_fire;

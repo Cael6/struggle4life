@@ -16,6 +16,7 @@ if (resource_type == RESOURCE_NONE || get_resource_count(resource_type) > 0) {
             obj_get_center_y(character),
             muzzle_flash
         );
+        audio_play_sound(fire_sound,10, false);
         if (self.shots_left == self.shots_before_reload) {
             change_resource_amount(resource_type, -1);
         }

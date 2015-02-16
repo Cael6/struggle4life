@@ -8,3 +8,4 @@ resource_type = RESOURCE_AMMO;
 damage = WEAPON_ASSAULT_DAMAGE;
 shots_before_reload = WEAPON_ASSAULT_SHOTS_PER_RELOAD;
 shots_left = WEAPON_ASSAULT_SHOTS_PER_RELOAD;
+fire_sound = so_ar_fire;

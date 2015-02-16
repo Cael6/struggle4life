@@ -4,7 +4,11 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\so_ar_fire</sound>
+    <sound>sound\so_bg_menu</sound>
+    <sound>sound\so_bg_game</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="controller_icons">
       <sprite>sprites\s_map_icon</sprite>
@@ -554,12 +558,12 @@
     <constant name="CREDITS_TEXT_COLOR">make_color_rgb(250,250,250)</constant>
     <constant name="CREDITS_TEXT_FONT">f_oswald</constant>
     <constant name="CREDITS_TEXT_LINE_SEP">20</constant>
-    <constant name="CREDITS_TEXT">"Open Sans Font - Steve Matteson##Cabin Sketch Font - Pablo Impallari##Oswald Font -  Vernon Adams##Josefin slab -  Santiago Orozco"</constant>
+    <constant name="CREDITS_TEXT">"Fonts:###Open Sans Font - Steve Matteson##Cabin Sketch Font - Pablo Impallari##Oswald Font -  Vernon Adams##Josefin slab -  Santiago Orozco####Example Code for line/circle intersections:##Hyomoto###Sounds:##Large Fireball Sound -  Mike Koenig##Pop Clip In Sound - Mike Koenig##Shotgun Blast Sound - Jim Rogers##50 Sniper Shot Sound - Liam ##M4A1 Single Sound - Kibblesbob###Music:##’Lost Frontier’ Kevin MacLeod (incompetech.com)##Licensed under Creative Commons: By Attribution 3.0##http://creativecommons.org/licenses/by/3.0/###’The Chamber’ Kevin MacLeod (incompetech.com)##Licensed under Creative Commons: By Attribution 3.0##http://creativecommons.org/licenses/by/3.0/"</constant>
     <constant name="CREDITS_TITLE_COLOR">make_color_rgb(250,250,250)</constant>
     <constant name="CREDITS_TITLE_FONT">f_title</constant>
     <constant name="CREDITS_TITLE_LINE_SEP">40</constant>
     <constant name="CREDITS_TITLE">"Credits"</constant>
-    <constant name="DEBUG">true</constant>
+    <constant name="DEBUG">false</constant>
     <constant name="DIALOGUE_BACKGROUND_ALPHA">1</constant>
     <constant name="DIALOGUE_BACKGROUND_COLOR">make_colour_rgb(22,22,22)</constant>
     <constant name="DIALOGUE_FONT">f_default_12</constant>

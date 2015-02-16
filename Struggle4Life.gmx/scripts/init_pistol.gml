@@ -6,3 +6,5 @@ check_collision = check_collision_pistol;
 resource_type = RESOURCE_NONE;
 damage = WEAPON_PISTOL_DAMAGE;
 is_pistol = true;
+
+fire_sound = so_ar_fire;

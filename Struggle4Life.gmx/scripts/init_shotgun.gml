@@ -7,3 +7,5 @@ resource_type = RESOURCE_AMMO;
 damage = WEAPON_SHOTGUN_DAMAGE;
 radius = WEAPON_SHOTGUN_RADIUS;
 max_radius = WEAPON_SHOTGUN_RADIUS;
+
+fire_sound = so_ar_fire;
