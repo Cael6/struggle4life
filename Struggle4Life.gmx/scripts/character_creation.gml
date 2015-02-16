@@ -69,7 +69,7 @@ set_character(
 );
 
 character_1.state = CHARACTER_STATE_DISPLAY;
-
+/*
 //body button 
 list_h_adjust = list_h_adjust + list_offset;
 list_h_adjust = list_h_adjust + list_offset;
@@ -111,6 +111,7 @@ with (body_button_next) {
         "BODY"
     );
 }
+*/
 /*
 //head button 
 //update the position of the list 

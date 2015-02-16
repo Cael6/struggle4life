@@ -7,3 +7,12 @@ action = argument[4];
 
 enabled = true;
 sprite = s_button;
+
+var b_width = width;
+var b_height = height;
+
+nine_slice = instance_create(x, y, o_9_button);
+with (nine_slice) {
+    set_9_slice(b_width, b_height);
+}
+nine_slice.depth = depth + 1;

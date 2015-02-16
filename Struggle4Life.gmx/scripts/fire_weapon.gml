@@ -1,7 +1,9 @@
 //if collise destroy innstance
 var i = 0;
 
-if (resource_type == RESOURCE_NONE || get_resource_count(resource_type) > 0) {
+if (resource_type == RESOURCE_NONE 
+    || get_resource_count(resource_type) > 0 
+    || self.shots_left != shots_before_reload) {
     var collided = script_execute(check_collision);
     if (is_array(collided)) {
         for (var i = 0; i < array_length_1d(collided); i += 1) {
@@ -35,4 +37,5 @@ if (resource_type == RESOURCE_NONE || get_resource_count(resource_type) > 0) {
 } else if (get_resource_count(resource_type) <= 0) {
     //TODO: shake cursor and resource count or some other way 
         //to tell the user there is no ammo left. Possibly sound could do this.
+    
 }

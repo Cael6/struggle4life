@@ -21,7 +21,6 @@ with (option) {
 }
 
 if (argument_count > 4) {
-    c_log("added arguments", C_LOG__DEBUG); 
     option.arguments = argument[4];
 }
 

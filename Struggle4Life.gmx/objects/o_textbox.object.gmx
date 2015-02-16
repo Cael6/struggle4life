@@ -31,6 +31,11 @@ blink = false;
 txt = "";
 alarm[0] = 30;
 can_click = true;
+
+nine_slice = instance_create(x - BUTTON_WIDTH / 2, y  - BUTTON_HEIGHT / 2, o_9_button);
+with (nine_slice) {
+    set_9_slice(BUTTON_WIDTH, BUTTON_HEIGHT);
+}
 </string>
           </argument>
         </arguments>
@@ -83,11 +88,10 @@ alarm[0] = 30;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if ( selected == true){
-    if(string_width(keyboard_string) &lt; max_width){
+            <string>if (selected == true) {
+    if (string_width(keyboard_string) &lt; max_width) {
         txt = keyboard_string;
-    }
-    else{
+    } else {
         keyboard_string = txt;
     }
 }
@@ -116,7 +120,7 @@ alarm[0] = 30;
             <string>var textboc = -1
 var counter = 0;
 
-if( can_click == true){
+if (can_click) {
     //When it's clicked set self to selected and unselected other
     while(true){
         textbox = instance_find(o_textbox, counter);
@@ -159,11 +163,10 @@ if( can_click == true){
           <argument>
             <kind>1</kind>
             <string>draw_set_font(f_default_12);
-draw_sprite(sprite_index, image_index, x, y);
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 
-if( txt == ""){
+if( txt == "" &amp;&amp; !selected){
     draw_text(x, y, "Enter name")
 }
 else{

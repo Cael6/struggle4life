@@ -157,8 +157,9 @@ switch (scenario_id) {
         }
         
         dialogue_add_option(dialogue, "Venture Onward", move_to_next_level, '1');
-        //Testing purpose
-        dialogue_add_option(dialogue, "Go last screen", get_win_screen, '1');
+        if (DEBUG) {
+            dialogue_add_option(dialogue, "Go last screen", get_win_screen, '2');
+        }
         break; 
                           
     //SAFE ZONE

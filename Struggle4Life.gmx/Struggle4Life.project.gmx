@@ -21,6 +21,7 @@
       <sprite>sprites\s_r_char_create</sprite>
       <sprite>sprites\s_r_battle_controller</sprite>
       <sprite>sprites\s_r_map_controller</sprite>
+      <sprite>sprites\s_r_scenario</sprite>
     </sprites>
     <sprites name="character">
       <sprite>sprites\s_char_1</sprite>
@@ -85,11 +86,11 @@
       <sprite>sprites\s_resource_ammo</sprite>
       <sprite>sprites\s_resource_fuel</sprite>
     </sprites>
-    <sprite>sprites\sprite52</sprite>
-    <sprite>sprites\s_r_scenario</sprite>
     <sprites name="UI">
       <sprite>sprites\s_slider</sprite>
       <sprite>sprites\s_9_bar</sprite>
+      <sprite>sprites\s_9_box</sprite>
+      <sprite>sprites\s_9_button</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -447,6 +448,7 @@
     <font>fonts\f_oswald</font>
     <font>fonts\f_cabin_sketch</font>
     <font>fonts\f_cabin_sketch_lg</font>
+    <font>fonts\f_default_sm</font>
   </fonts>
   <objects name="objects">
     <objects name="textbox">
@@ -530,7 +532,10 @@
       <object>objects\o_main_map</object>
     </objects>
     <object>objects\o_scenario</object>
-    <object>objects\o_9_slice</object>
+    <objects name="9 slice">
+      <object>objects\o_9_slice</object>
+      <object>objects\o_9_button</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_debug</room>
@@ -544,8 +549,8 @@
     <room>rooms\r_scenario</room>
   </rooms>
   <constants number="136">
-    <constant name="BUTTON_FONT">f_oswald</constant>
-    <constant name="BUTTON_HEIGHT">32</constant>
+    <constant name="BUTTON_FONT">f_default_sm</constant>
+    <constant name="BUTTON_HEIGHT">40</constant>
     <constant name="BUTTON_LINE_SEP">20</constant>
     <constant name="BUTTON_PADDING">7</constant>
     <constant name="BUTTON_TEXT_COLOR">make_color_rgb(250,250,250)</constant>
@@ -575,16 +580,16 @@
     <constant name="CREDITS_TITLE_FONT">f_title</constant>
     <constant name="CREDITS_TITLE_LINE_SEP">40</constant>
     <constant name="CREDITS_TITLE">"Credits"</constant>
-    <constant name="DEBUG">true</constant>
+    <constant name="DEBUG">false</constant>
     <constant name="DIALOGUE_BACKGROUND_ALPHA">1</constant>
     <constant name="DIALOGUE_BACKGROUND_COLOR">make_colour_rgb(22,22,22)</constant>
-    <constant name="DIALOGUE_FONT">f_default_12</constant>
+    <constant name="DIALOGUE_FONT">f_default_sm</constant>
     <constant name="DIALOGUE_HEIGHT">320</constant>
     <constant name="DIALOGUE_LINE_SEP">20</constant>
     <constant name="DIALOGUE_OPTION_TEXT_ALPHA">1</constant>
     <constant name="DIALOGUE_OPTION_TEXT_COLOR_1">make_colour_rgb(250, 250, 250)</constant>
     <constant name="DIALOGUE_OPTION_TEXT_COLOR_2">make_colour_rgb(250, 250, 150)</constant>
-    <constant name="DIALOGUE_PADDING">7</constant>
+    <constant name="DIALOGUE_PADDING">20</constant>
     <constant name="DIALOGUE_RADIUS_X">5</constant>
     <constant name="DIALOGUE_RADIUS_Y">5</constant>
     <constant name="DIALOGUE_TEXT_ALPHA">1</constant>

@@ -1,4 +1,7 @@
 with (o_dialogue) {
+    with (nine_slice) {
+        instance_destroy();
+    }
     instance_destroy();
 }
 

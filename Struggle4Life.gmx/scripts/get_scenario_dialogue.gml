@@ -44,7 +44,7 @@ switch (scenario_id) {
     
     case SCENARIO_GAME_WIN:
         
-        var dialogue_text = "Conguratation. You have succeed to escape from infected.";
+        var dialogue_text = "Conguratation. You have successfully escaped from infected.";
         with (dialogue) {
             set_dialogue(dialogue_text);
         }
@@ -80,7 +80,7 @@ switch (scenario_id) {
         
     case SCENARIO_RANDOM_START:
         //TODO: implement battle
-        var dialogue_text = "";
+        var dialogue_text = "You've come across " + string(glb_room_count) + " infected. What will you do?";
         
         with (dialogue) {
             set_dialogue(dialogue_text);

@@ -9,7 +9,7 @@ with(title){
 }
 
 //Set character design box
-character_creation(64,64, "1")
+character_creation(64,64, "1");
 /*
 character_creation(640,64, "2")
 character_creation(64, 416, "3")

@@ -6,7 +6,8 @@ globalvar
           glb_selected,
           glb_characters,
           glb_level,
-          glb_room
+          glb_room,
+          glb_room_count
           ;
 
 
@@ -21,3 +22,4 @@ glb_selected = noone;
 glb_characters = array_1d(noone);
 glb_level = 0;
 glb_room = 0;
+glb_room_count = 0;

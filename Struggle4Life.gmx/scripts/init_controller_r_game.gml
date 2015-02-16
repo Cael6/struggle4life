@@ -1,9 +1,9 @@
-get_scenario_dialogue(SCENARIO_GAME_START);
+get_random_scenario();
 randomize();
 state = STATE_NOT_BATTLE;
 var infected, infected_x, infected_y, infected_weapon, infected_oi,
     infected_weapon_oi;
-for (i = 0; i < 40; i += 1) {
+for (i = 0; i < glb_room_count; i += 1) {
     var random_infected_spawner = irandom(2);
     
     infected_x = ROOM_WIDTH + irandom(200);

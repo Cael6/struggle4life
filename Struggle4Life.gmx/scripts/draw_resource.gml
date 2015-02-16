@@ -13,7 +13,11 @@ if (glb_selected != noone) {
 }
 
 if (show_cost) {
-    draw_set_color(make_color_rgb(180, 180, 20));
+    if (amount < 1) {
+        draw_set_color(make_color_rgb(180, 20, 20));
+    } else {
+        draw_set_color(make_color_rgb(180, 180, 20));
+    }
 } else {
     draw_set_color(make_color_rgb(20, 20, 20));
 }

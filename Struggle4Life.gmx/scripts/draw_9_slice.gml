@@ -1,3 +1,5 @@
+draw_set_alpha(1);
+
 //Top Left
 draw_sprite_ext(
     sprite_index,
@@ -114,3 +116,5 @@ draw_sprite_ext(
     c_white,
     1
 );
+
+draw_set_alpha(1);

@@ -2,6 +2,7 @@
 draw_set_halign(fa_left);
 draw_set_font(DIALOGUE_FONT);
 
+/*
 //Draw Rectangular background
 draw_set_color(DIALOGUE_BACKGROUND_COLOR);
 draw_set_alpha(DIALOGUE_BACKGROUND_ALPHA);
@@ -14,6 +15,7 @@ draw_roundrect_ext(
     DIALOGUE_RADIUS_Y,
     false
 );
+*/
 
 //Draw Text
 draw_set_color(DIALOGUE_TEXT_COLOR);
