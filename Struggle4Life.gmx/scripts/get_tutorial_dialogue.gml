@@ -1,4 +1,5 @@
 destroy_dialogue();
+deselect_character();
 //get_scenario_dialogue(int scenario_id)
 // Scenarios 1 - 999 are reserved for static scenarios
 // Scenarios 1000+ are random scenarios.
@@ -28,32 +29,32 @@ switch (scenario_id) {
         break;
         
     case SCENARIO_TUTORIAL_ROOM1_1:
-        var dialogue_text = "You base has been overrun by infected! As you try to escape, you run into some of them.";
+        var dialogue_text = "Your base has been overrun by the infected! As you try to escape, you run into some of them.";
         with (dialogue) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Continue", destroy_dialogue, '1');
+        dialogue_add_option(dialogue, "Continue", start_battle, '1');
         
         break;
         
     case SCENARIO_TUTORIAL_ROOM1_2:
-        var dialogue_text = "Click your character and left click the enemy to deal damage with your primary weapon.";
+        var dialogue_text = "Select your character by clicking him (or keyboard 1-3) and left click the enemy to deal damage with your primary weapon.";
         with (dialogue) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Close Dialogue", destroy_dialogue, '1');
+        dialogue_add_option(dialogue, "Close Dialogue", start_battle, '1');
         
         break;
     
     case SCENARIO_TUTORIAL_ROOM1_3:
-        var dialogue_text = "This enemy doesn’t require three shots, click your character and right click to switch to your pistol.";
+        var dialogue_text = "This enemy only has 1 shot left, click your character and right click (or TAB) to switch to your pistol.";
         with (dialogue) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Close Dialogue", destroy_dialogue, '1');
+        dialogue_add_option(dialogue, "Close Dialogue", start_battle, '1');
         
         break;
     
@@ -63,18 +64,18 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Close Dialogue", destroy_dialogue, '1');
+        dialogue_add_option(dialogue, "Close Dialogue", start_battle, '1');
         
         break;
 
    //Second turtorial     
     case SCENARIO_TUTORIAL_ROOM2_1:
-        var dialogue_text = "You found a surviver. He looks like he want to come with you.";
+        var dialogue_text = "You found a survivor. He looks like he wants to join your quest.";
         with (dialogue) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Continue", destroy_dialogue, '1');
+        dialogue_add_option(dialogue, "Continue", start_battle, '1');
         
         break;
         
@@ -84,17 +85,17 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Continue", destroy_dialogue, '1');
+        dialogue_add_option(dialogue, "Continue", start_battle, '1');
         
         break;
             
     case SCENARIO_TUTORIAL_ROOM2_3:
-        var dialogue_text = "Select the player you wish to attack with by selecting them or their number.";
+        var dialogue_text = "Select the player you wish to attack with by selecting them or pressing their keyboard number.";
         with (dialogue) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Close Dialogue", destroy_dialogue, '1');
+        dialogue_add_option(dialogue, "Close Dialogue", start_battle, '1');
         
         break;
         
@@ -104,7 +105,7 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Close Dialogue", destroy_dialogue, '1');
+        dialogue_add_option(dialogue, "Close Dialogue", start_battle, '1');
         
         break;     
         
@@ -114,28 +115,28 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Close Dialogue", destroy_dialogue, '1');
+        dialogue_add_option(dialogue, "Close Dialogue", start_battle, '1');
         
         break;    
     
     //Scenario 3  
     case SCENARIO_TUTORIAL_ROOM3_1:
-        var dialogue_text = "It looks like this guy want to join you. Let take him with us.";
+        var dialogue_text = "It looks like this guy wants to join you. Let's take him with us.";
         with (dialogue) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Continue", destroy_dialogue, '1');
+        dialogue_add_option(dialogue, "Continue", start_battle, '1');
         
         break;    
         
     case SCENARIO_TUTORIAL_ROOM3_2:
-        var dialogue_text = "Enemies are coming. Prepare to attack them.";
+        var dialogue_text = "Enemies are coming. Prepare for a fight.";
         with (dialogue) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Close Dialogue", destroy_dialogue, '1');
+        dialogue_add_option(dialogue, "Close Dialogue", start_battle, '1');
         
         break;
     
@@ -145,12 +146,12 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Close Dialogue", destroy_dialogue, '1');
+        dialogue_add_option(dialogue, "Close Dialogue", start_battle, '1');
         
         break; 
     
     case SCENARIO_TUTORIAL_ROOM4_1:
-        var dialogue_text = "You have now completed completed tutorial!! You are now free to do as you please";
+        var dialogue_text = "You have now completed the tutorial!! You are now free to do as you please";
         with (dialogue) {
             set_dialogue(dialogue_text);
         }

@@ -1,4 +1,5 @@
 destroy_dialogue();
+deselect_character();
 //get_scenario_dialogue(int scenario_id)
 // Scenarios 1 - 999 are reserved for static scenarios
 // Scenarios 1000+ are random scenarios.
