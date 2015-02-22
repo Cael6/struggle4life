@@ -26,5 +26,4 @@ fuel = instance_create(0,0, o_resource_fuel);
 audio_stop_all();
 audio_play_sound(so_bg_game, 11, true);
 
-goto_r_main_map();
-
+goto_r_safe_zone();

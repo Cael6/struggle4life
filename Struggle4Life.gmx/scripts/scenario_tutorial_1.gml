@@ -18,7 +18,6 @@ switch (scenario_step) {
     
         //Show dialogue about intro
         get_tutorial_dialogue(SCENARIO_TUTORIAL_ROOM1_1); 
-        
         scenario_step += 1;
     
     //Show dialogue about switching to pistol 
@@ -37,7 +36,7 @@ switch (scenario_step) {
     //If enemy is gone, show dialogue about more enemies.
     case 2:
         if (instance_find(o_runner, 0) < 0) {
-            get_tutorial_dialogue(SCENARIO_TUTORIAL_ROOM1_4);       
+            get_tutorial_dialogue(SCENARIO_TUTORIAL_ROOM1_5);       
             scenario_step += 1;
         }
         break;
@@ -54,7 +53,7 @@ switch (scenario_step) {
     //Move to next room if done
     case 4:
         if (instance_find(o_runner, 0) < 0) {
-            get_tutorial_dialogue(SCENARIO_TUTORIAL_MOVE_AHEAD); 
+            get_tutorial_dialogue(SCENARIO_TUTORIAL_ROOM1_6); 
             glb_room += 1;
             scenario_step += 1;
         }

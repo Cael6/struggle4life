@@ -5,3 +5,5 @@ y1 = -1;
 y2 = -1;
 color = -1;
 
+show = true;
+alarm[0]=32;

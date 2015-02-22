@@ -8,6 +8,7 @@
     <sound>sound\so_ar_fire</sound>
     <sound>sound\so_bg_menu</sound>
     <sound>sound\so_bg_game</sound>
+    <sound>sound\so_fire_sound</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="controller_icons">
@@ -22,6 +23,7 @@
       <sprite>sprites\s_r_battle_controller</sprite>
       <sprite>sprites\s_r_map_controller</sprite>
       <sprite>sprites\s_r_scenario</sprite>
+      <sprite>sprites\s_r_safe_zone</sprite>
     </sprites>
     <sprites name="character">
       <sprite>sprites\s_char_1</sprite>
@@ -92,6 +94,7 @@
       <sprite>sprites\s_9_box</sprite>
       <sprite>sprites\s_9_button</sprite>
     </sprites>
+    <sprite>sprites\s_fire</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_road_1</background>
@@ -101,6 +104,7 @@
     <background>background\bg_map_2</background>
     <background>background\bg_map_3</background>
     <background>background\bg_map_1</background>
+    <background>background\bg_safe_zone</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -197,6 +201,11 @@
         <script>scripts\update_controller_r_scenario.gml</script>
         <script>scripts\draw_controller_r_scenario.gml</script>
       </scripts>
+      <scripts name="r_safe_zone">
+        <script>scripts\update_controller_r_safe_zone.gml</script>
+        <script>scripts\init_controller_r_safe_zone.gml</script>
+        <script>scripts\draw_controller_r_safe_zone.gml</script>
+      </scripts>
     </scripts>
     <scripts name="game actions">
       <script>scripts\move_ahead.gml</script>
@@ -242,6 +251,13 @@
       <script>scripts\draw_rec.gml</script>
       <script>scripts\init_rec.gml</script>
       <script>scripts\set_rec.gml</script>
+      <scripts name="arrow">
+        <script>scripts\draw_o_arrow.gml</script>
+        <script>scripts\init_o_arrow.gml</script>
+        <script>scripts\set_o_arrow.gml</script>
+        <script>scripts\timer_0_o_arrow.gml</script>
+        <script>scripts\create_arrow.gml</script>
+      </scripts>
     </scripts>
     <scripts name="objects">
       <scripts name="dialogue">
@@ -405,6 +421,12 @@
         <script>scripts\draw_main_map.gml</script>
         <script>scripts\set_main_map.gml</script>
       </scripts>
+      <scripts name="map_object">
+        <scripts name="fire">
+          <script>scripts\init_o_fire.gml</script>
+          <script>scripts\stop_o_fire.gml</script>
+        </scripts>
+      </scripts>
     </scripts>
     <scripts name="room change">
       <script>scripts\goto_r_credits.gml</script>
@@ -415,6 +437,7 @@
       <script>scripts\goto_r_game.gml</script>
       <script>scripts\goto_r_main_map.gml</script>
       <script>scripts\goto_r_scenario.gml</script>
+      <script>scripts\goto_r_safe_zone.gml</script>
       <scripts name="with_position_adjust">
         <script>scripts\goto_r_main_map_with_adjust.gml</script>
       </scripts>
@@ -449,6 +472,7 @@
     <font>fonts\f_cabin_sketch</font>
     <font>fonts\f_cabin_sketch_lg</font>
     <font>fonts\f_default_sm</font>
+    <font>fonts\font6</font>
   </fonts>
   <objects name="objects">
     <objects name="textbox">
@@ -465,6 +489,7 @@
       <object>objects\o_controller_r_game</object>
       <object>objects\o_controller_r_main_map</object>
       <object>objects\o_controller_r_scenario</object>
+      <object>objects\o_comtroller_r_safe_zone</object>
     </objects>
     <objects name="dialogue">
       <object>objects\o_dialogue</object>
@@ -536,6 +561,12 @@
       <object>objects\o_9_slice</object>
       <object>objects\o_9_button</object>
     </objects>
+    <objects name="arrow">
+      <object>objects\o_arrow</object>
+    </objects>
+    <objects name="map_object">
+      <object>objects\o_fire</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_debug</room>
@@ -547,8 +578,10 @@
     <room>rooms\r_main_map</room>
     <room>rooms\r_battle_map</room>
     <room>rooms\r_scenario</room>
+    <room>rooms\r_safe_zone</room>
   </rooms>
-  <constants number="136">
+  <constants number="139">
+    <constant name="ARROW_SIZE">40</constant>
     <constant name="BUTTON_FONT">f_default_sm</constant>
     <constant name="BUTTON_HEIGHT">40</constant>
     <constant name="BUTTON_LINE_SEP">20</constant>
@@ -645,6 +678,8 @@
     <constant name="SCENARIO_TUTORIAL_ROOM1_2">2</constant>
     <constant name="SCENARIO_TUTORIAL_ROOM1_3">3</constant>
     <constant name="SCENARIO_TUTORIAL_ROOM1_4">4</constant>
+    <constant name="SCENARIO_TUTORIAL_ROOM1_5">5</constant>
+    <constant name="SCENARIO_TUTORIAL_ROOM1_6">6</constant>
     <constant name="SCENARIO_TUTORIAL_ROOM2_1">10</constant>
     <constant name="SCENARIO_TUTORIAL_ROOM2_2">11</constant>
     <constant name="SCENARIO_TUTORIAL_ROOM2_3">12</constant>

@@ -39,9 +39,14 @@ switch (scenario_id) {
         break;
         
     case SCENARIO_TUTORIAL_ROOM1_2:
-        var dialogue_text = "Select your character by clicking him (or keyboard 1-3) and left click the enemy to deal damage with your primary weapon.";
+        var dialogue_text = "Select your character by clicking him (or press keyboard 1-3) and left click the enemy to deal damage with your primary weapon.";
         with (dialogue) {
             set_dialogue(dialogue_text);
+        }
+        
+        //Add am arrow 
+        with(o_character) {
+            create_arrow( x + 100, y + 100, x + 50, y + 50, ARROW_SIZE)
         }
         
         dialogue_add_option(dialogue, "Close Dialogue", start_battle, '1');
@@ -49,7 +54,33 @@ switch (scenario_id) {
         break;
     
     case SCENARIO_TUTORIAL_ROOM1_3:
+        var dialogue_text = "The primary weapon cosumes an ammo for each shot. However pistols doesm't cosume any ammo.";
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        //Add am arrow 
+        with(o_resource_ammo) {
+            create_arrow( x + 100, y + 100, x + 25 , y + 25, ARROW_SIZE)
+        }
+        
+        
+        dialogue_add_option(dialogue, "Close Dialogue", get_tutorial_dialogue, '1', SCENARIO_TUTORIAL_ROOM1_4);
+        
+        break;
+    
+    case SCENARIO_TUTORIAL_ROOM1_4:
         var dialogue_text = "This enemy only has 1 shot left, click your character and right click (or TAB) to switch to your pistol.";
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+           
+        dialogue_add_option(dialogue, "Close Dialogue", start_battle, '1');
+        
+        break;
+    
+    case SCENARIO_TUTORIAL_ROOM1_5:
+        var dialogue_text = "Here comes two more enemies, defeat them by using your weapons.";
         with (dialogue) {
             set_dialogue(dialogue_text);
         }
@@ -57,14 +88,19 @@ switch (scenario_id) {
         dialogue_add_option(dialogue, "Close Dialogue", start_battle, '1');
         
         break;
-    
-    case SCENARIO_TUTORIAL_ROOM1_4:
-        var dialogue_text = "Here comes two more enemies, defeat them by using your weapons.";
+        
+    case SCENARIO_TUTORIAL_ROOM1_6:
+        var dialogue_text = "Each weapon has cool down. It is display under each character's health bar. Be careful on managing it.";
         with (dialogue) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Close Dialogue", start_battle, '1');
+        //Add am arrow 
+        with(o_character) {
+            create_arrow( x + 128, y, x + 64, y, ARROW_SIZE)
+        }
+        
+        dialogue_add_option(dialogue, "Close Dialogue", get_tutorial_dialogue, '1', SCENARIO_TUTORIAL_MOVE_AHEAD);
         
         break;
 

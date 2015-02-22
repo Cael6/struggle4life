@@ -43,7 +43,7 @@ with(button_1){
 }
 
 if(map_type > 2 || map_type == 1){
-    button_3 = instance_create(ROOM_WIDTH / 2, ROOM_HEIGHT / 3, o_button)
+    button_3 = instance_create(ROOM_WIDTH / 2, ROOM_HEIGHT / 2, o_button)
     if(glb_level == 0){
         with(button_3){
             set_o_button(
@@ -67,5 +67,5 @@ if(map_type > 2 || map_type == 1){
             );
             depth = 19;
         }
-    }
+}
 }

@@ -24,4 +24,3 @@ for (var i = 0; i < array_length_1d(glb_characters); i += 1) {
     char_x = char_x + CHARACTER_POSITION_MAP_INTERVAL;
 }
 
-
