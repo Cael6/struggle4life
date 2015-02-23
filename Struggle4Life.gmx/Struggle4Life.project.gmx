@@ -105,6 +105,7 @@
     <background>background\bg_map_3</background>
     <background>background\bg_map_1</background>
     <background>background\bg_safe_zone</background>
+    <background>background\background8</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -143,6 +144,9 @@
       </scripts>
       <scripts name="r_start">
         <script>scripts\set_button_r_start.gml</script>
+      </scripts>
+      <scripts name="r_map">
+        <script>scripts\set_button_r_map.gml</script>
       </scripts>
     </scripts>
     <scripts name="common">
@@ -275,20 +279,6 @@
         <scripts name="battle">
           <script>scripts\show_dialog_battle_end.gml</script>
         </scripts>
-      </scripts>
-      <scripts name="map">
-        <scripts name="map_point">
-          <script>scripts\init_map_point.gml</script>
-          <script>scripts\update_map_point.gml</script>
-          <script>scripts\connect_map_points.gml</script>
-          <script>scripts\draw_map_point.gml</script>
-          <script>scripts\map_point_is_connected.gml</script>
-        </scripts>
-        <script>scripts\init_map.gml</script>
-        <script>scripts\update_map.gml</script>
-        <script>scripts\draw_map.gml</script>
-        <script>scripts\map_points_all_connect.gml</script>
-        <script>scripts\map_create_random_points.gml</script>
       </scripts>
       <scripts name="character">
         <script>scripts\init_character.gml</script>
@@ -441,6 +431,7 @@
       <scripts name="with_position_adjust">
         <script>scripts\goto_r_main_map_with_adjust.gml</script>
       </scripts>
+      <script>scripts\goto_r_map.gml</script>
     </scripts>
     <scripts name="utils">
       <script>scripts\array_1d.gml</script>
@@ -463,6 +454,10 @@
         <script>scripts\init_9_slice.gml</script>
         <script>scripts\set_9_slice.gml</script>
       </scripts>
+    </scripts>
+    <scripts name="map">
+      <script>scripts\init_map.gml</script>
+      <script>scripts\update_map.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -506,6 +501,7 @@
       <object>objects\o_button_next</object>
       <object>objects\o_button_back</object>
       <object>objects\o_button_startgame</object>
+      <object>objects\o_button_map</object>
     </objects>
     <objects name="label">
       <objects name="character">
@@ -519,8 +515,7 @@
       <object>objects\o_label</object>
     </objects>
     <objects name="map">
-      <object>objects\o_map</object>
-      <object>objects\o_map_point</object>
+      <object>objects\o_map_controller</object>
     </objects>
     <objects name="infected">
       <object>objects\o_runner</object>
@@ -579,6 +574,7 @@
     <room>rooms\r_battle_map</room>
     <room>rooms\r_scenario</room>
     <room>rooms\r_safe_zone</room>
+    <room>rooms\r_map</room>
   </rooms>
   <constants number="139">
     <constant name="ARROW_SIZE">40</constant>
@@ -613,7 +609,7 @@
     <constant name="CREDITS_TITLE_FONT">f_title</constant>
     <constant name="CREDITS_TITLE_LINE_SEP">40</constant>
     <constant name="CREDITS_TITLE">"Credits"</constant>
-    <constant name="DEBUG">false</constant>
+    <constant name="DEBUG">true</constant>
     <constant name="DIALOGUE_BACKGROUND_ALPHA">1</constant>
     <constant name="DIALOGUE_BACKGROUND_COLOR">make_colour_rgb(22,22,22)</constant>
     <constant name="DIALOGUE_FONT">f_default_sm</constant>

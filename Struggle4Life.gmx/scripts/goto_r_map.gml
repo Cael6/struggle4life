@@ -1,1 +1,1 @@
-room_goto(r_main_map);
+room_goto(r_map);
