@@ -8,7 +8,15 @@ if (using_weapon) {
     curr_weapon = pistol;
 }
 
-draw_sprite(curr_weapon.sprite_index, image_index, x, y);
+var weapon_index;
+
+if (curr_weapon.cooldown != 0) {
+    weapon_index = 1;
+} else {
+    weapon_index = 0;
+}
+
+draw_sprite(curr_weapon.sprite_index, weapon_index, x, y);
 
 if (state == CHARACTER_STATE_BATTLE) {
     draw_set_alpha(1);

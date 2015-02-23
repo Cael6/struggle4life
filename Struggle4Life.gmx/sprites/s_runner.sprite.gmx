@@ -21,5 +21,24 @@
   <height>78</height>
   <frames>
     <frame index="0">images\s_runner_0.png</frame>
+    <frame index="1">images\s_runner_1.png</frame>
+    <frame index="2">images\s_runner_2.png</frame>
+    <frame index="3">images\s_runner_3.png</frame>
+    <frame index="4">images\s_runner_4.png</frame>
+    <frame index="5">images\s_runner_5.png</frame>
+    <frame index="6">images\s_runner_6.png</frame>
+    <frame index="7">images\s_runner_7.png</frame>
+    <frame index="8">images\s_runner_8.png</frame>
+    <frame index="9">images\s_runner_9.png</frame>
+    <frame index="10">images\s_runner_10.png</frame>
+    <frame index="11">images\s_runner_11.png</frame>
+    <frame index="12">images\s_runner_12.png</frame>
+    <frame index="13">images\s_runner_13.png</frame>
+    <frame index="14">images\s_runner_14.png</frame>
+    <frame index="15">images\s_runner_15.png</frame>
+    <frame index="16">images\s_runner_16.png</frame>
+    <frame index="17">images\s_runner_17.png</frame>
+    <frame index="18">images\s_runner_18.png</frame>
+    <frame index="19">images\s_runner_19.png</frame>
   </frames>
 </sprite>
