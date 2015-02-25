@@ -95,6 +95,7 @@
       <sprite>sprites\s_9_button</sprite>
     </sprites>
     <sprite>sprites\s_fire</sprite>
+    <sprite>sprites\s_map</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_road_1</background>
@@ -562,6 +563,7 @@
     <objects name="map_object">
       <object>objects\o_fire</object>
     </objects>
+    <object>objects\o_map_bg</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_debug</room>
