@@ -13,4 +13,4 @@ text_y = title_y + CREDITS_TITLE_LINE_SEP + CREDITS_PADDING;
 
 start_timer = 60; //Wait 2 seconds before start scrolling
 
-audio_play_sound(so_bg_menu, 10, true);
+switch_bg_music(so_bg_menu);

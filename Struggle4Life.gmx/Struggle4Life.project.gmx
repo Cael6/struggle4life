@@ -100,6 +100,9 @@
       <sprite>sprites\s_9_box</sprite>
       <sprite>sprites\s_9_button</sprite>
       <sprite>sprites\s_keyboard_hint</sprite>
+      <sprite>sprites\s_mouse_left_click</sprite>
+      <sprite>sprites\s_mouse_right_click</sprite>
+      <sprite>sprites\s_mouse_scroll</sprite>
     </sprites>
     <sprite>sprites\s_fire</sprite>
     <sprite>sprites\s_map</sprite>
@@ -107,10 +110,16 @@
     <sprites name="Map">
       <sprite>sprites\s_map_base_1</sprite>
       <sprite>sprites\s_map_base_2</sprite>
+      <sprite>sprites\s_map_plot_1</sprite>
+      <sprite>sprites\s_map_plot_2</sprite>
+      <sprite>sprites\s_map_plot_3</sprite>
+      <sprite>sprites\s_map_plot_4</sprite>
+      <sprite>sprites\s_map_plot_5</sprite>
+      <sprite>sprites\s_map_plot_6</sprite>
+      <sprite>sprites\s_selected_plot</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
-    <background>background\bg_road_1</background>
     <background>background\bg_dna</background>
     <background>background\bg_vial</background>
     <background>background\bg_create_char</background>
@@ -119,9 +128,17 @@
     <background>background\bg_map_1</background>
     <background>background\bg_safe_zone</background>
     <background>background\background8</background>
+    <background>background\bg_road__1</background>
+    <background>background\bg_road_2</background>
+    <background>background\bg_road_3</background>
+    <background>background\bg_road_4</background>
+    <background>background\bg_road_5</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <scripts name="Audio">
+      <script>scripts\switch_bg_music.gml</script>
+    </scripts>
     <scripts name="buttons">
       <script>scripts\init_o_button.gml</script>
       <script>scripts\set_o_button.gml</script>
@@ -473,6 +490,13 @@
     <scripts name="map">
       <script>scripts\init_map.gml</script>
       <script>scripts\update_map.gml</script>
+      <script>scripts\draw_map_gui.gml</script>
+      <script>scripts\connected_path.gml</script>
+      <scripts name="Plots">
+        <script>scripts\draw_plot.gml</script>
+        <script>scripts\init_plot.gml</script>
+        <script>scripts\select_plot.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -529,14 +553,6 @@
       </objects>
       <object>objects\o_label</object>
     </objects>
-    <objects name="map">
-      <object>objects\o_map_controller</object>
-      <objects name="plot">
-        <object>objects\o_map_plot</object>
-        <object>objects\o_map_base_1</object>
-        <object>objects\o_map_base_2</object>
-      </objects>
-    </objects>
     <objects name="infected">
       <object>objects\o_runner</object>
       <object>objects\o_infected</object>
@@ -584,6 +600,20 @@
     </objects>
     <object>objects\o_map_bg</object>
     <object>objects\o_main_anim</object>
+    <objects name="map">
+      <object>objects\o_map_controller</object>
+      <objects name="plot">
+        <object>objects\o_map_plot</object>
+        <object>objects\o_map_base_1</object>
+        <object>objects\o_map_base_2</object>
+        <object>objects\o_map_plot_1</object>
+        <object>objects\o_map_plot_2</object>
+        <object>objects\o_map_plot_3</object>
+        <object>objects\o_map_plot_4</object>
+        <object>objects\o_map_plot_5</object>
+        <object>objects\o_map_plot_6</object>
+      </objects>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_debug</room>
@@ -598,7 +628,8 @@
     <room>rooms\r_safe_zone</room>
     <room>rooms\r_map</room>
   </rooms>
-  <constants number="139">
+  <constants number="140">
+    <constant name="MAP_PLOT_DISTANCE_THRESHOLD">250</constant>
     <constant name="ARROW_SIZE">40</constant>
     <constant name="BUTTON_FONT">f_default_sm</constant>
     <constant name="BUTTON_HEIGHT">40</constant>

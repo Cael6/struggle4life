@@ -7,7 +7,9 @@ globalvar
           glb_characters,
           glb_level,
           glb_room,
-          glb_room_count
+          glb_room_count,
+          glb_current_map_plot,
+          glb_hide_map_help
           ;
 
 
@@ -23,3 +25,5 @@ glb_characters = array_1d(noone);
 glb_level = 0;
 glb_room = 0;
 glb_room_count = 0;
+glb_current_map_plot = noone;
+glb_hide_map_help = false;
