@@ -8,18 +8,45 @@
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
-  <bbox_right>79</bbox_right>
-  <bbox_top>1</bbox_top>
-  <bbox_bottom>140</bbox_bottom>
+  <bbox_right>81</bbox_right>
+  <bbox_top>0</bbox_top>
+  <bbox_bottom>137</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>80</width>
-  <height>142</height>
+  <width>82</width>
+  <height>138</height>
   <frames>
     <frame index="0">images\s_char_1_0.png</frame>
+    <frame index="1">images\s_char_1_1.png</frame>
+    <frame index="2">images\s_char_1_2.png</frame>
+    <frame index="3">images\s_char_1_3.png</frame>
+    <frame index="4">images\s_char_1_4.png</frame>
+    <frame index="5">images\s_char_1_5.png</frame>
+    <frame index="6">images\s_char_1_6.png</frame>
+    <frame index="7">images\s_char_1_7.png</frame>
+    <frame index="8">images\s_char_1_8.png</frame>
+    <frame index="9">images\s_char_1_9.png</frame>
+    <frame index="10">images\s_char_1_10.png</frame>
+    <frame index="11">images\s_char_1_11.png</frame>
+    <frame index="12">images\s_char_1_12.png</frame>
+    <frame index="13">images\s_char_1_13.png</frame>
+    <frame index="14">images\s_char_1_14.png</frame>
+    <frame index="15">images\s_char_1_15.png</frame>
+    <frame index="16">images\s_char_1_16.png</frame>
+    <frame index="17">images\s_char_1_17.png</frame>
+    <frame index="18">images\s_char_1_18.png</frame>
+    <frame index="19">images\s_char_1_19.png</frame>
+    <frame index="20">images\s_char_1_20.png</frame>
+    <frame index="21">images\s_char_1_21.png</frame>
+    <frame index="22">images\s_char_1_22.png</frame>
+    <frame index="23">images\s_char_1_23.png</frame>
+    <frame index="24">images\s_char_1_24.png</frame>
+    <frame index="25">images\s_char_1_25.png</frame>
+    <frame index="26">images\s_char_1_26.png</frame>
+    <frame index="27">images\s_char_1_27.png</frame>
   </frames>
 </sprite>

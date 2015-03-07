@@ -32,6 +32,10 @@
       <sprite>sprites\s_char_2_hover</sprite>
       <sprite>sprites\s_char_3</sprite>
       <sprite>sprites\s_char_3_hover</sprite>
+      <sprite>sprites\s_char_4</sprite>
+      <sprite>sprites\s_char_4_hover</sprite>
+      <sprite>sprites\s_char_5</sprite>
+      <sprite>sprites\s_char_5_hover</sprite>
     </sprites>
     <sprites name="weapons">
       <sprites name="shotgun">
@@ -70,6 +74,8 @@
       <sprite>sprites\s_l_button</sprite>
       <sprite>sprites\s_r_button</sprite>
       <sprite>sprites\s_button_check</sprite>
+      <sprite>sprites\s_eye</sprite>
+      <sprite>sprites\s_eye_small</sprite>
     </sprites>
     <sprites name="infected">
       <sprite>sprites\s_runner</sprite>
@@ -93,9 +99,15 @@
       <sprite>sprites\s_9_bar</sprite>
       <sprite>sprites\s_9_box</sprite>
       <sprite>sprites\s_9_button</sprite>
+      <sprite>sprites\s_keyboard_hint</sprite>
     </sprites>
     <sprite>sprites\s_fire</sprite>
     <sprite>sprites\s_map</sprite>
+    <sprite>sprites\s_main_anim</sprite>
+    <sprites name="Map">
+      <sprite>sprites\s_map_base_1</sprite>
+      <sprite>sprites\s_map_base_2</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_road_1</background>
@@ -149,6 +161,7 @@
       <scripts name="r_map">
         <script>scripts\set_button_r_map.gml</script>
       </scripts>
+      <script>scripts\eye_get_sprite_index.gml</script>
     </scripts>
     <scripts name="common">
       <script>scripts\run_parent_event.gml</script>
@@ -263,6 +276,7 @@
         <script>scripts\timer_0_o_arrow.gml</script>
         <script>scripts\create_arrow.gml</script>
       </scripts>
+      <script>scripts\draw_line_fade.gml</script>
     </scripts>
     <scripts name="objects">
       <scripts name="dialogue">
@@ -517,6 +531,11 @@
     </objects>
     <objects name="map">
       <object>objects\o_map_controller</object>
+      <objects name="plot">
+        <object>objects\o_map_plot</object>
+        <object>objects\o_map_base_1</object>
+        <object>objects\o_map_base_2</object>
+      </objects>
     </objects>
     <objects name="infected">
       <object>objects\o_runner</object>
@@ -564,6 +583,7 @@
       <object>objects\o_fire</object>
     </objects>
     <object>objects\o_map_bg</object>
+    <object>objects\o_main_anim</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_debug</room>

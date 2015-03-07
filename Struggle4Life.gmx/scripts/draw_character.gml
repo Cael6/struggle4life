@@ -1,4 +1,4 @@
-draw_sprite(char_sprite, image_index, x, y);
+
 
 var curr_weapon;
 
@@ -10,21 +10,47 @@ if (using_weapon) {
 
 var weapon_index;
 
-if (curr_weapon.cooldown != 0) {
+if (curr_weapon.curr_cooldown != 0 || !state_is_battle()) {
     weapon_index = 1;
+    draw_sprite(char_sprite, 0, x, y);
 } else {
     weapon_index = 0;
+    draw_sprite(char_sprite, image_index, x, y);
 }
 
 draw_sprite(curr_weapon.sprite_index, weapon_index, x, y);
 
 if (state == CHARACTER_STATE_BATTLE) {
+    
     draw_set_alpha(1);
     draw_set_color(c_white);
     draw_set_font(f_oswald);
-    var key_string_width = string_width(display_key);
-    var key_string_height = string_height(display_key);
-    draw_text(x - key_string_width - 7, y - key_string_height - 7, display_key);
+    draw_set_halign(fa_center);
+    
+    draw_sprite(
+        s_keyboard_hint,
+        -1,
+        x - sprite_get_width(s_keyboard_hint),
+        y - sprite_get_height(s_keyboard_hint)
+    );
+        
+    draw_set_color(c_white);
+    draw_text_ext(
+        x - sprite_get_width(s_keyboard_hint) / 2 + 1,
+        y - sprite_get_height(s_keyboard_hint) + 1,
+        display_key,
+        sprite_get_height(s_keyboard_hint) / 2,
+        sprite_get_width(s_keyboard_hint)
+    );
+    
+    draw_set_color(c_black);
+    draw_text_ext(
+        x - sprite_get_width(s_keyboard_hint) / 2,
+        y - sprite_get_height(s_keyboard_hint),
+        display_key,
+        sprite_get_height(s_keyboard_hint) / 2,
+        sprite_get_width(s_keyboard_hint)
+    );
 
     draw_healthbar(
         x,
