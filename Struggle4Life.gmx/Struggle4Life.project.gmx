@@ -474,12 +474,6 @@
       <script>scripts\init_map.gml</script>
       <script>scripts\update_map.gml</script>
     </scripts>
-    <scripts name="menu">
-      <script>scripts\create_character_menu.gml</script>
-    </scripts>
-    <scripts name="file control">
-      <script>scripts\save_progress.gml</script>
-    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_default_12</font>
