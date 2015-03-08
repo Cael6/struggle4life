@@ -9,7 +9,8 @@ globalvar
           glb_room,
           glb_room_count,
           glb_current_map_plot,
-          glb_hide_map_help
+          glb_hide_map_help,
+          glb_next_map_plot
           ;
 
 
@@ -27,3 +28,4 @@ glb_room = 0;
 glb_room_count = 0;
 glb_current_map_plot = noone;
 glb_hide_map_help = false;
+glb_next_map_plot = noone;

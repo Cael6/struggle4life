@@ -47,5 +47,10 @@ keypress = -1;
 //key to display for character
 display_key = "1";
 
+battle_position = get_next_char_position();
+
+battle_position_x = battle_position[0];
+battle_position_y = battle_position[1];
+
 selected = false;
 persistent = true;

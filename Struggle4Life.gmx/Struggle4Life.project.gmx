@@ -117,6 +117,7 @@
       <sprite>sprites\s_map_plot_5</sprite>
       <sprite>sprites\s_map_plot_6</sprite>
       <sprite>sprites\s_selected_plot</sprite>
+      <sprite>sprites\s_map_locator</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -325,6 +326,7 @@
         <script>scripts\set_character.gml</script>
         <script>scripts\select_character.gml</script>
         <script>scripts\deselect_character.gml</script>
+        <script>scripts\get_next_char_position.gml</script>
       </scripts>
       <scripts name="weapon">
         <scripts name="assault">
@@ -500,12 +502,12 @@
       <script>scripts\update_map.gml</script>
       <script>scripts\draw_map_gui.gml</script>
       <script>scripts\connected_path.gml</script>
+      <script>scripts\hide_map.gml</script>
       <scripts name="Plots">
         <script>scripts\draw_plot.gml</script>
         <script>scripts\init_plot.gml</script>
         <script>scripts\select_plot.gml</script>
       </scripts>
-      <script>scripts\hide_map.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -551,7 +553,7 @@
       <object>objects\o_button_startgame</object>
       <object>objects\o_button_map</object>
       <object>objects\o_button_map_continue</object>
-      <object>objects\o_button_move</object>
+      <object>objects\o_button_embark</object>
     </objects>
     <objects name="label">
       <objects name="character">

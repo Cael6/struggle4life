@@ -11,7 +11,10 @@ connected_count = 0;
 var self_plot = self.id;
 
 with (o_map_plot) {
-    if (distance_between_points(x, y, self_plot.x, self_plot.y) < MAP_PLOT_DISTANCE_THRESHOLD) {
+    if (
+        distance_between_points(x, y, self_plot.x, self_plot.y) < MAP_PLOT_DISTANCE_THRESHOLD
+        && distance_between_points(x, y, self_plot.x, self_plot.y) > 0
+    ) {
         self_plot.connected_plots[self_plot.connected_count] = self.id;
         self_plot.connected_count += 1;
     }

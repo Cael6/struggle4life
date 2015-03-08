@@ -65,7 +65,7 @@
         <arguments>
           <argument>
             <kind>9</kind>
-            <script>run_parent_event</script>
+            <script>init_button_embark</script>
           </argument>
           <argument>
             <kind>0</kind>
