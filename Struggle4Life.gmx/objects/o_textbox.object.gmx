@@ -32,6 +32,12 @@ txt = "";
 alarm[0] = 30;
 can_click = true;
 
+//delete nine_slice if there is duplicate
+if(instance_position(x - BUTTON_WIDTH / 2, y  - BUTTON_HEIGHT / 2, o_9_button) &gt; 0 ){
+    with(instance_position(x - BUTTON_WIDTH / 2, y  - BUTTON_HEIGHT / 2, o_9_button)) {
+        instance_destroy();
+    }
+}
 nine_slice = instance_create(x - BUTTON_WIDTH / 2, y  - BUTTON_HEIGHT / 2, o_9_button);
 with (nine_slice) {
     set_9_slice(BUTTON_WIDTH, BUTTON_HEIGHT);

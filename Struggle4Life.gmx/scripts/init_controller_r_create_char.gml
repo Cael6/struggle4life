@@ -20,4 +20,3 @@ var startButton = instance_create(ROOM_WIDTH/2 - BUTTON_WIDTH - 96, ROOM_HEIGHT/
 var startButton = instance_create(ROOM_WIDTH/2 , ROOM_HEIGHT/2 - 16,o_button_r_start);
 
 audio_play_sound(so_bg_menu, 10, true);
-

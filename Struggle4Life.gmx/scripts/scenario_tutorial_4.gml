@@ -15,4 +15,3 @@ switch(scenario_step){
         break;
         
 }
-
