@@ -14,7 +14,7 @@ if (!dragging) {
     }
 }
 
-if (mouse_wheel_down() || keyboard_check(vk_pagedown)) {
+if (mouse_wheel_down() || keyboard_check(vk_pagedown) || keyboard_check(ord('Q'))) {
     var scroll_x = mouse_x;
     var scroll_y = mouse_y;
 
@@ -36,7 +36,7 @@ if (mouse_wheel_down() || keyboard_check(vk_pagedown)) {
     view_xview[0] -= mouse_x - scroll_x;
     view_yview[0] -= mouse_y - scroll_y;
 }
-if (mouse_wheel_up() || keyboard_check(vk_pageup)) {
+if (mouse_wheel_up() || keyboard_check(vk_pageup) || keyboard_check(ord('E'))) {
     var scroll_x = mouse_x;
     var scroll_y = mouse_y;
     
@@ -60,21 +60,34 @@ if (mouse_wheel_up() || keyboard_check(vk_pageup)) {
     view_yview[0] -= mouse_y - scroll_y;
 }
 
-if (keyboard_check(vk_left)) {
+if (keyboard_check(vk_left) || keyboard_check(ord('A'))) {
     view_xview[0] -= view_wview[0]/10;
 }
 
-if (keyboard_check(vk_right)) {
+if (keyboard_check(vk_right) || keyboard_check(ord('D'))) {
     view_xview[0] += view_wview[0]/10;
 }
 
-if (keyboard_check(vk_up)) {
+if (keyboard_check(vk_up) || keyboard_check(ord('W'))) {
     view_yview[0] -= view_hview[0]/10;
 }
 
-if (keyboard_check(vk_down)) {
+if (keyboard_check(vk_down) || keyboard_check(ord('S'))) {
     view_yview[0] += view_hview[0]/10;
 }
 
-view_xview[0] = max(0, min(view_xview[0], room_width - view_wview[0]))
-view_yview[0] = max(0, min(view_yview[0], room_height - view_hview[0]))
+view_xview[0] = max(0, min(view_xview[0], room_width - view_wview[0]));
+view_yview[0] = max(0, min(view_yview[0], room_height - view_hview[0]));
+
+if (keyboard_check_released(ord('H'))) {
+    glb_hide_map_help = !glb_hide_map_help;
+}
+
+with (o_button) {
+    scale = view_wview[0] / view_wport[0] ;
+    width = base_width * scale;
+    height = base_height * scale;
+    x = base_x * scale + view_xview[0];
+    y = base_y * scale + view_yview[0];
+}
+

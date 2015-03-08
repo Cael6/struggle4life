@@ -1,3 +1,9 @@
+for (var i = 0; i < 5; i += 1) {
+    background_visible[i] = false;
+}
+
+background_visible[irandom(4)] = true;
+
 scenario = instance_create(0,0,o_scenario);
 state = STATE_NOT_BATTLE;
 

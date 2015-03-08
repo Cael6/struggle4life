@@ -1,6 +1,10 @@
-get_random_scenario();
-randomize();
-state = STATE_NOT_BATTLE;
+for (var i = 0; i < 5; i += 1) {
+    background_visible[i] = false;
+}
+
+background_visible[irandom(4)] = true;
+
+/*
 var infected, infected_x, infected_y, infected_weapon, infected_oi,
     infected_weapon_oi;
 for (i = 0; i < glb_room_count; i += 1) {
@@ -23,14 +27,10 @@ for (i = 0; i < glb_room_count; i += 1) {
     
     infected = instance_create(infected_x, infected_y, infected_oi);
 }
+*/
 
-var char_x = CHARACTER_POSITION_BATTLE_X;
-var char_y = CHARACTER_POSITION_BATTLE_Y;
-
-for (var i = 0; i < array_length_1d(glb_characters); i += 1) {
-    character = glb_characters[i];
-    character.x = char_x;
-    character.y = char_y;
-    character.state = CHARACTER_STATE_BATTLE;
-    char_y = char_y + CHARACTER_POSITION_MAP_INTERVAL;
+with (o_character) {
+    x = battle_position_x;
+    y = battle_position_y;
+    state = CHARACTER_STATE_BATTLE;
 }

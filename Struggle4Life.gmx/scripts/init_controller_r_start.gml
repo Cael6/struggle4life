@@ -21,6 +21,4 @@ for (var i = 0; i < num; i += 1) {
     audio_set_master_gain(info[? "index"], 0.8);
     ds_map_destroy(info);
 }
-
-audio_stop_all();
-audio_play_sound(so_bg_menu, 10, true);
+switch_bg_music(so_bg_menu);

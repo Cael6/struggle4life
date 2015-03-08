@@ -20,7 +20,7 @@ if (curr_weapon.curr_cooldown != 0 || !state_is_battle()) {
 
 draw_sprite(curr_weapon.sprite_index, weapon_index, x, y);
 
-if (state == CHARACTER_STATE_BATTLE) {
+if (state_is_battle()) {
     
     draw_set_alpha(1);
     draw_set_color(c_white);
@@ -82,6 +82,6 @@ if (state == CHARACTER_STATE_BATTLE) {
 }
     
 
-if (state == CHARACTER_STATE_BATTLE && hover) {
+if (state_is_battle() && hover) {
     draw_sprite(hover_sprite, image_index, x, y);
 }
