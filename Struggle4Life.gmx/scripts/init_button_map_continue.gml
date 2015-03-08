@@ -1,0 +1,9 @@
+text = "Continue";
+width = BUTTON_WIDTH;
+height = BUTTON_HEIGHT;
+text_color = BUTTON_TEXT_COLOR;
+action = hide_map;
+enabled = true;
+sprite = s_button;
+base_x = ROOM_WIDTH - BUTTON_WIDTH - 32;
+base_y = ROOM_HEIGHT - BUTTON_HEIGHT - 32;

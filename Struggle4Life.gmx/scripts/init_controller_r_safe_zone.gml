@@ -9,6 +9,7 @@ if(glb_level == 0){
             BUTTON_TEXT_COLOR, 
             goto_r_scenario
         );
+        disabled_message = "Select a position on the map before continuing";
         depth = 19;
     }
 }
@@ -21,6 +22,7 @@ else{
             BUTTON_TEXT_COLOR, 
             goto_r_game
         );
+        disabled_message = "Select a position on the map before continuing";
         depth = 19;
     }
 }

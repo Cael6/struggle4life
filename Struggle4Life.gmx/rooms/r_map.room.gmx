@@ -110,6 +110,7 @@
     <instance objName="o_map_plot_3" x="736" y="448" name="inst_89CD8228" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_map_plot_2" x="1728" y="672" name="inst_9D43F107" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_map_plot_2" x="1696" y="1184" name="inst_49EAD1A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_button_map_continue" x="64" y="32" name="inst_289A3F02" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

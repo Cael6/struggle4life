@@ -143,6 +143,7 @@
       <script>scripts\init_o_button.gml</script>
       <script>scripts\set_o_button.gml</script>
       <script>scripts\draw_o_button.gml</script>
+      <script>scripts\eye_get_sprite_index.gml</script>
       <scripts name="r_test">
         <script>scripts\set_button_r_test.gml</script>
       </scripts>
@@ -178,7 +179,12 @@
       <scripts name="r_map">
         <script>scripts\set_button_r_map.gml</script>
       </scripts>
-      <script>scripts\eye_get_sprite_index.gml</script>
+      <scripts name="map continue">
+        <script>scripts\init_button_map_continue.gml</script>
+      </scripts>
+      <scripts name="embark">
+        <script>scripts\init_button_embark.gml</script>
+      </scripts>
     </scripts>
     <scripts name="common">
       <script>scripts\run_parent_event.gml</script>
@@ -486,6 +492,8 @@
         <script>scripts\init_9_slice.gml</script>
         <script>scripts\set_9_slice.gml</script>
       </scripts>
+      <script>scripts\draw_boxed_message.gml</script>
+      <script>scripts\draw_boxed_message_ext.gml</script>
     </scripts>
     <scripts name="map">
       <script>scripts\init_map.gml</script>
@@ -497,6 +505,7 @@
         <script>scripts\init_plot.gml</script>
         <script>scripts\select_plot.gml</script>
       </scripts>
+      <script>scripts\hide_map.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -541,6 +550,8 @@
       <object>objects\o_button_back</object>
       <object>objects\o_button_startgame</object>
       <object>objects\o_button_map</object>
+      <object>objects\o_button_map_continue</object>
+      <object>objects\o_button_move</object>
     </objects>
     <objects name="label">
       <objects name="character">

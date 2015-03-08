@@ -6,3 +6,7 @@ if (glb_current_map_plot == noone) {
     glb_current_map_plot = o_map_base_1;
     o_map_base_1.selected = true;
 }
+
+with (o_map_plot) {
+    enabled = true;
+}

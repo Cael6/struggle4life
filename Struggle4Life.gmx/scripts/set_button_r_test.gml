@@ -5,3 +5,6 @@ set_o_button(
     BUTTON_TEXT_COLOR, 
     goto_r_test
 );
+
+disabled_message = "Can't go to test room without causing crash here.";
+enabled = false;

@@ -82,3 +82,12 @@ view_yview[0] = max(0, min(view_yview[0], room_height - view_hview[0]));
 if (keyboard_check_released(ord('H'))) {
     glb_hide_map_help = !glb_hide_map_help;
 }
+
+with (o_button) {
+    scale = view_wview[0] / view_wport[0] ;
+    width = base_width * scale;
+    height = base_height * scale;
+    x = base_x * scale + view_xview[0];
+    y = base_y * scale + view_yview[0];
+}
+
