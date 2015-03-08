@@ -90,4 +90,3 @@ with (o_button) {
     x = base_x * scale + view_xview[0];
     y = base_y * scale + view_yview[0];
 }
-

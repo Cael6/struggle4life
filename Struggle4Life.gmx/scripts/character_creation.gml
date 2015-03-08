@@ -3,8 +3,8 @@
 var start_width = argument0;
 var start_height = argument1;
 var char_num = argument2;
-var rec_w_adjust = 318*2;
-var rec_h_adjust = 286;
+var rec_w_adjust = CHARACTER_MENU_REC_ADJ_X;
+var rec_h_adjust = CHARACTER_MENU_REC_ADJ_Y;
 
 //Textbox position
 //var textbox_h_adjust = 32;
@@ -35,7 +35,8 @@ with(rec){
             start_height,
             (start_width + rec_w_adjust),
             (start_height + rec_h_adjust),
-            c_white)
+            c_white,
+            true)
 }
 
 //Make name inputbox

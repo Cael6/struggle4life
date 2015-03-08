@@ -83,4 +83,3 @@ if (!glb_hide_map_help) {
 }
 
 
-
