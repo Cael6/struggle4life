@@ -248,7 +248,6 @@
         <script>scripts\draw_controller_r_game.gml</script>
         <script>scripts\state_is_battle.gml</script>
         <script>scripts\set_state_is_battle.gml</script>
-        <script>scripts\script250.gml</script>
       </scripts>
       <scripts name="r_main_map">
         <script>scripts\init_controller_r_main_map.gml</script>
