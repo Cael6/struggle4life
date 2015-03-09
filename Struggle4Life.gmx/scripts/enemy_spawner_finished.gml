@@ -1,0 +1,1 @@
+return o_enemy_spawner.finished_spawning;

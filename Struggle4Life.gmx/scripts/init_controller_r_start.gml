@@ -1,3 +1,5 @@
+randomize();
+
 with(o_weapon){
     instance_destroy()
 }

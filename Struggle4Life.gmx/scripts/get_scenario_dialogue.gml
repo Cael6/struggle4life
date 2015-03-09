@@ -81,7 +81,7 @@ switch (scenario_id) {
     case SCENARIO_OVERRUN_BASE:
         
         var dialogue_text = "You have returned to the overrun base... That wasn't smart. Good Luck.";
-        set_enemy_spawner(200, ENEMY_MOD_IMPOSSIBLE, ENEMY_TYPE_INFECTED_ALL);
+        set_enemy_spawner(200, ENEMY_MOD_IMPOSSIBLE, ENEMY_TYPE_INFECTED_ALL, 30);
         with (dialogue) {
             set_dialogue(dialogue_text);
         }
@@ -90,10 +90,52 @@ switch (scenario_id) {
         
         break;
             
-    case SCENARIO_TUT_1:
+    case SCENARIO_TUT_1_1:
+    
+        o_controller_r_game.is_additional_update = true;
+        o_controller_r_game.additional_update = tut_1_1;
+        
+        var dialogue_text = "You've just left the overrun base. All your friends have died. Everyone... You are alone in a dark and tainted world. You have nothing but the clothes on your back and the shoes on your feet.##You see a weakened infected in front of you and pick up a nearby assault rifle. Take aim lost soul and hold your own.";
+        set_enemy_spawner(1, ENEMY_MOD_EASY, ENEMY_TYPE_INFECTED_CRAWLER, 30);
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        dialogue_add_option(dialogue, "Let's do this!", start_battle, '1');
+        
+        break;
+        
+    case SCENARIO_TUT_1_2:
+        
+        var dialogue_text = "Ammo is scarce in this cold and lonely world. Your pistols, however, have been modified to take anything you can find to be used as ammo.##Switch to your pistol ([Tab] / [Right Click] when character selected) and finish this wretched creation.";
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        o_controller_r_game.is_additional_update = false;
+        o_controller_r_game.additional_update = -1;
+        
+        dialogue_add_option(dialogue, "Continue", start_battle, '1');
+        
+        break;
+        
+    case SCENARIO_TUT_1_3:
+    
+        change_resource_amount(RESOURCE_AMMO, 2);
+        
+        var dialogue_text = "The area looks clear. You search around a bit. You found:#2 ammo#1 map#1 red marker##You find a place to rest and take the time to plan your next moves.";
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        dialogue_add_option(dialogue, "Continue", destroy_dialogue, '1');
+        
+        break;
+        
+    case SCENARIO_TUT_2:
         
         var dialogue_text = "Your base has been overrun by the infected! As you try to escape, you run into some of them.";
-        set_enemy_spawner(1, ENEMY_MOD_EASY, ENEMY_TYPE_INFECTED_CRAWLER);
+        set_enemy_spawner(1, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_CRAWLER, 30);
         with (dialogue) {
             set_dialogue(dialogue_text);
         }

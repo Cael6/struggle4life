@@ -234,6 +234,7 @@
         <script>scripts\draw_controller_r_game.gml</script>
         <script>scripts\state_is_battle.gml</script>
         <script>scripts\set_state_is_battle.gml</script>
+        <script>scripts\script250.gml</script>
       </scripts>
       <scripts name="r_main_map">
         <script>scripts\init_controller_r_main_map.gml</script>
@@ -254,6 +255,11 @@
         <script>scripts\init_enemy_spawner.gml</script>
         <script>scripts\update_enemy_spawner.gml</script>
         <script>scripts\set_enemy_spawner.gml</script>
+        <script>scripts\enemy_spawner_finished.gml</script>
+        <script>scripts\spawn_enemy_type.gml</script>
+        <script>scripts\spawn_crawlers.gml</script>
+        <script>scripts\spawn_spitters.gml</script>
+        <script>scripts\spawn_bruisers.gml</script>
       </scripts>
     </scripts>
     <scripts name="game actions">
@@ -493,6 +499,8 @@
         <script>scripts\scenario_tutorial_2.gml</script>
         <script>scripts\scenario_tutorial_3.gml</script>
         <script>scripts\scenario_tutorial_4.gml</script>
+        <script>scripts\tut_1_1.gml</script>
+        <script>scripts\tut_1_2.gml</script>
       </scripts>
     </scripts>
     <scripts name="UI">
@@ -764,9 +772,9 @@
     <constant name="SCENARIO_RANDOM_END">1001</constant>
     <constant name="SCENARIO_RANDOM_START">1000</constant>
     <constant name="SCENARIO_SAFE_ZONE">3</constant>
-    <constant name="SCENARIO_TUT_3">902</constant>
-    <constant name="SCENARIO_TUT_2">901</constant>
-    <constant name="SCENARIO_TUT_1">900</constant>
+    <constant name="SCENARIO_TUT_1_3">902</constant>
+    <constant name="SCENARIO_TUT_1_2">901</constant>
+    <constant name="SCENARIO_TUT_1_1">900</constant>
     <constant name="SCENARIO_TUTORIAL_MOVE_AHEAD">1000</constant>
     <constant name="SCENARIO_TUTORIAL_ROOM1_1">1</constant>
     <constant name="SCENARIO_TUTORIAL_ROOM1_2">2</constant>
@@ -788,7 +796,7 @@
     <constant name="STATE_NOT_BATTLE">1</constant>
     <constant name="WEAPON_ASSAULT_COOLDOWN">45</constant>
     <constant name="WEAPON_ASSAULT_DAMAGE">1</constant>
-    <constant name="WEAPON_ASSAULT_RANGE">2</constant>
+    <constant name="WEAPON_ASSAULT_RANGE">3</constant>
     <constant name="WEAPON_ASSAULT_SHOTS_PER_RELOAD">3</constant>
     <constant name="WEAPON_BRUISER_COOLDOWN">-2</constant>
     <constant name="WEAPON_BRUISER_DAMAGE">4</constant>

@@ -17,3 +17,4 @@ height = sprite_get_height(body_sprite);
 //Can create here because weapons are static to infected.
 weapon = instance_create(0, 0, o_runner_bite);
 weapon.character = self.id;
+

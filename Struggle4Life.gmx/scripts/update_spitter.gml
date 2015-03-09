@@ -1,4 +1,4 @@
-if (is_in_battle) {
+if (is_in_battle && state_is_battle()) {
     //look for character
     if (alive) {
         if (-1 == target) {
@@ -26,4 +26,8 @@ if (is_in_battle) {
             }
         }
     }
+}
+
+if (!state_is_battle()) {
+    speed = 0;
 }

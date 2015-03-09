@@ -7,6 +7,11 @@ if (!check_characters_alive()) {
     }
 }
 
-if (state == STATE_BATTLE && !check_enemies_alive()) {
+if (is_additional_update) {
+    script_execute(additional_update);
+}
+
+if (state == STATE_BATTLE && !check_enemies_alive() && enemy_spawner_finished()) {
     get_to_safe_zone();
 }
+

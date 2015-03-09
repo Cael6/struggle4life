@@ -1,2 +1,11 @@
 var controller = o_controller_r;
-controller.state = STATE_BATTLE;
+
+if (argument_count > 0) {
+    if (argument[0]) {
+        controller.state = STATE_BATTLE;
+    } else {
+        controller.state = STATE_NOT_BATTLE;
+    }
+} else {
+    controller.state = STATE_BATTLE;
+}
