@@ -23,4 +23,6 @@ with (o_map_plot) {
 
 action = select_plot;
 
+ally = false;
+
 persistent = true;

@@ -1,7 +1,6 @@
 //if collise destroy innstance
 var i = 0;
 
-
 if (resource_type == RESOURCE_NONE 
     || get_resource_count(resource_type) > 0 
     || self.shots_left != shots_before_reload) {

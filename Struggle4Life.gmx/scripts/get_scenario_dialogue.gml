@@ -88,6 +88,20 @@ switch (scenario_id) {
         dialogue_add_option(dialogue, "Let's do this!", start_battle, '1');
         
         break;
+        
+    case SCENARIO_ALLY_SNIPER:
+    
+        var dialogue_text = "You have come across an allied sniper. He joins the mission.";
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        dialogue_add_option(dialogue, "Welcome aboard", goto_r_safe_zone, '1');
+        //Prevent infinite ally
+        glb_current_map_plot.scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END);
+        glb_current_map_plot.ally = false;
+        
+        break;
             
     case SCENARIO_TUT_1_1:
     
@@ -174,6 +188,28 @@ switch (scenario_id) {
         
         dialogue_add_option(dialogue, "Ready!", start_battle, '1');
         
+        //Unset this scenario
+        glb_current_map_plot.scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END);
+        
+        break;
+        
+    case SCENARIO_TUT_3_2:
+    
+        with (o_map_plot) {
+            if (order_id == 8) {
+                ally = true;
+                scenario_id = SCENARIO_ALLY_SNIPER;
+            }
+        }
+    
+        var dialogue_text = "Your new ally takes your map and updates it with the information he has.##He also points out the location of his friend who he was with before he was chased off by that group of crawlers.";
+        set_enemy_spawner(6, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_CRAWLER, 150);
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        dialogue_add_option(dialogue, "Continue", destroy_dialogue, '1');
+        
         break;
     
     case SCENARIO_TUT_4_1:
@@ -191,16 +227,19 @@ switch (scenario_id) {
         
     case SCENARIO_RANDOM_START:
     
+        var enemy_count = instance_number(o_character) * floor(glb_current_map_plot.order_id / 3);
+        set_enemy_spawner(enemy_count, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_ALL, 30);
         
-        set_enemy_spawner(instance_number(o_character) * floor(glb_current_map_plot.order_id / 3), ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_ALL, 30);
-        
-        var dialogue_text = "You've come across " + string(glb_room_count) + " infected. What will you do?";
+        var dialogue_text = "You've come across " + string(enemy_count) + " infected.";
         
         with (dialogue) {
             set_dialogue(dialogue_text);
         }
         
         dialogue_add_option(dialogue, "To Battle", start_battle, '1');
+        
+        //Prevent infinite reward/enemy loop
+        glb_current_map_plot.scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END);
         
         break;
         
@@ -231,6 +270,9 @@ switch (scenario_id) {
         }
         
         dialogue_add_option(dialogue, "Continue", get_to_safe_zone, '1');
+        
+        //Prevent infinite rewards
+        glb_current_map_plot.scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END);
         
         break;
         

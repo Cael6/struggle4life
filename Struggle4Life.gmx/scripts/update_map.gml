@@ -85,8 +85,6 @@ if (keyboard_check(vk_down) || keyboard_check(ord('S'))) {
     view_yview[0] += view_hview[0]/10;
 }
 
-c_log(string(room_width), C_LOG__DEBUG);
-
 view_xview[0] = max(0, min(view_xview[0], 2048 - view_wview[0]));
 view_yview[0] = max(0, min(view_yview[0], 1536 - view_hview[0]));
 

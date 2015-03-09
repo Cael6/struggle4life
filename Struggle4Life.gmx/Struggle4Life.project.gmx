@@ -108,6 +108,7 @@
     <sprite>sprites\s_map</sprite>
     <sprite>sprites\s_main_anim</sprite>
     <sprites name="Map">
+      <sprite>sprites\s_ally_plot</sprite>
       <sprite>sprites\s_map_base_1</sprite>
       <sprite>sprites\s_map_base_2</sprite>
       <sprite>sprites\s_map_plot_1</sprite>
@@ -664,7 +665,7 @@
     <room>rooms\r_safe_zone</room>
     <room>rooms\r_map</room>
   </rooms>
-  <constants number="160">
+  <constants number="161">
     <constant name="CHARACTER_MENU_REC_ADJ_Y">256</constant>
     <constant name="CHARACTER_MENU_REC_ADJ_X">632</constant>
     <constant name="MAP_PLOT_DISTANCE_THRESHOLD">250</constant>
@@ -773,6 +774,7 @@
     <constant name="SCENARIO_RANDOM_START">1000</constant>
     <constant name="SCENARIO_SAFE_ZONE">3</constant>
     <constant name="SCENARIO_TUT_4_1">905</constant>
+    <constant name="SCENARIO_TUT_3_2">906</constant>
     <constant name="SCENARIO_TUT_3_1">904</constant>
     <constant name="SCENARIO_TUT_2_1">903</constant>
     <constant name="SCENARIO_TUT_1_3">902</constant>

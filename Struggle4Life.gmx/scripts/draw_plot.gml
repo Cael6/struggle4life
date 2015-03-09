@@ -16,6 +16,10 @@ if (enabled) {
         draw_sprite(sprite_index, 0, x, y);
     }
     
+    if (ally) {
+        draw_sprite(s_ally_plot, -1, x, y);
+    }
+    
     if (selected) {
         draw_sprite(s_selected_plot, -1, x + width / 2, y + height / 2);
     }
