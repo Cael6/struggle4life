@@ -150,6 +150,22 @@ switch (scenario_id) {
         
     case SCENARIO_TUT_3_1:
     
+        var character = instance_create(0, 0, o_character);
+        var shotgun = instance_create(0, 0, o_shotgun);
+        
+        shotgun.character = character;
+        
+        set_character(
+            character,
+            s_char_2,
+            s_char_2_hover,
+            shotgun,
+            string(array_length_1d(glb_characters) + 1)
+        );
+        
+        character.x = character.battle_position_x;
+        character.y = character.battle_position_y;
+    
         var dialogue_text = "You come across an ally, the first non-infected human you've seen in a few days.##He's in retreat from a few crawlers. You see he's carrying his own shotgun and you toss him some ammo and a modified pistol.##'Let's take these guys out!'";
         set_enemy_spawner(6, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_CRAWLER, 150);
         with (dialogue) {
