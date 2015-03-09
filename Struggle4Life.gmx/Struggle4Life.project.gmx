@@ -520,6 +520,9 @@
         <script>scripts\set_plot_by_order_id.gml</script>
       </scripts>
     </scripts>
+    <scripts name="menu">
+      <script>scripts\create_character_menu.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_default_12</font>
@@ -653,7 +656,9 @@
     <room>rooms\r_safe_zone</room>
     <room>rooms\r_map</room>
   </rooms>
-  <constants number="155">
+  <constants number="157">
+    <constant name="CHARACTER_MENU_REC_ADJ_Y">256</constant>
+    <constant name="CHARACTER_MENU_REC_ADJ_X">632</constant>
     <constant name="MAP_PLOT_DISTANCE_THRESHOLD">250</constant>
     <constant name="ARROW_SIZE">40</constant>
     <constant name="BUTTON_FONT">f_default_sm</constant>
