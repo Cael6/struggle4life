@@ -1,5 +1,5 @@
 
-text = "";
+text = "aaaa";
 width = -1;
 height = -1;
 text_color = -1;

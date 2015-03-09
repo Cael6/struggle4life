@@ -6,7 +6,7 @@ var button_y = 32 + CHARACTER_MENU_REC_ADJ_Y ;
 
 //if current_room is main menu update start position
 if(room == r_start) {
-    start_x = 96;
+    start_x = 46;
 }
 //Delete all related object
 with(o_character) {
@@ -43,7 +43,9 @@ with(rec){
             start_x + CHARACTER_MENU_REC_ADJ_X + 32 ,
             start_y - 32 + CHARACTER_MENU_REC_ADJ_Y + BUTTON_HEIGHT * 3,
             c_black,
-            false)
+            false,
+            2
+            )
     depth = 999
     draw_set_alpha(0.5)
 }
@@ -54,7 +56,9 @@ with(rec){
             start_x + CHARACTER_MENU_REC_ADJ_X + 32 ,
             start_y - 32 + CHARACTER_MENU_REC_ADJ_Y + BUTTON_HEIGHT * 3,
             c_white,
-            true)
+            true,
+            1
+            )
     depth = 998
     draw_set_alpha(0.5)
 }

@@ -5,3 +5,4 @@ y1 = -1;
 y2 = -1;
 color = -1;
 fill = -1;
+alpha = 0;

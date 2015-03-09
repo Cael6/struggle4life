@@ -14,6 +14,8 @@ globalvar
           glb_map_plots_ordered,
           glb_safe_zone_scenario_id,
           glb_has_map
+          glb_music_volume,
+          glb_sound_volume
           ;
 
 
@@ -35,3 +37,6 @@ glb_next_map_plot = noone;
 glb_map_plots_ordered = false;
 glb_safe_zone_scenario_id = SCENARIO_SAFE_ZONE;
 glb_has_map = false;
+glb_map_plots_ordered = false;
+glb_music_volume = 1;
+glb_sound_volume = 1;

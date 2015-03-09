@@ -9,4 +9,3 @@ if (horizontal_stretch < 0 || vertical_stretch < 0) {
     exit_game();
 }
 
-

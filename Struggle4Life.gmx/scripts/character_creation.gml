@@ -36,7 +36,9 @@ with(rec){
             (start_width + rec_w_adjust),
             (start_height + rec_h_adjust),
             c_white,
-            true)
+            true,
+            1
+            )
 }
 
 //Make name inputbox

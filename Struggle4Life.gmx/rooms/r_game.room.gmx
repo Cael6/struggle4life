@@ -52,6 +52,7 @@
   </views>
   <instances>
     <instance objName="o_controller_r_game" x="0" y="0" name="inst_1F3F9D85" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_button_pause" x="256" y="0" name="inst_69946118" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

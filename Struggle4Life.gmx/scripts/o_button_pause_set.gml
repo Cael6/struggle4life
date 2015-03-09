@@ -1,7 +1,7 @@
 set_o_button(
-    "Exit Game", 
+    "Pause", 
     BUTTON_WIDTH, 
     BUTTON_HEIGHT, 
     BUTTON_TEXT_COLOR, 
-    exit_game
+    pause_menu
 );

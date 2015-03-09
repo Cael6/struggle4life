@@ -26,3 +26,5 @@ for (var i = 0; i < array_length_1d(glb_characters); i += 1) {
     //Heal
     character.hp = character.max_hp;
 }
+
+save_progress();
