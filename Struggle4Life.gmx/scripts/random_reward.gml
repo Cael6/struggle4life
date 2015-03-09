@@ -1,2 +1,2 @@
-var reward = array_1d(irandom_range(0, 4), irandom_range(0,2));
+var reward = array_1d(instance_number(o_character) * irandom_range(0, 4), irandom_range(0,2));
 return reward;

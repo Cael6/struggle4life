@@ -10,13 +10,15 @@ if (self.object_index == o_map_base_2) {
         case 1:
             scenario_id = SCENARIO_TUT_1_1;
             break;
-        /*case 2:
-            scenario_id = SCENARIO_TUT_2;
+        case 2:
+            scenario_id = SCENARIO_TUT_2_1;
             break;
         case 3:
-            scenario_id = SCENARIO_TUT_3;
-            break;*/
-            
+            scenario_id = SCENARIO_TUT_3_1;
+            break;
+        case 4:
+            scenario_id = SCENARIO_TUT_4_1;
+            break;
         //TODO: more scenarios
         default:
             scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END);

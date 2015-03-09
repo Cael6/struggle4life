@@ -138,20 +138,45 @@ switch (scenario_id) {
         
     case SCENARIO_TUT_2_1:
         
-        var dialogue_text = "Your base has been overrun by the infected! As you try to escape, you run into some of them.";
-        set_enemy_spawner(1, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_CRAWLER, 30);
+        var dialogue_text = "It's a new day and your hope of survival is as slim as ever. Walking down the street you can see a group of what you think might be survivors. There's even a man wearing a familiar jacket...##That's your buddy Jim from the overrun military base. You shout out to him.##Looks like that was a mistake. The characters out in front of you suddenly get on their hands and feet and start vigorously crawling towards you. Prepare for a fight.";
+        set_enemy_spawner(3, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_CRAWLER, 150);
         with (dialogue) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Let's do this!", start_battle, '1');
+        dialogue_add_option(dialogue, "I'm ready", start_battle, '1');
         
         break;
         
+    case SCENARIO_TUT_3_1:
+    
+        var dialogue_text = "You come across an ally, the first non-infected human you've seen in a few days.##He's in retreat from a few crawlers. You see he's carrying his own shotgun and you toss him some ammo and a modified pistol.##'Let's take these guys out!'";
+        set_enemy_spawner(6, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_CRAWLER, 150);
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        dialogue_add_option(dialogue, "Ready!", start_battle, '1');
+        
+        break;
+    
+    case SCENARIO_TUT_4_1:
+    
+        var dialogue_text = "";
+        set_enemy_spawner(6, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_CRAWLER, 150);
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        dialogue_add_option(dialogue, "Ready!", start_battle, '1');
+        
+        break;
+    
         
     case SCENARIO_RANDOM_START:
     
-        set_enemy_spawner(1, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_ALL, 30);
+        
+        set_enemy_spawner(instance_number(o_character) * floor(glb_current_map_plot.order_id / 3), ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_ALL, 30);
         
         var dialogue_text = "You've come across " + string(glb_room_count) + " infected. What will you do?";
         
