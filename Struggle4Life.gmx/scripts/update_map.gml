@@ -1,6 +1,9 @@
 if (!glb_map_plots_ordered) {
+    glb_current_map_plot = o_map_base_1;
+    glb_next_map_plot = glb_current_map_plot.connected_plots[0];
     order_and_set_plots();
     glb_map_plots_ordered = true;
+    hide_map();
 }
 
 
@@ -82,8 +85,10 @@ if (keyboard_check(vk_down) || keyboard_check(ord('S'))) {
     view_yview[0] += view_hview[0]/10;
 }
 
-view_xview[0] = max(0, min(view_xview[0], room_width - view_wview[0]));
-view_yview[0] = max(0, min(view_yview[0], room_height - view_hview[0]));
+c_log(string(room_width), C_LOG__DEBUG);
+
+view_xview[0] = max(0, min(view_xview[0], 2048 - view_wview[0]));
+view_yview[0] = max(0, min(view_yview[0], 1536 - view_hview[0]));
 
 if (keyboard_check_released(ord('H'))) {
     glb_hide_map_help = !glb_hide_map_help;

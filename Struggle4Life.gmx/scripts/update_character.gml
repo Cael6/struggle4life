@@ -1,4 +1,8 @@
 if (selected) {
+    
+    if (!state_is_battle()) {
+        deselect_character();
+    }
 
     if (keyboard_check_pressed(vk_escape)) {
         deselect_character();

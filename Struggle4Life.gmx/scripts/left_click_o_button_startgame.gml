@@ -25,4 +25,4 @@ fuel = instance_create(0,0, o_resource_fuel);
 
 switch_bg_music(so_bg_game);
 
-goto_r_safe_zone();
+goto_r_map();

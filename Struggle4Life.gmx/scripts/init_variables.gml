@@ -11,7 +11,9 @@ globalvar
           glb_current_map_plot,
           glb_hide_map_help,
           glb_next_map_plot,
-          glb_map_plots_ordered
+          glb_map_plots_ordered,
+          glb_safe_zone_scenario_id,
+          glb_has_map
           ;
 
 
@@ -31,3 +33,5 @@ glb_current_map_plot = noone;
 glb_hide_map_help = false;
 glb_next_map_plot = noone;
 glb_map_plots_ordered = false;
+glb_safe_zone_scenario_id = SCENARIO_SAFE_ZONE;
+glb_has_map = false;

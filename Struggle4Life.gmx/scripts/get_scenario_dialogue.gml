@@ -68,13 +68,12 @@ switch (scenario_id) {
     
     case SCENARIO_SAFE_ZONE:
         
-        var dialogue_text = "The party has reached a safe zone; what do they do next?";
+        var dialogue_text = "The party has reached a safe zone.";
         with (dialogue) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Venture Onward", move_ahead, '1');
-        dialogue_add_option(dialogue, "Scavenge", scavenge, '2');
+        dialogue_add_option(dialogue, "Okay", goto_r_safe_zone, '1');
         
         break;
         
@@ -114,6 +113,9 @@ switch (scenario_id) {
         
         o_controller_r_game.is_additional_update = false;
         o_controller_r_game.additional_update = -1;
+        glb_safe_zone_scenario_id = SCENARIO_TUT_1_3;
+        glb_has_map = true;
+        
         
         dialogue_add_option(dialogue, "Continue", start_battle, '1');
         
@@ -130,9 +132,11 @@ switch (scenario_id) {
         
         dialogue_add_option(dialogue, "Continue", destroy_dialogue, '1');
         
+        glb_safe_zone_scenario_id = SCENARIO_SAFE_ZONE;
+        
         break;
         
-    case SCENARIO_TUT_2:
+    case SCENARIO_TUT_2_1:
         
         var dialogue_text = "Your base has been overrun by the infected! As you try to escape, you run into some of them.";
         set_enemy_spawner(1, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_CRAWLER, 30);
@@ -146,20 +150,21 @@ switch (scenario_id) {
         
         
     case SCENARIO_RANDOM_START:
-        //TODO: implement battle
+    
+        set_enemy_spawner(1, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_ALL, 30);
+        
         var dialogue_text = "You've come across " + string(glb_room_count) + " infected. What will you do?";
         
         with (dialogue) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Run Away", run_away, '1');
-        dialogue_add_option(dialogue, "To Battle", start_battle, '2');
+        dialogue_add_option(dialogue, "To Battle", start_battle, '1');
         
         break;
         
     case SCENARIO_RANDOM_END:
-    
+        
         var reward = random_reward();
         var dialogue_text = "";
         if (reward[0] > 0 || reward[1] > 0) {
@@ -190,7 +195,7 @@ switch (scenario_id) {
         
         
     default:
-        c_log("Got to default dialogue scenario with scenario_id: " + scenario_id, C_LOG__ERROR);
+        c_log("Got to default dialogue scenario with scenario_id: " + string(scenario_id), C_LOG__ERROR);
         var dialogue_text = "Something went wrong with the scenario generator##Please tell a dev!";
         with (dialogue) {
             set_dialogue(dialogue_text);
