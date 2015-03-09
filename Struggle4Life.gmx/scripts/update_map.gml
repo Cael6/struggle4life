@@ -1,4 +1,5 @@
 if (!glb_map_plots_ordered) {
+    c_log("plots ordered", C_LOG__INFO);
     glb_current_map_plot = o_map_base_1;
     glb_next_map_plot = glb_current_map_plot.connected_plots[0];
     order_and_set_plots();

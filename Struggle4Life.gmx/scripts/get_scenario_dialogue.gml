@@ -91,6 +91,22 @@ switch (scenario_id) {
         
     case SCENARIO_ALLY_SNIPER:
     
+        var character = instance_create(0, 0, o_character);
+        var sniper = instance_create(0, 0, o_sniper);
+        
+        sniper.character = character;
+        
+        set_character(
+            character,
+            s_char_3,
+            s_char_3_hover,
+            sniper,
+            string(instance_number(o_character))
+        );
+        
+        character.x = character.battle_position_x;
+        character.y = character.battle_position_y;
+    
         var dialogue_text = "You have come across an allied sniper. He joins the mission.";
         with (dialogue) {
             set_dialogue(dialogue_text);
@@ -174,7 +190,7 @@ switch (scenario_id) {
             s_char_2,
             s_char_2_hover,
             shotgun,
-            string(array_length_1d(glb_characters) + 1)
+            string(instance_number(o_character))
         );
         
         character.x = character.battle_position_x;
@@ -185,6 +201,8 @@ switch (scenario_id) {
         with (dialogue) {
             set_dialogue(dialogue_text);
         }
+        
+        glb_safe_zone_scenario_id = SCENARIO_TUT_3_2;
         
         dialogue_add_option(dialogue, "Ready!", start_battle, '1');
         
@@ -203,10 +221,11 @@ switch (scenario_id) {
         }
     
         var dialogue_text = "Your new ally takes your map and updates it with the information he has.##He also points out the location of his friend who he was with before he was chased off by that group of crawlers.";
-        set_enemy_spawner(6, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_CRAWLER, 150);
         with (dialogue) {
             set_dialogue(dialogue_text);
         }
+        
+        glb_safe_zone_scenario_id = SCENARIO_SAFE_ZONE;
         
         dialogue_add_option(dialogue, "Continue", destroy_dialogue, '1');
         

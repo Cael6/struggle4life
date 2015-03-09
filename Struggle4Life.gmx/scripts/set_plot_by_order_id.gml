@@ -19,6 +19,9 @@ if (self.object_index == o_map_base_2) {
         case 4:
             scenario_id = SCENARIO_TUT_4_1;
             break;
+        case 8: 
+            scenario_id = SCENARIO_ALLY_SNIPER;
+            break
         //TODO: more scenarios
         default:
             scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END);

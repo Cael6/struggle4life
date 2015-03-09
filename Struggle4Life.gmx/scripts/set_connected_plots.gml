@@ -27,4 +27,6 @@ for (var i = 0; i < array_length_1d(curr_plots); i += 1) {
 
 if (next_count > 0) {
     set_connected_plots(next_plots, plot_count);
+} else {
+    c_log("Plots set", C_LOG__INFO);
 }
