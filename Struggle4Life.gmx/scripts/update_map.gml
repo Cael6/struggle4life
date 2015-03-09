@@ -1,3 +1,9 @@
+if (!glb_map_plots_ordered) {
+    order_and_set_plots();
+    glb_map_plots_ordered = true;
+}
+
+
 if (!dragging) {
     if (mouse_check_button(mb_right)) {
         dragging = true;
@@ -90,4 +96,3 @@ with (o_button) {
     x = base_x * scale + view_xview[0];
     y = base_y * scale + view_yview[0];
 }
-

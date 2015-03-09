@@ -78,6 +78,31 @@ switch (scenario_id) {
         
         break;
         
+    case SCENARIO_OVERRUN_BASE:
+        
+        var dialogue_text = "You have returned to the overrun base... That wasn't smart. Good Luck.";
+        set_enemy_spawner(200, ENEMY_MOD_IMPOSSIBLE, ENEMY_TYPE_INFECTED_ALL);
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        dialogue_add_option(dialogue, "Let's do this!", start_battle, '1');
+        
+        break;
+            
+    case SCENARIO_TUT_1:
+        
+        var dialogue_text = "Your base has been overrun by the infected! As you try to escape, you run into some of them.";
+        set_enemy_spawner(1, ENEMY_MOD_EASY, ENEMY_TYPE_INFECTED_CRAWLER);
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        dialogue_add_option(dialogue, "Let's do this!", start_battle, '1');
+        
+        break;
+        
+        
     case SCENARIO_RANDOM_START:
         //TODO: implement battle
         var dialogue_text = "You've come across " + string(glb_room_count) + " infected. What will you do?";

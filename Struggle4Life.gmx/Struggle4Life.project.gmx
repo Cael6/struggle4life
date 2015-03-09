@@ -200,6 +200,8 @@
       <script>scripts\check_left_click.gml</script>
       <script>scripts\execute_action.gml</script>
       <script>scripts\run_action.gml</script>
+      <script>scripts\order_objects_by_x_y.gml</script>
+      <script>scripts\compare_x_y.gml</script>
     </scripts>
     <scripts name="controllers">
       <script>scripts\init_room.gml</script>
@@ -247,6 +249,11 @@
         <script>scripts\update_controller_r_safe_zone.gml</script>
         <script>scripts\init_controller_r_safe_zone.gml</script>
         <script>scripts\draw_controller_r_safe_zone.gml</script>
+      </scripts>
+      <scripts name="Enemy Spawner">
+        <script>scripts\init_enemy_spawner.gml</script>
+        <script>scripts\update_enemy_spawner.gml</script>
+        <script>scripts\set_enemy_spawner.gml</script>
       </scripts>
     </scripts>
     <scripts name="game actions">
@@ -502,11 +509,15 @@
       <script>scripts\update_map.gml</script>
       <script>scripts\draw_map_gui.gml</script>
       <script>scripts\connected_path.gml</script>
+      <script>scripts\order_and_set_plots.gml</script>
       <script>scripts\hide_map.gml</script>
       <scripts name="Plots">
         <script>scripts\draw_plot.gml</script>
         <script>scripts\init_plot.gml</script>
         <script>scripts\select_plot.gml</script>
+        <script>scripts\get_plot_scenario.gml</script>
+        <script>scripts\set_connected_plots.gml</script>
+        <script>scripts\set_plot_by_order_id.gml</script>
       </scripts>
     </scripts>
   </scripts>
@@ -627,6 +638,7 @@
         <object>objects\o_map_plot_6</object>
       </objects>
     </objects>
+    <object>objects\o_enemy_spawner</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_debug</room>
@@ -641,7 +653,7 @@
     <room>rooms\r_safe_zone</room>
     <room>rooms\r_map</room>
   </rooms>
-  <constants number="140">
+  <constants number="155">
     <constant name="MAP_PLOT_DISTANCE_THRESHOLD">250</constant>
     <constant name="ARROW_SIZE">40</constant>
     <constant name="BUTTON_FONT">f_default_sm</constant>
@@ -690,6 +702,13 @@
     <constant name="DIALOGUE_TEXT_ALPHA">1</constant>
     <constant name="DIALOGUE_TEXT_COLOR">make_colour_rgb(250,250,250)</constant>
     <constant name="DIALOGUE_WIDTH">480</constant>
+    <constant name="ENEMY_TYPE_INFECTED_ALL">7</constant>
+    <constant name="ENEMY_TYPE_INFECTED_SPITTER_BRUISER">6</constant>
+    <constant name="ENEMY_TYPE_INFECTED_CRAWLER_BRUISER">5</constant>
+    <constant name="ENEMY_TYPE_INFECTED_CRAWLER_SPITTER">4</constant>
+    <constant name="ENEMY_TYPE_INFECTED_BRUISER">3</constant>
+    <constant name="ENEMY_TYPE_INFECTED_SPITTER">2</constant>
+    <constant name="ENEMY_TYPE_INFECTED_CRAWLER">1</constant>
     <constant name="ENEMY_BRUISER_ATTACK">4</constant>
     <constant name="ENEMY_BRUISER_HEALTH">10</constant>
     <constant name="ENEMY_BRUISER_SPEED">1/3</constant>
@@ -702,6 +721,10 @@
     <constant name="ENEMY_SPAWN_TURTORIAL">0</constant>
     <constant name="ENEMY_SPITTER_ATTACK">1</constant>
     <constant name="ENEMY_SPITTER_HEALTH">2</constant>
+    <constant name="ENEMY_MOD_IMPOSSIBLE">4</constant>
+    <constant name="ENEMY_MOD_HARD">3</constant>
+    <constant name="ENEMY_MOD_NORMAL">2</constant>
+    <constant name="ENEMY_MOD_EASY">1</constant>
     <constant name="ENEMY_SPITTER_SPEED">1</constant>
     <constant name="MAP_HEIGHT">300</constant>
     <constant name="MAP_LEAST_POINTS">16</constant>
@@ -729,12 +752,16 @@
     <constant name="SCENARIO_COUNT">1</constant>
     <constant name="SCENARIO_GAME_OVER">1</constant>
     <constant name="SCENARIO_GAME_START">2</constant>
+    <constant name="SCENARIO_OVERRUN_BASE">5</constant>
     <constant name="SCENARIO_GAME_WIN">4</constant>
     <constant name="SCENARIO_LEVEL_FIRST">1</constant>
     <constant name="SCENARIO_LEVEL_TUTORIAL">0</constant>
     <constant name="SCENARIO_RANDOM_END">1001</constant>
     <constant name="SCENARIO_RANDOM_START">1000</constant>
     <constant name="SCENARIO_SAFE_ZONE">3</constant>
+    <constant name="SCENARIO_TUT_3">902</constant>
+    <constant name="SCENARIO_TUT_2">901</constant>
+    <constant name="SCENARIO_TUT_1">900</constant>
     <constant name="SCENARIO_TUTORIAL_MOVE_AHEAD">1000</constant>
     <constant name="SCENARIO_TUTORIAL_ROOM1_1">1</constant>
     <constant name="SCENARIO_TUTORIAL_ROOM1_2">2</constant>

@@ -1,6 +1,7 @@
 width = sprite_get_width(sprite_index);
 height = sprite_get_height(sprite_index);
 
+order_id = -1;
 scenario_id = -1;
 
 controller = o_controller_r;

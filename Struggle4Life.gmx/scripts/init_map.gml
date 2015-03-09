@@ -10,3 +10,5 @@ if (glb_current_map_plot == noone) {
 with (o_map_plot) {
     enabled = true;
 }
+
+

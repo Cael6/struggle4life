@@ -34,3 +34,5 @@ with (o_character) {
     y = battle_position_y;
     state = CHARACTER_STATE_BATTLE;
 }
+
+get_plot_scenario();
