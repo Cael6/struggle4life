@@ -11,7 +11,9 @@ globalvar
           glb_current_map_plot,
           glb_hide_map_help,
           glb_next_map_plot,
-          glb_map_plots_ordered
+          glb_map_plots_ordered,
+          glb_music_volume,
+          glb_sound_volume
           ;
 
 
@@ -31,3 +33,5 @@ glb_current_map_plot = noone;
 glb_hide_map_help = false;
 glb_next_map_plot = noone;
 glb_map_plots_ordered = false;
+glb_music_volume = 1;
+glb_sound_volume = 1;

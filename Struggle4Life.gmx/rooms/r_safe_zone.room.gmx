@@ -55,6 +55,7 @@
     <instance objName="o_comtroller_r_safe_zone" x="0" y="0" name="inst_305F67CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_button_embark" x="768" y="320" name="inst_8801D63A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_button_map" x="768" y="416" name="inst_730960F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_button_pause" x="256" y="0" name="inst_A627EA27" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

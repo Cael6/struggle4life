@@ -71,6 +71,7 @@
     </sprites>
     <sprites name="button">
       <sprite>sprites\s_button</sprite>
+      <sprite>sprites\s_bar</sprite>
       <sprite>sprites\s_l_button</sprite>
       <sprite>sprites\s_r_button</sprite>
       <sprite>sprites\s_button_check</sprite>
@@ -134,11 +135,13 @@
     <background>background\bg_road_3</background>
     <background>background\bg_road_4</background>
     <background>background\bg_road_5</background>
+    <background>background\bg_black</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Audio">
       <script>scripts\switch_bg_music.gml</script>
+      <script>scripts\play_sound_effect.gml</script>
     </scripts>
     <scripts name="buttons">
       <script>scripts\init_o_button.gml</script>
@@ -185,6 +188,16 @@
       </scripts>
       <scripts name="embark">
         <script>scripts\init_button_embark.gml</script>
+      </scripts>
+      <scripts name="pause">
+        <script>scripts\o_button_pause_set.gml</script>
+        <script>scripts\o_button_close_pause_set.gml</script>
+      </scripts>
+      <scripts name="option">
+        <script>scripts\set_button_option.gml</script>
+      </scripts>
+      <scripts name="load">
+        <script>scripts\set_button_load.gml</script>
       </scripts>
     </scripts>
     <scripts name="common">
@@ -522,6 +535,26 @@
     </scripts>
     <scripts name="menu">
       <script>scripts\create_character_menu.gml</script>
+      <script>scripts\option_menu.gml</script>
+      <script>scripts\pause_menu.gml</script>
+      <script>scripts\close_pause_menu.gml</script>
+    </scripts>
+    <scripts name="savedata">
+      <script>scripts\save_progress.gml</script>
+      <script>scripts\load_progress.gml</script>
+      <script>scripts\cotinue_game.gml</script>
+    </scripts>
+    <scripts name="slider">
+      <script>scripts\init_slider.gml</script>
+      <script>scripts\set_slider.gml</script>
+      <scripts name="slider_head">
+        <script>scripts\init_slider_head.gml</script>
+        <script>scripts\slider_head_update.gml</script>
+        <script>scripts\slider_head_click_press.gml</script>
+        <script>scripts\slider_head_click_release.gml</script>
+        <script>scripts\slider_head_draw.gml</script>
+      </scripts>
+      <script>scripts\slider_click.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -557,6 +590,9 @@
     <objects name="buttons">
       <object>objects\o_button</object>
       <object>objects\o_button_exit</object>
+      <object>objects\o_button_option</object>
+      <object>objects\o_button_pause</object>
+      <object>objects\o_button_close_pause</object>
       <object>objects\o_button_r_test</object>
       <object>objects\o_button_credits</object>
       <object>objects\o_button_r_battle</object>
@@ -568,6 +604,7 @@
       <object>objects\o_button_map</object>
       <object>objects\o_button_map_continue</object>
       <object>objects\o_button_embark</object>
+      <object>objects\o_button_continue</object>
     </objects>
     <objects name="label">
       <objects name="character">
@@ -642,6 +679,10 @@
       </objects>
     </objects>
     <object>objects\o_enemy_spawner</object>
+    <objects name="slider">
+      <object>objects\o_slider</object>
+      <object>objects\o_slider_head</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_debug</room>
