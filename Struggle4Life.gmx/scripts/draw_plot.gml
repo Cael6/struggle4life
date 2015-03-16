@@ -28,3 +28,9 @@ if (enabled) {
         draw_sprite(s_map_locator, -1, x, y);
     }
 }
+
+draw_set_color(c_white);
+draw_set_font(f_default_12);
+draw_set_halign(fa_center);
+draw_text(x, y+10, self.order_id);
+

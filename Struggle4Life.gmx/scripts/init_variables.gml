@@ -15,7 +15,11 @@ globalvar
           glb_safe_zone_scenario_id,
           glb_has_map
           glb_music_volume,
-          glb_sound_volume
+          glb_sound_volume,
+          glb_cheat_enemy_speed,
+          glb_cheat_cool_down,
+          glb_cheat_ammo,
+          glb_cheat_fuel
           ;
 
 
@@ -40,3 +44,7 @@ glb_has_map = false;
 glb_map_plots_ordered = false;
 glb_music_volume = 1;
 glb_sound_volume = 1;
+glb_cheat_enemy_speed = 1;
+glb_cheat_cool_down = 1;
+glb_cheat_ammo = 0;
+glb_cheat_fuel = 0;

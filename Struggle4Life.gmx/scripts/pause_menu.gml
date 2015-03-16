@@ -37,7 +37,7 @@ with(rec){
             c_black,
             false,
             0.5)
-    depth = 999
+    depth = 10
 }
 
 var rec = instance_create(0,0,o_rectangle);
@@ -50,7 +50,7 @@ with(rec){
             true,
             1
             )
-    depth = 998
+    depth = 10
     draw_set_alpha(0.5)
 }
 
@@ -96,9 +96,14 @@ var continueButton = instance_create(start_x,
                                   start_y + button_y,
                                   o_button_close_pause
                                   );
-
+with(continueButton) {
+     depth = 8
+}
 //Exit button                              
 var exitButton = instance_create(start_x + BUTTON_WIDTH * 2, 
                                  start_y + button_y,
                                  o_button_exit
                                  );
+with(exitButton) {
+     depth = 8
+}

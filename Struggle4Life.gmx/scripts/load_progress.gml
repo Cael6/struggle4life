@@ -32,4 +32,3 @@ if(file_exists(save_path)){
 //free map
 ds_map_destroy(save_map);
 
-

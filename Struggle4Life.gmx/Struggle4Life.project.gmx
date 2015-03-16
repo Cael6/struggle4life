@@ -564,6 +564,9 @@
       </scripts>
       <script>scripts\slider_click.gml</script>
     </scripts>
+    <scripts name="cheat">
+      <script>scripts\apply_cheat.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_default_12</font>
@@ -578,6 +581,7 @@
     <objects name="textbox">
       <object>objects\o_text</object>
       <object>objects\o_textbox</object>
+      <object>objects\o_cheatbox</object>
     </objects>
     <objects name="controllers">
       <object>objects\o_controller_r</object>
@@ -704,6 +708,7 @@
     <room>rooms\r_scenario</room>
     <room>rooms\r_safe_zone</room>
     <room>rooms\r_map</room>
+    <room>rooms\r_map_2</room>
   </rooms>
   <constants number="162">
     <constant name="CHARACTER_MENU_REC_ADJ_Y">256</constant>

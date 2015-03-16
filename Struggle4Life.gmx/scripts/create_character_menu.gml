@@ -36,6 +36,13 @@ with(o_label){
 //Create Instances
 //Make frame rectangle
 character_creation(start_x , start_y, "1");
+with(o_character){
+    depth = 9
+}
+with(o_rectangle){
+    depth = 9;
+}
+
 var rec = instance_create(0,0,o_rectangle);
 with(rec){
     set_rec(start_x - 32,
@@ -46,7 +53,7 @@ with(rec){
             false,
             2
             )
-    depth = 999
+    depth = 10
     draw_set_alpha(0.5)
 }
 var rec = instance_create(0,0,o_rectangle);
@@ -59,15 +66,21 @@ with(rec){
             true,
             1
             )
-    depth = 998
+    depth = 10
     draw_set_alpha(0.5)
 }
 var startButton = instance_create(start_x, 
                                   start_y + button_y,
                                   o_button_startgame
                                   );
+with(startButton) {
+     depth = 8
+}
                                   
 var menuButton = instance_create(start_x + BUTTON_WIDTH * 2, 
                                  start_y + button_y,
                                  o_button_r_start
                                  );
+with(menuButton) {
+     depth = 8
+}

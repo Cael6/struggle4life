@@ -82,4 +82,3 @@ if (!glb_hide_map_help) {
     draw_text(ROOM_WIDTH - string_width('"H"') - helper_margin, helper_margin, '"H"'); 
 }
 
-

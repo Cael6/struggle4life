@@ -20,7 +20,7 @@ with(o_rectangle) {
     instance_destroy();
 }
 
-with(o_textbox){
+with(o_cheatbox){
     instance_destroy();
 }
 
@@ -39,7 +39,7 @@ with(rec){
             c_black,
             false,
             0.5)
-    depth = 999
+    depth = 10
 }
 
 var rec = instance_create(0,0,o_rectangle);
@@ -52,7 +52,7 @@ with(rec){
             true,
             1
             )
-    depth = 998
+    depth = 10
     draw_set_alpha(0.5)
 }
 
@@ -105,14 +105,14 @@ with(cheatLbl) {
                          
 var textbox = instance_create((start_x + input_x) ,
                               (start_y + input_y + next_line*2) ,
-                              o_textbox
+                              o_cheatbox
               );
-//TODO: Make this happen by set              
-with(textbox) {
-    txt = "Enter Code";
-}
+
 //Exit button                              
 var menuButton = instance_create(start_x + BUTTON_WIDTH * 2, 
                                  start_y + button_y,
                                  o_button_r_start
                                  );
+with(menuButton) {
+     depth = 8
+}

@@ -6,7 +6,7 @@ body_sprite = s_runner;
 //sprite to show when hovered
 hover_sprite = s_runner_hover;
 
-o_speed = ENEMY_RUNNER_SPEED;
+o_speed = ENEMY_RUNNER_SPEED * glb_cheat_enemy_speed;
 hp = ENEMY_RUNNER_HEALTH;
 max_hp = ENEMY_RUNNER_HEALTH;
 
@@ -17,4 +17,3 @@ height = sprite_get_height(body_sprite);
 //Can create here because weapons are static to infected.
 weapon = instance_create(0, 0, o_runner_bite);
 weapon.character = self.id;
-

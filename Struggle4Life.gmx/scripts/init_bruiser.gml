@@ -6,7 +6,7 @@ body_sprite = s_bruiser;
 //sprite to show when hovered
 hover_sprite = s_bruiser_hover;
 
-o_speed = ENEMY_BRUISER_SPEED;
+o_speed = ENEMY_BRUISER_SPEED * glb_cheat_enemy_speed;
 hp = ENEMY_BRUISER_HEALTH;
 max_hp = ENEMY_BRUISER_HEALTH;
 

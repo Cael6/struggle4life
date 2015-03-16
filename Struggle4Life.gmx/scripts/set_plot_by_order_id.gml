@@ -19,7 +19,7 @@ if (self.object_index == o_map_base_2) {
         case 4:
             scenario_id = SCENARIO_TUT_4_1;
             break;
-        case 8: 
+        case 11: 
             scenario_id = SCENARIO_ALLY_SNIPER;
             break
         //TODO: more scenarios

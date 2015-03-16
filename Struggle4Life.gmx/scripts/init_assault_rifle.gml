@@ -1,5 +1,5 @@
 aoe_sprite = s_assault_rifle_aoe;
-cooldown = WEAPON_ASSAULT_COOLDOWN;
+cooldown = WEAPON_ASSAULT_COOLDOWN / glb_cheat_cool_down;
 name = "Assault Rifle";
 is_pistol = false;
 range = WEAPON_ASSAULT_RANGE;

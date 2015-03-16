@@ -6,7 +6,7 @@ body_sprite = s_spitter;
 //sprite to show when hovered
 hover_sprite = s_spitter_hover;
 
-o_speed = ENEMY_SPITTER_SPEED;
+o_speed = ENEMY_SPITTER_SPEED * glb_cheat_enemy_speed;
 hp = ENEMY_SPITTER_HEALTH;
 max_hp = ENEMY_SPITTER_HEALTH;
 
