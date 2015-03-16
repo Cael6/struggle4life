@@ -3,7 +3,7 @@
   <spriteName>s_slider</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>9</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>o_slider</parentName>
   <maskName>&lt;undefined&gt;</maskName>

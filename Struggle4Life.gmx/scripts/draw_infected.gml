@@ -3,7 +3,7 @@ draw_sprite(body_sprite, image_index, x, y);
 if (gun_hover) {
     draw_sprite_ext(hover_sprite, image_index, x, y, 1, 1, 0, c_white, 1);
 }
-
+draw_set_alpha(0.5);
 draw_healthbar(
     x,
     y - 4,
@@ -17,3 +17,4 @@ draw_healthbar(
     false,
     false
 );
+draw_set_alpha(1);

@@ -17,7 +17,8 @@ var distance_from_sniper = distance_between_points(
 );
 
 for (var i = 0; i < spitters_to_spawn; i += 1) {
-    instance_create(curr_x, curr_y, o_spitter);
+    var new_spitter = instance_create(curr_x, curr_y, o_spitter);
+    new_spitter.image_index = irandom_range(0, new_spitter.image_number);
     distance_from_sniper += sprite_get_width(s_spitter) * 2;
     curr_x = 160 + sprite_get_width(s_char_1) / 2 
         + lengthdir_x(distance_from_sniper, angle_to_sniper);

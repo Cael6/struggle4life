@@ -6,7 +6,7 @@ var group_y = irandom_range(
 );
 
 for (var i = 0; i < crawlers_to_spawn; i += 1) {
-    instance_create(
+    var new_crawler = instance_create(
         ROOM_WIDTH,
         max(440, group_y + irandom_range(
             -1 * sprite_get_height(s_runner), 
@@ -14,7 +14,7 @@ for (var i = 0; i < crawlers_to_spawn; i += 1) {
         ),
         o_runner
     );
-    
+    new_crawler.image_index = irandom_range(0, new_crawler.image_number);
 }
 
 enemy_count -= crawlers_to_spawn;

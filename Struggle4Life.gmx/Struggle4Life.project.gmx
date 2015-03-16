@@ -140,6 +140,7 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\init_variables.gml</script>
     <scripts name="Audio">
       <script>scripts\switch_bg_music.gml</script>
       <script>scripts\play_sound_effect.gml</script>
@@ -503,7 +504,6 @@
       <script>scripts\array_1d.gml</script>
       <script>scripts\array_2d.gml</script>
     </scripts>
-    <script>scripts\init_variables.gml</script>
     <scripts name="scenario">
       <script>scripts\init_scenario.gml</script>
       <script>scripts\update_scenario.gml</script>

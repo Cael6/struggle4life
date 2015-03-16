@@ -24,8 +24,8 @@ with(rec){
             ROOM_HEIGHT,
             c_black,
             false,
-            0.5)
-    depth = 1000
+            0.8)
+    depth = 3
 }
 
 var rec = instance_create(0,0,o_rectangle);
@@ -36,8 +36,8 @@ with(rec){
             start_y - 32 + CHARACTER_MENU_REC_ADJ_Y + BUTTON_HEIGHT * 3,
             c_black,
             false,
-            0.5)
-    depth = 10
+            0.9)
+    depth = 2
 }
 
 var rec = instance_create(0,0,o_rectangle);
@@ -50,7 +50,7 @@ with(rec){
             true,
             1
             )
-    depth = 10
+    depth = 2
     draw_set_alpha(0.5)
 }
 
@@ -97,7 +97,7 @@ var continueButton = instance_create(start_x,
                                   o_button_close_pause
                                   );
 with(continueButton) {
-     depth = 8
+     depth = 1
 }
 //Exit button                              
 var exitButton = instance_create(start_x + BUTTON_WIDTH * 2, 
@@ -105,5 +105,5 @@ var exitButton = instance_create(start_x + BUTTON_WIDTH * 2,
                                  o_button_exit
                                  );
 with(exitButton) {
-     depth = 8
+     depth = 1
 }

@@ -11,3 +11,5 @@ if (!alive) {
     }
     instance_destroy();
 }
+
+depth = ROOM_HEIGHT - (y + height);
