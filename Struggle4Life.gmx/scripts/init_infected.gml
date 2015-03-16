@@ -24,6 +24,8 @@ is_eating = false;
 //Whether the infected is in battle or not
 is_in_battle = false;
 
+death_animation = -1;
+
 hp = -1
 max_hp = -1;
 alive = true;

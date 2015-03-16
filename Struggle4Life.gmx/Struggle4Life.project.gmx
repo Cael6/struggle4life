@@ -87,6 +87,7 @@
       <sprite>sprites\s_runner_hover</sprite>
       <sprite>sprites\s_b</sprite>
       <sprite>sprites\sprite54</sprite>
+      <sprite>sprites\s_bruiser_death</sprite>
     </sprites>
     <sprites name="textbox">
       <sprite>sprites\s_textbox</sprite>
@@ -131,11 +132,21 @@
     <background>background\bg_map_1</background>
     <background>background\bg_safe_zone</background>
     <background>background\background8</background>
-    <background>background\bg_road__1</background>
+    <background>background\bg_road_1</background>
     <background>background\bg_road_2</background>
     <background>background\bg_road_3</background>
     <background>background\bg_road_4</background>
     <background>background\bg_road_5</background>
+    <background>background\bg_road_6</background>
+    <background>background\bg_road_7</background>
+    <background>background\bg_road_8</background>
+    <background>background\bg_road_9</background>
+    <background>background\bg_road_10</background>
+    <background>background\bg_road_11</background>
+    <background>background\bg_road_12</background>
+    <background>background\bg_road_13</background>
+    <background>background\bg_road_14</background>
+    <background>background\bg_road_15</background>
     <background>background\bg_black</background>
   </backgrounds>
   <paths name="paths"/>

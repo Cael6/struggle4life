@@ -37,6 +37,8 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
+        init_variables();
+        
         dialogue_add_option(dialogue, "Exit Game", exit_game, '1');
         dialogue_add_option(dialogue, "Main Menu", goto_r_start, '2');
         

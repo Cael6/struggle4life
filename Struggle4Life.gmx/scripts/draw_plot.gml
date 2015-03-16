@@ -27,10 +27,11 @@ if (enabled) {
     if (glb_current_map_plot.id == self.id) {
         draw_sprite(s_map_locator, -1, x, y);
     }
+    if (DEBUG) {
+        draw_set_color(c_white);
+        draw_set_font(f_default_12);
+        draw_set_halign(fa_center);
+        draw_text(x, y+10, self.order_id);
+    }
 }
-
-draw_set_color(c_white);
-draw_set_font(f_default_12);
-draw_set_halign(fa_center);
-draw_text(x, y+10, self.order_id);
 

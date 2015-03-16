@@ -19,7 +19,9 @@ globalvar
           glb_cheat_enemy_speed,
           glb_cheat_cool_down,
           glb_cheat_ammo,
-          glb_cheat_fuel
+          glb_cheat_fuel,
+          glb_cheat_health,
+          glb_game_bgs
           ;
 
 
@@ -48,3 +50,22 @@ glb_cheat_enemy_speed = 1;
 glb_cheat_cool_down = 1;
 glb_cheat_ammo = 0;
 glb_cheat_fuel = 0;
+glb_cheat_health = 0;
+glb_game_bgs = array_1d(
+    bg_road_1,
+    bg_road_2,
+    bg_road_3,
+    bg_road_4,
+    bg_road_5,
+    bg_road_6,
+    bg_road_7,
+    bg_road_8,
+    bg_road_9,
+    bg_road_10,
+    bg_road_11,
+    bg_road_12,
+    bg_road_13,
+    bg_road_14,
+    bg_road_15,
+);
+
