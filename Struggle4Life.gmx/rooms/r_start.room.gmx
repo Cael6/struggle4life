@@ -54,9 +54,9 @@
     <instance objName="o_controller_r_start" x="0" y="0" name="inst_982E89D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_button_credits" x="736" y="288" name="inst_91CBDFED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_button_char_create" x="736" y="160" name="inst_D47D3500" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_button_exit" x="736" y="544" name="inst_D58C3BA5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_button_exit" x="736" y="416" name="inst_D58C3BA5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_main_anim" x="0" y="0" name="inst_A5C04C98" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_button_option" x="736" y="416" name="inst_3DAC8277" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_button_option" x="736" y="352" name="inst_3DAC8277" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_button_continue" x="736" y="224" name="inst_D940727A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

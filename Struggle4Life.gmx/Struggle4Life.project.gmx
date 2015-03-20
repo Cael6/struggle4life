@@ -122,6 +122,12 @@
       <sprite>sprites\s_selected_plot</sprite>
       <sprite>sprites\s_map_locator</sprite>
     </sprites>
+    <sprites name="cutscene">
+      <sprites name="Intro">
+        <sprite>sprites\s_cutscene_intro_1</sprite>
+        <sprite>sprites\s_cutscene_intro_2</sprite>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_dna</background>
@@ -212,6 +218,9 @@
       <scripts name="load">
         <script>scripts\set_button_load.gml</script>
       </scripts>
+      <scripts name="r_cutscene">
+        <script>scripts\set_button_r_cutscene.gml</script>
+      </scripts>
     </scripts>
     <scripts name="common">
       <script>scripts\run_parent_event.gml</script>
@@ -285,6 +294,44 @@
         <script>scripts\spawn_crawlers.gml</script>
         <script>scripts\spawn_spitters.gml</script>
         <script>scripts\spawn_bruisers.gml</script>
+      </scripts>
+      <scripts name="cutscene">
+        <script>scripts\get_cutscene_init_by_id.gml</script>
+        <script>scripts\init_r_cutscene.gml</script>
+        <script>scripts\update_r_cutscene.gml</script>
+        <script>scripts\draw_r_cutscene.gml</script>
+        <scripts name="Intro">
+          <script>scripts\update_cutscene_intro.gml</script>
+          <script>scripts\init_cutscene_intro.gml</script>
+        </scripts>
+        <scripts name="Acquire Cure">
+          <script>scripts\update_cutscene_acquire_cure.gml</script>
+          <script>scripts\init_cutscene_acquire_cure.gml</script>
+        </scripts>
+        <scripts name="Cure Stolen">
+          <script>scripts\update_cutscene_cure_stolen.gml</script>
+          <script>scripts\init_cutscene_cure_stolen.gml</script>
+        </scripts>
+        <scripts name="Death">
+          <script>scripts\update_cutscene_death.gml</script>
+          <script>scripts\init_cutscene_death.gml</script>
+        </scripts>
+        <scripts name="Victory">
+          <script>scripts\update_cutscene_victory.gml</script>
+          <script>scripts\init_cutscene_victory.gml</script>
+        </scripts>
+        <scripts name="text object">
+          <script>scripts\init_cutscene_text.gml</script>
+          <script>scripts\update_cutscene_text.gml</script>
+          <script>scripts\draw_cutscene_text.gml</script>
+          <script>scripts\set_cutscene_text.gml</script>
+        </scripts>
+        <scripts name="image object">
+          <script>scripts\init_cutscene_image.gml</script>
+          <script>scripts\update_cutscene_image.gml</script>
+          <script>scripts\draw_cutscene_image.gml</script>
+          <script>scripts\set_cutscene_image.gml</script>
+        </scripts>
       </scripts>
     </scripts>
     <scripts name="game actions">
@@ -510,6 +557,7 @@
         <script>scripts\goto_r_main_map_with_adjust.gml</script>
       </scripts>
       <script>scripts\goto_r_map.gml</script>
+      <script>scripts\goto_r_cutscene.gml</script>
     </scripts>
     <scripts name="utils">
       <script>scripts\array_1d.gml</script>
@@ -605,6 +653,7 @@
       <object>objects\o_controller_r_main_map</object>
       <object>objects\o_controller_r_scenario</object>
       <object>objects\o_comtroller_r_safe_zone</object>
+      <object>objects\o_controller_r_cutscene</object>
     </objects>
     <objects name="dialogue">
       <object>objects\o_dialogue</object>
@@ -628,6 +677,7 @@
       <object>objects\o_button_map_continue</object>
       <object>objects\o_button_embark</object>
       <object>objects\o_button_continue</object>
+      <object>objects\o_button_cutscene</object>
     </objects>
     <objects name="label">
       <objects name="character">
@@ -706,6 +756,10 @@
       <object>objects\o_slider</object>
       <object>objects\o_slider_head</object>
     </objects>
+    <objects name="cutscene">
+      <object>objects\o_cutscene_text</object>
+      <object>objects\o_cutscene_strip</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_debug</room>
@@ -720,8 +774,9 @@
     <room>rooms\r_safe_zone</room>
     <room>rooms\r_map</room>
     <room>rooms\r_map_2</room>
+    <room>rooms\r_cutscene</room>
   </rooms>
-  <constants number="162">
+  <constants number="167">
     <constant name="CHARACTER_MENU_REC_ADJ_Y">256</constant>
     <constant name="CHARACTER_MENU_REC_ADJ_X">632</constant>
     <constant name="MAP_PLOT_DISTANCE_THRESHOLD">250</constant>
@@ -884,6 +939,11 @@
     <constant name="WEAPON_SPITTER_COOLDOWN">120</constant>
     <constant name="WEAPON_SPITTER_DAMAGE">1</constant>
     <constant name="WEAPON_SPITTER_RANGE">1.5</constant>
+    <constant name="CUTSCENE_INTRO">1</constant>
+    <constant name="CUTSCENE_ACQUIRE_CURE">2</constant>
+    <constant name="CUTSCENE_CURE_STOLEN">3</constant>
+    <constant name="CUTSCENE_DEATH">4</constant>
+    <constant name="CUTSCENE_VICTORY">5</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

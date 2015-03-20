@@ -99,6 +99,16 @@ var continueButton = instance_create(start_x,
 with(continueButton) {
      depth = 1
 }
+
+//Main Menu Button
+var mainButton = instance_create(
+    start_x + BUTTON_WIDTH, 
+    start_y + button_y,
+    o_button_r_start
+);
+with(mainButton) {
+     depth = 1
+}
 //Exit button                              
 var exitButton = instance_create(start_x + BUTTON_WIDTH * 2, 
                                  start_y + button_y,

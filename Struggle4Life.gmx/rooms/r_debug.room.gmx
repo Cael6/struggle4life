@@ -60,6 +60,7 @@
     <instance objName="o_button_r_start" x="32" y="384" name="inst_FC4EBE4F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_button_map" x="32" y="448" name="inst_D13217FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_button_option" x="32" y="512" name="inst_D1B1E0B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_button_cutscene" x="32" y="576" name="inst_C05FD0BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

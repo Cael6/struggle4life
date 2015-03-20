@@ -21,7 +21,8 @@ globalvar
           glb_cheat_ammo,
           glb_cheat_fuel,
           glb_cheat_health,
-          glb_game_bgs
+          glb_game_bgs,
+          glb_current_cutscene
           ;
 
 
@@ -68,4 +69,4 @@ glb_game_bgs = array_1d(
     bg_road_14,
     bg_road_15,
 );
-
+glb_current_cutscene = CUTSCENE_INTRO;
