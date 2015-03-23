@@ -92,8 +92,6 @@
       <sprite>sprites\s_spitter</sprite>
       <sprite>sprites\s_spitter_hover</sprite>
       <sprite>sprites\s_runner_hover</sprite>
-      <sprite>sprites\s_b</sprite>
-      <sprite>sprites\sprite54</sprite>
       <sprite>sprites\s_bruiser_death</sprite>
       <sprite>sprites\s_spitter_death</sprite>
       <sprite>sprites\s_spitter_attack</sprite>
@@ -139,6 +137,10 @@
         <sprite>sprites\s_cutscene_intro_1</sprite>
         <sprite>sprites\s_cutscene_intro_2</sprite>
       </sprites>
+    </sprites>
+    <sprites name="truck">
+      <sprite>sprites\s_truck</sprite>
+      <sprite>sprites\s_truck_fire</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -555,6 +557,11 @@
           <script>scripts\stop_o_fire.gml</script>
         </scripts>
       </scripts>
+      <scripts name="truck">
+        <script>scripts\init_truck.gml</script>
+        <script>scripts\draw_truck.gml</script>
+        <script>scripts\update_truck.gml</script>
+      </scripts>
     </scripts>
     <scripts name="room change">
       <script>scripts\goto_r_credits.gml</script>
@@ -774,6 +781,7 @@
       <object>objects\o_cutscene_text</object>
       <object>objects\o_cutscene_strip</object>
     </objects>
+    <object>objects\o_truck</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_debug</room>

@@ -10,6 +10,10 @@ with (o_character) {
     visible = false;
 }
 
+with (o_truck) {
+    visible = false;
+}
+
 with (o_resource) {
     visible = false;
 }
