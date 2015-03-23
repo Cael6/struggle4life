@@ -1,4 +1,4 @@
-if (is_in_battle && state_is_battle() && !glb_pause) {
+if (is_in_battle && state_is_battle() && !glb_pause && alive) {
     if (!is_eating) {
         if (-1 == target) {
             ai_find_target();

@@ -13,10 +13,9 @@ if (!alive) {
             sprite_index = death_animation;
         }
         if (image_number == image_index + 1) {
-            with (weapon) {
-                instance_destroy();
-            }
-            instance_destroy();
+            image_index -= 1;
+            speed = 0;
+            depth = 9999;            
         }
     } else {
         with (weapon) {
