@@ -10,6 +10,10 @@ with (o_character) {
     state = CHARACTER_STATE_BATTLE;
 }
 
+if (instance_number(o_truck) == 0) {
+    instance_create(0, 0, o_truck);
+}
+
 if (instance_number(o_enemy_spawner) == 0) {
     instance_create(0,0,o_enemy_spawner);
 }
