@@ -7,7 +7,9 @@ if (click_start && mouse_check_button_released(mb_left)) {
         if (!mb_left_action) {
             //Mouse released and intersecting fire script
             execute_self_action();
-            play_sound_effect(so_ar_fire, false);
+            if(sound > -1) {
+                play_sound_effect(sound, false);
+            }
         } else {
             execute_action(self.mb_left_action);
         }

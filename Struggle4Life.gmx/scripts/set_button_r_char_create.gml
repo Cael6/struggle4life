@@ -3,5 +3,6 @@ set_o_button(
     BUTTON_WIDTH, 
     BUTTON_HEIGHT, 
     BUTTON_TEXT_COLOR, 
-    create_character_menu
+    create_character_menu,
+    so_menu_click
 );

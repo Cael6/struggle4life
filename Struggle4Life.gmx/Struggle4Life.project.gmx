@@ -9,6 +9,13 @@
     <sound>sound\so_bg_menu</sound>
     <sound>sound\so_bg_game</sound>
     <sound>sound\so_fire_sound</sound>
+    <sounds name="button">
+      <sound>sound\so_buttonn_embark</sound>
+      <sound>sound\so_button_map</sound>
+    </sounds>
+    <sound>sound\so_zone_selected</sound>
+    <sound>sound\so_menu_click</sound>
+    <sound>sound\so_menu_click2</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="controller_icons">
@@ -165,19 +172,20 @@
     <script>scripts\init_variables.gml</script>
     <scripts name="Audio">
       <script>scripts\switch_bg_music.gml</script>
+      <script>scripts\replay_music.gml</script>
       <script>scripts\play_sound_effect.gml</script>
     </scripts>
     <scripts name="buttons">
       <script>scripts\init_o_button.gml</script>
       <script>scripts\set_o_button.gml</script>
       <script>scripts\draw_o_button.gml</script>
-      <script>scripts\eye_get_sprite_index.gml</script>
       <scripts name="r_test">
         <script>scripts\set_button_r_test.gml</script>
       </scripts>
       <scripts name="exit">
         <script>scripts\set_button_exit.gml</script>
       </scripts>
+      <script>scripts\eye_get_sprite_index.gml</script>
       <scripts name="r_credits">
         <script>scripts\set_button_r_credits.gml</script>
       </scripts>

@@ -3,5 +3,6 @@ set_o_button(
     BUTTON_WIDTH,
     BUTTON_HEIGHT,
     BUTTON_TEXT_COLOR,
-    goto_r_cutscene
+    goto_r_cutscene,
+    so_menu_click
 );

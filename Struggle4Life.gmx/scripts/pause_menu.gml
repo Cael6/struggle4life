@@ -3,6 +3,8 @@ var start_x = 192;
 var start_y = 156;
 
 //menu options
+var title_x = 200;
+var title_y = 24;
 var label_x = 64;
 var label_y = 48;
 var input_x = 384;
@@ -54,6 +56,16 @@ with(rec){
     draw_set_alpha(0.5)
 }
 
+//Top Label
+var optionLbl = instance_create(
+    start_x + title_x,
+    start_y + title_y,
+    o_label
+);
+with(optionLbl) {
+    update_o_label("Pause", BUTTON_WIDTH, BUTTON_HEIGHT, BUTTON_TEXT_COLOR);
+}
+
 //Music
 var musicLbl =  instance_create(start_x + label_x,
                                 start_y + label_y  + next_line,
@@ -92,28 +104,33 @@ with(soundBar){
 }
 
 //Continue Game
-var continueButton = instance_create(start_x, 
-                                  start_y + button_y,
-                                  o_button_close_pause
-                                  );
+var continueButton = instance_create(
+    start_x, 
+    start_y + button_y,
+    o_button_close_pause
+);
+
 with(continueButton) {
      depth = 1
 }
 
 //Main Menu Button
 var mainButton = instance_create(
-    start_x + BUTTON_WIDTH, 
+    start_x + BUTTON_WIDTH + 32, 
     start_y + button_y,
     o_button_r_start
 );
+
 with(mainButton) {
      depth = 1
 }
 //Exit button                              
-var exitButton = instance_create(start_x + BUTTON_WIDTH * 2, 
-                                 start_y + button_y,
-                                 o_button_exit
-                                 );
+var exitButton = instance_create(
+    start_x + BUTTON_WIDTH * 2 + 64, 
+    start_y + button_y,
+    o_button_exit
+);
+
 with(exitButton) {
      depth = 1
 }

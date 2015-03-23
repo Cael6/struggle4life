@@ -7,3 +7,4 @@ enabled = true;
 sprite = s_button;
 base_x = ROOM_WIDTH - BUTTON_WIDTH - 32;
 base_y = ROOM_HEIGHT - BUTTON_HEIGHT - 32;
+sound = so_button_map;

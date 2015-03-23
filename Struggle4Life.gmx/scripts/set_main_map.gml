@@ -24,7 +24,8 @@ with(button_1){
             BUTTON_WIDTH, 
             BUTTON_HEIGHT, 
             BUTTON_TEXT_COLOR, 
-            goto_r_game
+            goto_r_game,
+            so_menu_click
         );
         depth = 19;
     }
@@ -36,7 +37,8 @@ with(button_1){
             BUTTON_WIDTH, 
             BUTTON_HEIGHT, 
             BUTTON_TEXT_COLOR, 
-            goto_r_game
+            goto_r_game,
+            so_menu_click
         );
         depth = 19;
     }
@@ -51,7 +53,8 @@ if(map_type > 2 || map_type == 1){
                 BUTTON_WIDTH, 
                 BUTTON_HEIGHT, 
                 BUTTON_TEXT_COLOR, 
-                goto_r_scenario
+                goto_r_scenario,
+                so_menu_click
             );
             depth = 19;
         }
@@ -63,7 +66,8 @@ if(map_type > 2 || map_type == 1){
                 BUTTON_WIDTH, 
                 BUTTON_HEIGHT, 
                 BUTTON_TEXT_COLOR, 
-                goto_r_game
+                goto_r_game,
+                so_menu_click
             );
             depth = 19;
         }

@@ -8,3 +8,4 @@ mb_right_action = false;
 selected = false;
 enabled = true;
 click_start = false;
+sound = -1;

@@ -7,5 +7,6 @@ if (enabled) {
         }
         glb_next_map_plot = self.id;
         selected = true;
+        play_sound_effect(so_zone_selected, false);
     }
 }

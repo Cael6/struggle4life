@@ -6,3 +6,4 @@ sprite = s_button;
 action = goto_r_game;
 enabled = true;
 disabled_message = "Selected a position on the map before continuing";
+sound = so_buttonn_embark;
