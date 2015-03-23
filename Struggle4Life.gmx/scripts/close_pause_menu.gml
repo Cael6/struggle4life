@@ -28,3 +28,6 @@ with(o_button_r_start) {
 with(o_button_exit) {
     instance_destroy();
 }
+
+//Update pause flag
+glb_pause = false;

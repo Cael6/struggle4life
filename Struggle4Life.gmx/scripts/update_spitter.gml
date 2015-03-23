@@ -1,4 +1,4 @@
-if (is_in_battle && state_is_battle()) {
+if (is_in_battle && state_is_battle() && !glb_pause) {
     //look for character
     if (alive) {
         if (-1 == target) {
@@ -33,6 +33,6 @@ if (is_in_battle && state_is_battle()) {
     }
 }
 
-if (!state_is_battle()) {
+if (!state_is_battle() || glb_pause) {
     speed = 0;
 }

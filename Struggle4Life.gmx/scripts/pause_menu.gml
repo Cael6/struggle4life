@@ -117,3 +117,6 @@ var exitButton = instance_create(start_x + BUTTON_WIDTH * 2,
 with(exitButton) {
      depth = 1
 }
+
+//Set pause flag true
+glb_pause = true;
