@@ -6,8 +6,10 @@ var next_count = 0;
 var duplicate_plot = false;
 
 for (var i = 0; i < array_length_1d(curr_plots); i += 1) {
-    curr_plots[i].order_id = plot_count;
-    plot_count += 1;
+    if (curr_plots[i].order_id == -1) {
+        curr_plots[i].order_id = plot_count; //Set this current plot
+        plot_count += 1;
+    }
     for (var j = 0; j < array_length_1d(curr_plots[i].connected_plots); j += 1) {
         if (curr_plots[i].connected_plots[j].order_id == -1) { //plot not already set
             for (var k = 0; k < next_count; k += 1) { 
