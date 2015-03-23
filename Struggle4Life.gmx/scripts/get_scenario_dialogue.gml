@@ -216,7 +216,7 @@ switch (scenario_id) {
     case SCENARIO_TUT_3_2:
     
         with (o_map_plot) {
-            if (order_id == 11) {
+            if (order_id == 18) {
                 ally = true;
                 scenario_id = SCENARIO_ALLY_SNIPER;
             }
