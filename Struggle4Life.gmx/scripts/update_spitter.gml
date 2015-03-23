@@ -15,7 +15,12 @@ if (is_in_battle && state_is_battle()) {
         ) {
             move_towards_point(target.x, target.y, o_speed);
         } else {
-            speed = 0;
+            if (speed > 0) {
+                attacking = true;
+                sprite_index = attack_animation;
+                image_index = 0;
+                speed = 0;
+            }
             if (0 == weapon.curr_cooldown) {
                 with (weapon) {
                     fire_weapon();

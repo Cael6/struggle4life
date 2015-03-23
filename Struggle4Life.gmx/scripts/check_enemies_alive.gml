@@ -4,5 +4,4 @@ with (o_infected) {
     }
 }
 
-return false;
-
+return instance_number(o_infected) > 0;

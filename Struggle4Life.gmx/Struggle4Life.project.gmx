@@ -88,6 +88,11 @@
       <sprite>sprites\s_b</sprite>
       <sprite>sprites\sprite54</sprite>
       <sprite>sprites\s_bruiser_death</sprite>
+      <sprite>sprites\s_spitter_death</sprite>
+      <sprite>sprites\s_spitter_attack</sprite>
+      <sprite>sprites\s_bruiser_attack</sprite>
+      <sprite>sprites\s_runner_death</sprite>
+      <sprite>sprites\s_runner_attack</sprite>
     </sprites>
     <sprites name="textbox">
       <sprite>sprites\s_textbox</sprite>
@@ -635,6 +640,7 @@
     <font>fonts\f_cabin_sketch_lg</font>
     <font>fonts\f_default_sm</font>
     <font>fonts\font6</font>
+    <font>fonts\f_oswald_med</font>
   </fonts>
   <objects name="objects">
     <objects name="textbox">

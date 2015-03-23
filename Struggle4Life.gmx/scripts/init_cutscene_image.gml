@@ -13,7 +13,7 @@ target_x = x;
 target_y = y;
 
 active_time = 0;
-time_before_finished_animation = 150;
+time_before_finished_animation = 60;
 
 //Default Set
 set_cutscene_image(1.2, 1.2, -10, 0, 60, sprite_index);

@@ -2,6 +2,21 @@ if (character) {
 
     if (curr_cooldown > 0) {
         curr_cooldown -= 1;
+    } else {
+        if (false) {
+        if (glb_selected == noone && state_is_battle()) {
+            var curr_is_pistol = is_pistol;
+            with (self.character) {
+                c_log("character id: " + string(self.id), C_LOG__DEBUG);
+                if (
+                    using_weapon && !curr_is_pistol 
+                    || !using_weapon && curr_is_pistol
+                ) {
+                    select_character();
+                }
+            }
+        }
+        }
     }
     if (is_pistol) {
         drawing = self.character.selected && !self.character.using_weapon;

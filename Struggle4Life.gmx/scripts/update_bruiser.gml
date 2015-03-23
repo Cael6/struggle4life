@@ -22,7 +22,12 @@ if (is_in_battle && state_is_battle()) {
             if (!target.alive) {
                 is_eating = true;
             }
-            speed = 0;
+            if (speed > 0) {
+                attacking = true;
+                sprite_index = attack_animation;
+                image_index = 0;
+                speed = 0;
+            }
         } else {
             move_towards_point(target.x, target.y, o_speed);
         }

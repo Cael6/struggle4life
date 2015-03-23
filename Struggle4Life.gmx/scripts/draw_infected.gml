@@ -1,6 +1,10 @@
 if (alive) {
-    draw_sprite(body_sprite, image_index, x, y);
-
+    if (!attacking) {
+        draw_sprite(body_sprite, image_index, x, y);
+    } else {
+        draw_sprite(attack_animation, image_index, x, y);
+    }
+    
     if (gun_hover) {
         draw_sprite_ext(hover_sprite, image_index, x, y, 1, 1, 0, c_white, 1);
     }
