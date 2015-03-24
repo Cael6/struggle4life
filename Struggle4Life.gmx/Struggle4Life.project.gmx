@@ -16,6 +16,8 @@
     <sound>sound\so_zone_selected</sound>
     <sound>sound\so_menu_click</sound>
     <sound>sound\so_menu_click2</sound>
+    <sound>sound\so_zombie_1</sound>
+    <sound>sound\so_truck</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="controller_icons">
@@ -115,6 +117,7 @@
       <sprite>sprites\s_mouse_left_click</sprite>
       <sprite>sprites\s_mouse_right_click</sprite>
       <sprite>sprites\s_mouse_scroll</sprite>
+      <sprite>sprites\s_dialogue</sprite>
     </sprites>
     <sprite>sprites\s_fire</sprite>
     <sprite>sprites\s_map</sprite>
@@ -142,6 +145,10 @@
       <sprite>sprites\s_truck</sprite>
       <sprite>sprites\s_truck_fire</sprite>
     </sprites>
+    <sprites name="intro">
+      <sprite>sprites\s_struggle_soft_intro</sprite>
+      <sprite>sprites\s_struggle_4_life_intro</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_dna</background>
@@ -168,6 +175,7 @@
     <background>background\bg_road_14</background>
     <background>background\bg_road_15</background>
     <background>background\bg_black</background>
+    <background>background\bg_intro</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -347,6 +355,11 @@
           <script>scripts\draw_cutscene_image.gml</script>
           <script>scripts\set_cutscene_image.gml</script>
         </scripts>
+      </scripts>
+      <scripts name="r_intro">
+        <script>scripts\draw_intro.gml</script>
+        <script>scripts\init_intro.gml</script>
+        <script>scripts\update_intro.gml</script>
       </scripts>
     </scripts>
     <scripts name="game actions">
@@ -675,6 +688,7 @@
       <object>objects\o_controller_r_scenario</object>
       <object>objects\o_comtroller_r_safe_zone</object>
       <object>objects\o_controller_r_cutscene</object>
+      <object>objects\o_controller_r_intro</object>
     </objects>
     <objects name="dialogue">
       <object>objects\o_dialogue</object>
@@ -784,6 +798,7 @@
     <object>objects\o_truck</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\r_intro</room>
     <room>rooms\r_debug</room>
     <room>rooms\r_start</room>
     <room>rooms\r_test</room>
@@ -834,7 +849,7 @@
     <constant name="CREDITS_TITLE_FONT">f_title</constant>
     <constant name="CREDITS_TITLE_LINE_SEP">40</constant>
     <constant name="CREDITS_TITLE">"Credits"</constant>
-    <constant name="DEBUG">true</constant>
+    <constant name="DEBUG">false</constant>
     <constant name="DIALOGUE_BACKGROUND_ALPHA">1</constant>
     <constant name="DIALOGUE_BACKGROUND_COLOR">make_colour_rgb(22,22,22)</constant>
     <constant name="DIALOGUE_FONT">f_default_sm</constant>

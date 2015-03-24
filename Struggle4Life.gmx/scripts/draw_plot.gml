@@ -7,8 +7,8 @@ if (enabled) {
         for (i = 0; i < connected_count; i += 1) {
             draw_line(x, y, connected_plots[i].x, connected_plots[i].y);
         }
-        draw_set_alpha(1);
     }
+    draw_set_alpha(1);
     
     if (hover && connected_path(self.id, glb_current_map_plot)) {
         draw_sprite(sprite_index, 1, x, y);
@@ -34,4 +34,3 @@ if (enabled) {
         draw_text(x, y+10, self.order_id);
     }
 }
-
