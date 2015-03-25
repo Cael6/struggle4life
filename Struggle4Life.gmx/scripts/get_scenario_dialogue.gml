@@ -93,6 +93,7 @@ switch (scenario_id) {
         
     case SCENARIO_ALLY_SNIPER:
     
+        
         var character = instance_create(0, 0, o_character);
         var sniper = instance_create(0, 0, o_sniper);
         
@@ -102,8 +103,7 @@ switch (scenario_id) {
             character,
             s_char_3,
             s_char_3_hover,
-            sniper,
-            string(instance_number(o_character))
+            sniper
         );
         
         character.x = character.battle_position_x;
@@ -191,8 +191,7 @@ switch (scenario_id) {
             character,
             s_char_2,
             s_char_2_hover,
-            shotgun,
-            string(instance_number(o_character))
+            shotgun
         );
         
         character.x = character.battle_position_x;

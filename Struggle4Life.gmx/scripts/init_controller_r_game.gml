@@ -18,4 +18,8 @@ if (instance_number(o_enemy_spawner) == 0) {
     instance_create(0,0,o_enemy_spawner);
 }
 
+if (instance_number(o_tooltip_helper) == 0) {
+    instance_create(0, 0, o_tooltip_helper);
+}
+
 get_plot_scenario();

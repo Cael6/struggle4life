@@ -3,8 +3,8 @@ var character = argument0;
 character.char_sprite = argument1;
 character.hover_sprite = argument2;
 character.weapon = argument3;
-character.display_key = argument4;
-character.keypress = ord(argument4);
+
+c_log("Set Character", C_LOG__INFO);
 
 character.state = CHARACTER_STATE_BATTLE;
 

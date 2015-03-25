@@ -19,8 +19,7 @@ switch(scenario_step){
         character,
         s_char_2,
         s_char_2_hover,
-        shotgun,
-        string(array_length_1d(glb_characters) + 1)
+        shotgun
     );
     character.state = CHARACTER_STATE_BATTLE;
     character.depth -= instance_number(o_character);

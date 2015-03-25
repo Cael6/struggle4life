@@ -13,4 +13,16 @@ if (is_additional_update) {
 
 if (state == STATE_BATTLE && !check_enemies_alive() && enemy_spawner_finished()) {
     get_to_safe_zone();
+    //clear dead bodies
+    with (o_character) {
+        if (!alive) {
+            with (weapon) {
+                instance_destroy();
+            }
+            with (pistol) {
+                instance_destroy();
+            }
+            instance_destroy();
+        }
+    }
 }

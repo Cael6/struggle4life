@@ -16,15 +16,10 @@ if (glb_has_map) {
     o_button_map.visible = false;
 }
 
-for (var i = 0; i < array_length_1d(glb_characters); i += 1) {
-    character = glb_characters[i];
-    character.x = char_x;
-    character.y = char_y;
-    character.state = CHARACTER_STATE_DISPLAY;
-    char_x = char_x + CHARACTER_POSITION_MAP_INTERVAL;
-    
+with (o_character) {
     //Heal
-    character.hp = character.max_hp;
+    hp = max_hp;
+    state = CHARACTER_STATE_DISPLAY;
 }
 
 save_progress();

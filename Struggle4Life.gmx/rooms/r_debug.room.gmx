@@ -55,7 +55,7 @@
     <instance objName="o_button_credits" x="32" y="192" name="inst_8E7162EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_button_exit" x="32" y="64" name="inst_F80CB696" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_button_r_test" x="32" y="128" name="inst_F39A4872" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_button_char_create" x="32" y="256" name="inst_02255A20" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_button_start_game" x="32" y="256" name="inst_02255A20" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_button_r_battle" x="32" y="320" name="inst_422495F0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_button_r_start" x="32" y="384" name="inst_FC4EBE4F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="o_button_map" x="32" y="448" name="inst_D13217FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -11,8 +11,7 @@ set_character(
     character_1,
     s_char_1, 
     s_char_1_hover, 
-    assault,
-    1
+    assault
 );
 
 character_1.state = CHARACTER_STATE_DISPLAY;

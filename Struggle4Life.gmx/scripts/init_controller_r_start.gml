@@ -8,6 +8,10 @@ with(o_truck) {
     instance_destroy();
 }
 
+with (o_tooltip_helper) {
+    instance_destroy();
+}
+
 with(o_character) {
     instance_destroy()
 }
