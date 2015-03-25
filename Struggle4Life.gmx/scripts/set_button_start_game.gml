@@ -3,6 +3,6 @@ set_o_button(
     BUTTON_WIDTH, 
     BUTTON_HEIGHT, 
     BUTTON_TEXT_COLOR, 
-    start_game,
+    run_cutscene_intro,
     so_menu_click
 );

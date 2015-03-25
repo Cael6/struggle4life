@@ -258,7 +258,6 @@
       </scripts>
       <scripts name="start_game">
         <script>scripts\set_button_start_game.gml</script>
-        <script>scripts\start_game.gml</script>
       </scripts>
     </scripts>
     <scripts name="common">
@@ -343,10 +342,12 @@
         <scripts name="Intro">
           <script>scripts\update_cutscene_intro.gml</script>
           <script>scripts\init_cutscene_intro.gml</script>
+          <script>scripts\run_cutscene_intro.gml</script>
         </scripts>
         <scripts name="Acquire Cure">
           <script>scripts\update_cutscene_acquire_cure.gml</script>
           <script>scripts\init_cutscene_acquire_cure.gml</script>
+          <script>scripts\run_cutscene_acquire_cure.gml</script>
         </scripts>
         <scripts name="Cure Stolen">
           <script>scripts\update_cutscene_cure_stolen.gml</script>
@@ -380,6 +381,7 @@
       </scripts>
     </scripts>
     <scripts name="game actions">
+      <script>scripts\start_game.gml</script>
       <script>scripts\move_ahead.gml</script>
       <script>scripts\move_to_next_level.gml</script>
       <script>scripts\get_scenario_dialogue.gml</script>
