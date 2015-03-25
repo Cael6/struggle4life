@@ -23,6 +23,8 @@ with (o_map_plot) {
 
 action = select_plot;
 
+double_click_action = close_map_go_to_battle;
+
 ally = false;
 
 persistent = true;

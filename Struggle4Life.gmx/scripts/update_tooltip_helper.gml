@@ -15,6 +15,10 @@ if (state_is_battle()) {
     
     if (array_length_1d(queue) > 1) {
         pop_time += 1;
+    } else {
+        //reset when there is no real item in queue in case one was popped off 
+        //before pop time was reset.
+        pop_time = 0;
     }
     if (pop_time > 90) {
         th_queue_pop();

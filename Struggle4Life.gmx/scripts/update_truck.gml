@@ -12,6 +12,7 @@ if (key_down && keyboard_check_released(ord('F'))) {
             sprite_index = s_truck_fire;
             image_index = 0;
             change_resource_amount(RESOURCE_FUEL, -1);
+            audio_play_sound(so_flamethrower, 10, false);
         }
     }
 }
@@ -24,7 +25,7 @@ if (
     image_index = 0;
 }
 
-if (key_down) {
+if (key_down && state_is_battle()) {
     with (weapon) {
         drawing = true;
     }

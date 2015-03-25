@@ -9,4 +9,4 @@ max_damage = WEAPON_SHOTGUN_MAX_DAMAGE;
 radius = WEAPON_SHOTGUN_RADIUS;
 max_radius = WEAPON_SHOTGUN_RADIUS;
 
-fire_sound = so_ar_fire;
+fire_sound = so_shotgun;

@@ -13,6 +13,3 @@ with (o_truck) {
 with (o_resource) {
     visible = true;
 }
-
-
-goto_r_safe_zone();

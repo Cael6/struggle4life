@@ -187,7 +187,7 @@
         <arguments>
           <argument>
             <kind>9</kind>
-            <script>check_left_click</script>
+            <script>check_double_click</script>
           </argument>
           <argument>
             <kind>0</kind>
