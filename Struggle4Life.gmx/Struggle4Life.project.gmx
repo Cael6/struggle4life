@@ -700,6 +700,18 @@
         <script>scripts\check_flamethrower_tooltip.gml</script>
       </scripts>
     </scripts>
+    <scripts name="Particle">
+      <script>scripts\create_dust_cloud_black.gml</script>
+      <script>scripts\create_dust_cloud_white.gml</script>
+      <script>scripts\start_dust_cloud.gml</script>
+      <script>scripts\stop_dust_cloud.gml</script>
+      <script>scripts\create_ash.gml</script>
+      <script>scripts\start_ash.gml</script>
+      <script>scripts\stop_ash.gml</script>
+      <script>scripts\create_ash_up.gml</script>
+      <script>scripts\start_ash_up.gml</script>
+      <script>scripts\stop_ash_up.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_default_12</font>
@@ -843,9 +855,9 @@
     <room>rooms\r_intro</room>
     <room>rooms\r_debug</room>
     <room>rooms\r_start</room>
-    <room>rooms\r_test</room>
     <room>rooms\r_credits</room>
     <room>rooms\r_char_create</room>
+    <room>rooms\r_test</room>
     <room>rooms\r_game</room>
     <room>rooms\r_main_map</room>
     <room>rooms\r_battle_map</room>

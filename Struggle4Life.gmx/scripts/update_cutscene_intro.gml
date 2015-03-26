@@ -20,6 +20,15 @@ if (time == 50) {
     text_4.text = "Gaurd: They’ve gotten through! We need to ge.. ARGHH!";
 }
 
+if (mouse_check_button_released(mb_left)) {
+    for (var i = 0; i < 6; i += 1) {
+        if (time < i * 50) {
+            time = i * 50;
+            break;
+        }
+    }
+}
+
 if (time > 300) {
     if (mouse_check_button_released(mb_left)) {
         run_cutscene_acquire_cure();
