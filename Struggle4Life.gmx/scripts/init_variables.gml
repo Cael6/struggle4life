@@ -72,8 +72,3 @@ glb_game_bgs = array_1d(
 );
 glb_current_cutscene = CUTSCENE_INTRO;
 glb_available_chars = array_1d(1, 2, 3);
-
-create_dust_cloud_black();
-create_dust_cloud_white();
-create_ash();
-create_ash_up();

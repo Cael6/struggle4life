@@ -22,9 +22,6 @@ if (instance_number(o_tooltip_helper) == 0) {
     instance_create(0, 0, o_tooltip_helper);
 }
 
-stop_dust_cloud();
-start_dust_cloud();
-start_ash();
-stop_ash_up();
+show_particles(true, true, true, false);
 
 get_plot_scenario();

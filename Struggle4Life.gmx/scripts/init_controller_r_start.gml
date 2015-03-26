@@ -33,6 +33,4 @@ for (var i = 0; i < num; i += 1) {
 }
 switch_bg_music(so_bg_menu);
 
-stop_ash();
-stop_ash_up();
-start_dust_cloud();
+show_particles(true, true, false, false);

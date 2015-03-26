@@ -710,14 +710,15 @@
     <scripts name="Particle">
       <script>scripts\create_dust_cloud_black.gml</script>
       <script>scripts\create_dust_cloud_white.gml</script>
-      <script>scripts\start_dust_cloud.gml</script>
-      <script>scripts\stop_dust_cloud.gml</script>
       <script>scripts\create_ash.gml</script>
-      <script>scripts\start_ash.gml</script>
-      <script>scripts\stop_ash.gml</script>
       <script>scripts\create_ash_up.gml</script>
+      <script>scripts\start_dust_cloud.gml</script>
+      <script>scripts\start_ash.gml</script>
       <script>scripts\start_ash_up.gml</script>
+      <script>scripts\stop_dust_cloud.gml</script>
+      <script>scripts\stop_ash.gml</script>
       <script>scripts\stop_ash_up.gml</script>
+      <script>scripts\show_particles.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">

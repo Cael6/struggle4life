@@ -22,9 +22,6 @@ with (o_character) {
     state = CHARACTER_STATE_DISPLAY;
 }
 
-stop_dust_cloud();
-start_dust_cloud();
-start_ash();
-start_ash_up();
+show_particles(true, true, true, true);
 
 save_progress();
