@@ -22,12 +22,11 @@ if (is_in_battle && state_is_battle() && !glb_pause && alive) {
                 speed = 0;
             }
             if (0 == weapon.curr_cooldown) {
-                with (weapon) {
-                    fire_weapon();
-                }
                 if (!target.alive) {
                     ai_find_target();
                 }
+                fire_spitter();
+                weapon.curr_cooldown = weapon.cooldown;
             }
         }
     }

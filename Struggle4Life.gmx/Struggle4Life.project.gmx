@@ -104,6 +104,7 @@
       <sprite>sprites\s_bruiser_attack</sprite>
       <sprite>sprites\s_runner_death</sprite>
       <sprite>sprites\s_runner_attack</sprite>
+      <sprite>sprites\s_spitter_projectile</sprite>
     </sprites>
     <sprites name="textbox">
       <sprite>sprites\s_textbox</sprite>
@@ -552,6 +553,12 @@
             <script>scripts\draw_spitter.gml</script>
             <script>scripts\init_spitter.gml</script>
             <script>scripts\update_spitter.gml</script>
+            <script>scripts\fire_spitter.gml</script>
+            <scripts name="projectile">
+              <script>scripts\init_spitter_projectile.gml</script>
+              <script>scripts\update_spitter_projectile.gml</script>
+              <script>scripts\draw_spitter_projectile.gml</script>
+            </scripts>
           </scripts>
           <script>scripts\init_infected.gml</script>
           <script>scripts\update_infected.gml</script>
@@ -850,6 +857,7 @@
     </objects>
     <object>objects\o_truck</object>
     <object>objects\o_tooltip_helper</object>
+    <object>objects\o_spitter_projectile</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_intro</room>
