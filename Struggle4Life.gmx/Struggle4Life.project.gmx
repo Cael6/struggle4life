@@ -327,6 +327,7 @@
         <script>scripts\update_controller_r_safe_zone.gml</script>
         <script>scripts\init_controller_r_safe_zone.gml</script>
         <script>scripts\draw_controller_r_safe_zone.gml</script>
+        <script>scripts\safe_zone_transfer_to_battle.gml</script>
       </scripts>
       <scripts name="Enemy Spawner">
         <script>scripts\init_enemy_spawner.gml</script>

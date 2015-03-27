@@ -1,4 +1,5 @@
 if (selected) {
     hide_map();
-    goto_r_game();
+    safe_zone_transfer_to_battle();
+    goto_r_safe_zone();
 }

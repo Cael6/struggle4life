@@ -23,7 +23,8 @@ globalvar
           glb_cheat_health,
           glb_game_bgs,
           glb_current_cutscene,
-          glb_available_chars
+          glb_available_chars,
+          glb_safe_zone_night
           ;
 
 
@@ -72,3 +73,4 @@ glb_game_bgs = array_1d(
 );
 glb_current_cutscene = CUTSCENE_INTRO;
 glb_available_chars = array_1d(1, 2, 3);
+glb_safe_zone_night = false;
