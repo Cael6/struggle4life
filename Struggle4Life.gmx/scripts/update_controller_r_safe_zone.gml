@@ -8,4 +8,8 @@ if (!room_transfering && glb_safe_zone_night) {
     room_transfering = true;
     glb_safe_zone_night = false;
     transfer_script = goto_r_game;
+    with (o_button) {
+        visible = false;
+        enabled = false;
+    }
 }
