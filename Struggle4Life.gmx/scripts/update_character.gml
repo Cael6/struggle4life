@@ -32,3 +32,8 @@ if (selected) {
         select_character();
     }
 }
+if (alive) {
+    depth = ROOM_HEIGHT - (y + height);
+} else {
+    depth = ROOM_HEIGHT;
+}

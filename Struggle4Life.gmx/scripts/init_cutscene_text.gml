@@ -15,7 +15,9 @@ target_y = y;
 active_time = 0;
 time_before_finished_animation = 150;
 
+animating = false;
+
 text = "";
 
 //Default Set
-set_cutscene_text(1.2, 1.2, 0, 0, 60, "");
+set_cutscene_text(1.2, 1.2, 0, 0, 50, "");

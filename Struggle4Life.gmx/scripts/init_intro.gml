@@ -10,6 +10,7 @@ create_dust_cloud_black();
 create_dust_cloud_white();
 create_ash();
 create_ash_up();
+create_particle_blood();
 
 start_dust_cloud();
 start_ash();

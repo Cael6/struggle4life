@@ -163,6 +163,7 @@
       <sprite>sprites\s_tooltip_char_1_died</sprite>
       <sprite>sprites\s_tooltip_char_2_died</sprite>
       <sprite>sprites\s_tooltip_char_3_died</sprite>
+      <sprite>sprites\s_tooltip_area_clear</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -280,6 +281,8 @@
     </scripts>
     <scripts name="controllers">
       <script>scripts\init_room.gml</script>
+      <script>scripts\update_room.gml</script>
+      <script>scripts\draw_room.gml</script>
       <scripts name="r_credits">
         <script>scripts\init_controller_r_credits.gml</script>
         <script>scripts\update_controller_r_credits.gml</script>
@@ -367,6 +370,7 @@
           <script>scripts\update_cutscene_text.gml</script>
           <script>scripts\draw_cutscene_text.gml</script>
           <script>scripts\set_cutscene_text.gml</script>
+          <script>scripts\force_cutscene_text_to_final.gml</script>
         </scripts>
         <scripts name="image object">
           <script>scripts\init_cutscene_image.gml</script>
@@ -705,6 +709,7 @@
         <script>scripts\check_3_dead_tooltip.gml</script>
         <script>scripts\check_no_ammo_tooltip.gml</script>
         <script>scripts\check_flamethrower_tooltip.gml</script>
+        <script>scripts\check_area_cleared_tooltip.gml</script>
       </scripts>
     </scripts>
     <scripts name="Particle">
@@ -712,6 +717,7 @@
       <script>scripts\create_dust_cloud_white.gml</script>
       <script>scripts\create_ash.gml</script>
       <script>scripts\create_ash_up.gml</script>
+      <script>scripts\create_particle_blood.gml</script>
       <script>scripts\start_dust_cloud.gml</script>
       <script>scripts\start_ash.gml</script>
       <script>scripts\start_ash_up.gml</script>

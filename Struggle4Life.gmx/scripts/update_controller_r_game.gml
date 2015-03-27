@@ -11,8 +11,9 @@ if (is_additional_update) {
     script_execute(additional_update);
 }
 
-if (state == STATE_BATTLE && !check_enemies_alive() && enemy_spawner_finished()) {
-    get_to_safe_zone();
+if (!room_transfering && state_is_battle() && !check_enemies_alive() && enemy_spawner_finished()) {
+    room_transfering = true;
+    transfer_script = get_to_safe_zone;
     //clear dead bodies
     with (o_character) {
         if (!alive) {

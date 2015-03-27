@@ -11,4 +11,5 @@ char_1_already_dead = false;
 char_2_already_dead = false;
 char_3_already_dead = false;
 
+area_cleared = false;
 

@@ -86,5 +86,5 @@ if (alive) {
         draw_sprite(hover_sprite, image_index, x, y);
     }
 } else {
-    draw_sprite_ext(sprite_index, image_index, x, y + height, 1, 1, 90, c_white, 1);
+    draw_sprite_ext(char_sprite, 0, x, y + height, 1, 1, 90, c_white, 1);
 }

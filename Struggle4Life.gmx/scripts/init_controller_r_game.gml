@@ -4,6 +4,9 @@ background_index[0] = glb_game_bgs[irandom(14)];
 is_additional_update = false;
 additional_update = -1;
 
+time = 0;
+area_cleared = false;
+
 with (o_character) {
     x = battle_position_x;
     y = battle_position_y;

@@ -8,13 +8,13 @@ if (is_in_battle && state_is_battle() && !glb_pause && alive) {
             rectangle_in_rectangle(
                 target.x,
                 target.y,
-                target.x + target.width,
+                target.x + target.width / 2,
                 target.y + target.height,
                 x,
                 y,
                 x + width,
                 y + height
-            )
+            ) > 0
         ) { //in range
             with (weapon) {
                 fire_weapon();
@@ -22,6 +22,8 @@ if (is_in_battle && state_is_battle() && !glb_pause && alive) {
             if (!target.alive) {
                 is_eating = true;
             }
+            x = target.x + target.width / 2;
+            y = target.y + target.height / 2 - 10;
             if (speed > 0) {
                 attacking = true;
                 sprite_index = attack_animation;
@@ -29,7 +31,11 @@ if (is_in_battle && state_is_battle() && !glb_pause && alive) {
                 speed = 0;
             }
         } else {
-            move_towards_point(target.x, target.y, o_speed);
+            move_towards_point(
+                target.x,
+                target.y + target.height / 2,
+                o_speed
+            );
         }
     } else {
         //eat some more

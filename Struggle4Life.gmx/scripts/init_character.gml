@@ -71,4 +71,3 @@ battle_position = get_next_char_position();
 
 battle_position_x = battle_position[0];
 battle_position_y = battle_position[1];
-

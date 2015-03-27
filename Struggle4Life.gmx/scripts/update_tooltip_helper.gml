@@ -25,4 +25,12 @@ if (state_is_battle()) {
         pop_time = 0;
     }
     
+    //Check after popping so there is no flash.
+    check_area_cleared_tooltip();
+    
+    
+} else {
+    while (array_length_1d(queue) > 1) {
+        th_queue_pop();
+    }
 }
