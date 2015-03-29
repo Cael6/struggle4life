@@ -388,7 +388,9 @@
     </scripts>
     <scripts name="game actions">
       <script>scripts\start_game.gml</script>
+      <script>scripts\get_ally.gml</script>
       <script>scripts\move_ahead.gml</script>
+      <script>scripts\update_plot_status.gml</script>
       <script>scripts\move_to_next_level.gml</script>
       <script>scripts\get_scenario_dialogue.gml</script>
       <script>scripts\get_tutorial_dialogue.gml</script>
@@ -883,7 +885,7 @@
     <room>rooms\r_map_2</room>
     <room>rooms\r_cutscene</room>
   </rooms>
-  <constants number="168">
+  <constants number="180">
     <constant name="ARROW_SIZE">40</constant>
     <constant name="BUTTON_FONT">f_default_sm</constant>
     <constant name="BUTTON_HEIGHT">40</constant>
@@ -923,7 +925,7 @@
     <constant name="CUTSCENE_DEATH">4</constant>
     <constant name="CUTSCENE_INTRO">1</constant>
     <constant name="CUTSCENE_VICTORY">5</constant>
-    <constant name="DEBUG">false</constant>
+    <constant name="DEBUG">true</constant>
     <constant name="DIALOGUE_BACKGROUND_ALPHA">1</constant>
     <constant name="DIALOGUE_BACKGROUND_COLOR">make_colour_rgb(22,22,22)</constant>
     <constant name="DIALOGUE_FONT">f_default_sm</constant>
@@ -986,13 +988,25 @@
     <constant name="RESOURCE_WIDTH">100</constant>
     <constant name="ROOM_HEIGHT">768</constant>
     <constant name="ROOM_WIDTH">1024</constant>
+    <constant name="SCENARIO_ALLY_ADD">853</constant>
+    <constant name="SCENARIO_ALLY_ASSAULT">852</constant>
+    <constant name="SCENARIO_ALLY_SHOTGUN">851</constant>
     <constant name="SCENARIO_ALLY_SNIPER">850</constant>
     <constant name="SCENARIO_COUNT">1</constant>
     <constant name="SCENARIO_GAME_OVER">1</constant>
     <constant name="SCENARIO_GAME_START">2</constant>
     <constant name="SCENARIO_GAME_WIN">4</constant>
+    <constant name="SCENARIO_MAP_UPDATE_3">2004</constant>
+    <constant name="SCENARIO_MAP_UPDATE_2">2003</constant>
+    <constant name="SCENARIO_MAP_UPDATE_1">2002</constant>
+    <constant name="SCENARIO_REWARD_AMMO">2001</constant>
+    <constant name="SCENARIO_HARD_BATTLE">2000</constant>
     <constant name="SCENARIO_LEVEL_FIRST">1</constant>
     <constant name="SCENARIO_LEVEL_TUTORIAL">0</constant>
+    <constant name="SCENARIO_MAP_UPDATE_PLOT_1">3</constant>
+    <constant name="SCENARIO_MAP_UPDATE_PLOT_2">9</constant>
+    <constant name="SCENARIO_MAP_UPDATE_PLOT_3">34</constant>
+    <constant name="SCENARIO_MAP_UPDATE_PLOT_4">46</constant>
     <constant name="SCENARIO_OVERRUN_BASE">5</constant>
     <constant name="SCENARIO_RANDOM_END">1001</constant>
     <constant name="SCENARIO_RANDOM_START">1000</constant>
@@ -1042,8 +1056,8 @@
     <constant name="WEAPON_RUNNER_DAMAGE">4</constant>
     <constant name="WEAPON_RUNNER_RANGE">-2</constant>
     <constant name="WEAPON_SHOTGUN_COOLDOWN">30</constant>
-    <constant name="WEAPON_SHOTGUN_MIN_DAMAGE">2</constant>
     <constant name="WEAPON_SHOTGUN_MAX_DAMAGE">5</constant>
+    <constant name="WEAPON_SHOTGUN_MIN_DAMAGE">2</constant>
     <constant name="WEAPON_SHOTGUN_RADIUS">96</constant>
     <constant name="WEAPON_SHOTGUN_RANGE">2</constant>
     <constant name="WEAPON_SNIPER_COOLDOWN">60</constant>

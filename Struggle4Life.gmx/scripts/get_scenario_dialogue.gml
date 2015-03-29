@@ -120,6 +120,77 @@ switch (scenario_id) {
         glb_current_map_plot.ally = false;
         
         break;
+    
+    case SCENARIO_ALLY_SHOTGUN:
+    
+        
+        var character = instance_create(0, 0, o_character);
+        var sniper = instance_create(0, 0, o_shotgun);
+        
+        sniper.character = character;
+        
+        set_character(
+            character,
+            s_char_2,
+            s_char_2_hover,
+            sniper
+        );
+        
+        character.x = character.battle_position_x;
+        character.y = character.battle_position_y;
+    
+        var dialogue_text = "You have come across an allied shotgunner. He joins the mission.";
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        dialogue_add_option(dialogue, "Welcome aboard", goto_r_safe_zone, '1');
+        //Prevent infinite ally
+        glb_current_map_plot.scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END);
+        glb_current_map_plot.ally = false;
+        
+        break;
+    
+    case SCENARIO_ALLY_ASSAULT:
+    
+        
+        var character = instance_create(0, 0, o_character);
+        var sniper = instance_create(0, 0, o_assault_rifle);
+        
+        sniper.character = character;
+        
+        set_character(
+            character,
+            s_char_5,
+            s_char_5_hover,
+            sniper
+        );
+        
+        character.x = character.battle_position_x;
+        character.y = character.battle_position_y;
+    
+        var dialogue_text = "You have come across an allied guy with assault rifle. He joins the mission.";
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        dialogue_add_option(dialogue, "Welcome aboard", goto_r_safe_zone, '1');
+        //Prevent infinite ally
+        glb_current_map_plot.scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END);
+        glb_current_map_plot.ally = false;
+        
+        break;
+    
+    case SCENARIO_ALLY_ADD:
+        var type =  0;
+        if(instance_number(o_character) > 2) {
+            get_scenario_dialogue(irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END));
+        }
+        else {
+            type = get_ally();
+            get_scenario_dialogue(type);
+        }
+        break;
             
     case SCENARIO_TUT_1_1:
     
@@ -213,13 +284,8 @@ switch (scenario_id) {
         break;
         
     case SCENARIO_TUT_3_2:
-    
-        with (o_map_plot) {
-            if (order_id == 18) {
-                ally = true;
-                scenario_id = SCENARIO_ALLY_SNIPER;
-            }
-        }
+        //Update map
+        update_plot_status(SCENARIO_MAP_UPDATE_PLOT_1);
     
         var dialogue_text = "Your new ally takes your map and updates it with the information he has.##He also points out the location of his friend who he was with before he was chased off by that group of crawlers.";
         with (dialogue) {
@@ -296,7 +362,115 @@ switch (scenario_id) {
         
         break;
         
+    case SCENARIO_HARD_BATTLE:
         
+        var enemy_count = instance_number(o_character) * glb_current_map_plot.order_id * 3;
+        set_enemy_spawner(enemy_count, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_ALL, 30);
+        
+        var dialogue_text = "You've come across " + string(enemy_count) + " infected.";
+        
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        dialogue_add_option(dialogue, "To Battle", start_battle, '1');
+        
+        //Randomize event after beeting
+        glb_current_map_plot.scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_HARD_BATTLE);
+        if(glb_current_map_plot.scenario_id == SCENARIO_HARD_BATTLE){
+            glb_current_map_plot.hard = false;
+        }
+        else{
+            
+        }
+        
+        
+        break;
+    
+    case SCENARIO_REWARD_AMMO:
+        
+        var reward = array_1d(100, 0);
+        var dialogue_text = "";
+        if (reward[0] > 0 || reward[1] > 0) {
+            dialogue_text += "The party comes across a little extra resources.##";
+        } else {
+            get_scenario_dialogue(SCENARIO_SAFE_ZONE);
+            break;
+        }
+        
+        if (reward[0] > 0) {
+            dialogue_text += string(reward[0]) + " ammo#";
+        }
+        
+        if (reward[1] > 0) {
+            dialogue_text += string(reward[1]) + " fuel#";
+        }
+        
+        change_resource_amount(RESOURCE_AMMO, reward[0]);
+        change_resource_amount(RESOURCE_FUEL, reward[1]);
+        
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        dialogue_add_option(dialogue, "Continue", get_to_safe_zone, '1');
+        
+        //Prevent infinite rewards
+        glb_current_map_plot.scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END);
+        
+        break;
+        
+    case SCENARIO_MAP_UPDATE_1:
+        
+        //Update map
+        update_plot_status(SCENARIO_MAP_UPDATE_PLOT_2);
+        
+        var dialogue_text = "You have found a new map. Informtion about area around is added.";
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        dialogue_add_option(dialogue, "Continue", goto_r_safe_zone, '1');
+        //Prevent infinite ally
+        glb_current_map_plot.scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END);
+        glb_current_map_plot.ally = false;
+        
+        break; 
+    
+    case SCENARIO_MAP_UPDATE_2:
+        
+        //Update map
+        update_plot_status(SCENARIO_MAP_UPDATE_PLOT_3);
+        
+        var dialogue_text = "You have found a new map. Informtion about area around is added.";
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        dialogue_add_option(dialogue, "Continue", goto_r_safe_zone, '1');
+        //Prevent infinite ally
+        glb_current_map_plot.scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END);
+        glb_current_map_plot.ally = false;
+        
+        break;   
+        
+    case SCENARIO_MAP_UPDATE_3:
+        
+        //Update map
+        update_plot_status(SCENARIO_MAP_UPDATE_PLOT_4);
+        
+        var dialogue_text = "You have found a new map. Informtion about area around is added.";
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        dialogue_add_option(dialogue, "Continue", goto_r_safe_zone, '1');
+        //Prevent infinite ally
+        glb_current_map_plot.scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END);
+        glb_current_map_plot.ally = false;
+        
+        break;   
+         
     default:
         c_log("Got to default dialogue scenario with scenario_id: " + string(scenario_id), C_LOG__ERROR);
         var dialogue_text = "Something went wrong with the scenario generator##Please tell a dev!";

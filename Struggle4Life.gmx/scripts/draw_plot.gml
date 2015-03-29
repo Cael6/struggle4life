@@ -17,7 +17,13 @@ if (enabled) {
     }
     
     if (ally) {
-        draw_sprite(s_ally_plot, -1, x, y);
+        if(instance_number(o_character) < 3) {
+            draw_sprite(s_ally_plot, -1, x, y);
+        }
+    }
+    
+     if (hard) {
+        draw_sprite(s_bruiser, -1, x, y);
     }
     
     if (selected) {

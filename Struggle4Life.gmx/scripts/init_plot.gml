@@ -26,5 +26,7 @@ action = select_plot;
 double_click_action = close_map_go_to_battle;
 
 ally = false;
+hard = false;
+
 
 persistent = true;
