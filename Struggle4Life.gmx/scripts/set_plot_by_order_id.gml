@@ -39,11 +39,10 @@ if (self.object_index == o_map_base_2) {
     //UPDATE HARD STAGE:
     for (var i = 0; i < array_length_1d(hard_stage); i += 1) {
             if( hard_stage[i] == order_id) {
-                scenario_id = SCENARIO_HARD_BATTLE;
+                scenario_id = SCENARIO_HORDE_ALL_BATTLE;
             }
     }
     
 }
-
 
 

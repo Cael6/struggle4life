@@ -18,12 +18,16 @@ if (enabled) {
     
     if (ally) {
         if(instance_number(o_character) < 3) {
-            draw_sprite(s_ally_plot, -1, x, y);
+            draw_sprite(s_map_ally, -1, x, y);
         }
     }
     
      if (hard) {
-        draw_sprite(s_bruiser, -1, x, y);
+        if(horde_sprite > 0) {
+            draw_sprite(horde_sprite, -1, x, y);
+        }else{
+            draw_sprite(s_map_horde_all, -1, x, y);
+        }
     }
     
     if (selected) {

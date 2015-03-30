@@ -4,6 +4,7 @@ deselect_character();
 // Scenarios 1 - 999 are reserved for static scenarios
 // Scenarios 1000+ are random scenarios.
 var scenario_id = argument0;
+var mapUpdateList;
 
 var dialogue = instance_create(
                    get_horizontal_center_from_width(DIALOGUE_WIDTH),
@@ -362,11 +363,11 @@ switch (scenario_id) {
         
         break;
         
-    case SCENARIO_HARD_BATTLE:
+    case SCENARIO_HORDE_ALL_BATTLE:
         
         var enemy_count = instance_number(o_character) * glb_current_map_plot.order_id * 3;
         set_enemy_spawner(enemy_count, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_ALL, 30);
-        
+
         var dialogue_text = "You've come across " + string(enemy_count) + " infected.";
         
         with (dialogue) {
@@ -376,23 +377,138 @@ switch (scenario_id) {
         dialogue_add_option(dialogue, "To Battle", start_battle, '1');
         
         //Randomize event after beeting
-        glb_current_map_plot.scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_HARD_BATTLE);
-        if(glb_current_map_plot.scenario_id == SCENARIO_HARD_BATTLE){
-            glb_current_map_plot.hard = false;
-        }
-        else{
-            
-        }
-        
+        mapUpdateList = get_horde_map();
+        glb_current_map_plot.scenario_id = mapUpdateList[0];
+        glb_current_map_plot.horde_sprite = mapUpdateList[1];
         
         break;
-    
+
+    case SCENARIO_HORDE_BRUISER_BATTLE:
+        
+        var enemy_count = instance_number(o_character) * glb_current_map_plot.order_id * 3;
+        set_enemy_spawner(enemy_count, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_BRUISER, 30);
+
+        var dialogue_text = "You've come across " + string(enemy_count) + " infected.";
+        
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        dialogue_add_option(dialogue, "To Battle", start_battle, '1');
+        
+        //Randomize event after beeting
+        mapUpdateList = get_horde_map();
+        glb_current_map_plot.scenario_id = mapUpdateList[0];
+        glb_current_map_plot.horde_sprite = mapUpdateList[1];
+        
+        break;
+        
+    case SCENARIO_HORDE_SPITTER_BATTLE:
+        
+        var enemy_count = instance_number(o_character) * glb_current_map_plot.order_id * 3;
+        set_enemy_spawner(enemy_count, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_SPITTER, 30);
+
+        var dialogue_text = "You've come across " + string(enemy_count) + " infected.";
+        
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        dialogue_add_option(dialogue, "To Battle", start_battle, '1');
+        
+        //Randomize event after beeting
+        mapUpdateList = get_horde_map();
+        glb_current_map_plot.scenario_id = mapUpdateList[0];
+        glb_current_map_plot.horde_sprite = mapUpdateList[1];
+        
+        break;   
+        
+    case SCENARIO_HORDE_CRAWLER_BATTLE:
+        
+        var enemy_count = instance_number(o_character) * glb_current_map_plot.order_id * 3;
+        set_enemy_spawner(enemy_count, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_CRAWLER, 30);
+
+        var dialogue_text = "You've come across " + string(enemy_count) + " infected.";
+        
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        dialogue_add_option(dialogue, "To Battle", start_battle, '1');
+        
+        //Randomize event after beeting
+        mapUpdateList = get_horde_map();
+        glb_current_map_plot.scenario_id = mapUpdateList[0];
+        glb_current_map_plot.horde_sprite = mapUpdateList[1];
+        
+        break;   
+        
+    case SCENARIO_HORDE_CRAWLER_BRUISER_BATTLE:
+        
+        var enemy_count = instance_number(o_character) * glb_current_map_plot.order_id * 3;
+        set_enemy_spawner(enemy_count, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_CRAWLER_BRUISER, 30);
+
+        var dialogue_text = "You've come across " + string(enemy_count) + " infected.";
+        
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        dialogue_add_option(dialogue, "To Battle", start_battle, '1');
+        
+        //Randomize event after beeting
+        mapUpdateList = get_horde_map();
+        glb_current_map_plot.scenario_id = mapUpdateList[0];
+        glb_current_map_plot.horde_sprite = mapUpdateList[1];
+        
+        break;                  
+ 
+    case SCENARIO_HORDE_CRAWLER_SPITTER_BATTLE:
+        
+        var enemy_count = instance_number(o_character) * glb_current_map_plot.order_id * 3;
+        set_enemy_spawner(enemy_count, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_CRAWLER_SPITTER, 30);
+
+        var dialogue_text = "You've come across " + string(enemy_count) + " infected.";
+        
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        dialogue_add_option(dialogue, "To Battle", start_battle, '1');
+        
+        //Randomize event after beeting
+        mapUpdateList = get_horde_map();
+        glb_current_map_plot.scenario_id = mapUpdateList[0];
+        glb_current_map_plot.horde_sprite = mapUpdateList[1];
+        
+        break;     
+            
+    case SCENARIO_HORDE_BRUISER_SPITTER_BATTLE:
+        
+        var enemy_count = instance_number(o_character) * glb_current_map_plot.order_id * 3;
+        set_enemy_spawner(enemy_count, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_SPITTER_BRUISER, 30);
+
+        var dialogue_text = "You've come across " + string(enemy_count) + " infected.";
+        
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        dialogue_add_option(dialogue, "To Battle", start_battle, '1');
+        
+        //Randomize event after beeting
+        mapUpdateList = get_horde_map();
+        glb_current_map_plot.scenario_id = mapUpdateList[0];
+        glb_current_map_plot.horde_sprite = mapUpdateList[1];
+        
+        break;       
+                       
     case SCENARIO_REWARD_AMMO:
         
         var reward = array_1d(100, 0);
         var dialogue_text = "";
         if (reward[0] > 0 || reward[1] > 0) {
-            dialogue_text += "The party comes across a little extra resources.##";
+            dialogue_text += "The party comes across a gun shop. You found a lot of extra resources.##";
         } else {
             get_scenario_dialogue(SCENARIO_SAFE_ZONE);
             break;

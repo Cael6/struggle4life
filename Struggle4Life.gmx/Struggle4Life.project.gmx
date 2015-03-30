@@ -139,6 +139,14 @@
       <sprite>sprites\s_map_plot_6</sprite>
       <sprite>sprites\s_selected_plot</sprite>
       <sprite>sprites\s_map_locator</sprite>
+      <sprite>sprites\s_map_ally</sprite>
+      <sprite>sprites\s_map_horde_all</sprite>
+      <sprite>sprites\s_map_horde_spitter</sprite>
+      <sprite>sprites\s_map_horde_bruiser</sprite>
+      <sprite>sprites\s_map_horde_bruiser_spitter</sprite>
+      <sprite>sprites\s_map_horde_crawler_bruiser</sprite>
+      <sprite>sprites\s_map_horde_crawler_spitter</sprite>
+      <sprite>sprites\s_map_horde_crawler</sprite>
     </sprites>
     <sprites name="cutscene">
       <sprites name="Intro">
@@ -389,6 +397,7 @@
     <scripts name="game actions">
       <script>scripts\start_game.gml</script>
       <script>scripts\get_ally.gml</script>
+      <script>scripts\get_horde_map.gml</script>
       <script>scripts\move_ahead.gml</script>
       <script>scripts\update_plot_status.gml</script>
       <script>scripts\move_to_next_level.gml</script>
@@ -739,6 +748,7 @@
     <font>fonts\f_default_sm</font>
     <font>fonts\font6</font>
     <font>fonts\f_oswald_med</font>
+    <font>fonts\font8</font>
   </fonts>
   <objects name="objects">
     <objects name="textbox">
@@ -885,7 +895,7 @@
     <room>rooms\r_map_2</room>
     <room>rooms\r_cutscene</room>
   </rooms>
-  <constants number="180">
+  <constants number="186">
     <constant name="ARROW_SIZE">40</constant>
     <constant name="BUTTON_FONT">f_default_sm</constant>
     <constant name="BUTTON_HEIGHT">40</constant>
@@ -1000,7 +1010,13 @@
     <constant name="SCENARIO_MAP_UPDATE_2">2003</constant>
     <constant name="SCENARIO_MAP_UPDATE_1">2002</constant>
     <constant name="SCENARIO_REWARD_AMMO">2001</constant>
-    <constant name="SCENARIO_HARD_BATTLE">2000</constant>
+    <constant name="SCENARIO_HORDE_BRUISER_SPITTER_BATTLE">1008</constant>
+    <constant name="SCENARIO_HORDE_CRAWLER_SPITTER_BATTLE">1007</constant>
+    <constant name="SCENARIO_HORDE_CRAWLER_BRUISER_BATTLE">1006</constant>
+    <constant name="SCENARIO_HORDE_CRAWLER_BATTLE">1005</constant>
+    <constant name="SCENARIO_HORDE_SPITTER_BATTLE">1004</constant>
+    <constant name="SCENARIO_HORDE_BRUISER_BATTLE">1003</constant>
+    <constant name="SCENARIO_HORDE_ALL_BATTLE">1002</constant>
     <constant name="SCENARIO_LEVEL_FIRST">1</constant>
     <constant name="SCENARIO_LEVEL_TUTORIAL">0</constant>
     <constant name="SCENARIO_MAP_UPDATE_PLOT_1">3</constant>

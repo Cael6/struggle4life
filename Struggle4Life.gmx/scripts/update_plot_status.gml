@@ -1,4 +1,5 @@
 var update_plot = argument0;
+var list;
 
 switch(update_plot) {
     case SCENARIO_MAP_UPDATE_PLOT_1:
@@ -14,20 +15,24 @@ switch(update_plot) {
             }
             
             if (order_id == 5) {
+                horde_type = get_horde_map();
                 hard = true;
-                scenario_id = SCENARIO_HARD_BATTLE;
+                scenario_id = horde_type[0];
+                horde_sprite = horde_type[1];
             }
         }
         break;
     
     case SCENARIO_MAP_UPDATE_PLOT_2:
-        var hard_stage = array_1d(8, 14, 23, 22, 21, 30);
+        var hard_stage = array_1d(14, 23, 22, 21, 30);
         with (o_map_plot) {
             //UPDATE HARD STAGE:
             for (var i = 0; i < array_length_1d(hard_stage); i += 1) {
                     if( hard_stage[i] == order_id) {
+                        horde_type = get_horde_map();
                         hard = true;
-                        scenario_id = SCENARIO_HARD_BATTLE;
+                        scenario_id = horde_type[0];
+                        horde_sprite = horde_type[1];
                     }
             }
         }
@@ -41,8 +46,10 @@ switch(update_plot) {
             }
             
             if (order_id == 33) {
+                horde_type = get_horde_map();
                 hard = true;
-                scenario_id = SCENARIO_HARD_BATTLE;
+                scenario_id = horde_type[0];
+                horde_sprite = horde_type[1];
             }
             
         }
@@ -56,8 +63,10 @@ switch(update_plot) {
             }
             
             if (order_id == 47) {
+                horde_type = get_horde_map();
                 hard = true;
-                scenario_id = SCENARIO_HARD_BATTLE;
+                scenario_id = horde_type[0];
+                horde_sprite = horde_type[1];
             }
             
             if (order_id == 49) {

@@ -26,6 +26,8 @@ action = select_plot;
 double_click_action = close_map_go_to_battle;
 
 ally = false;
+
+horde_sprite = -4;
 hard = false;
 
 
