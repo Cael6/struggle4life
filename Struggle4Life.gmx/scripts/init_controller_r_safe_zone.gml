@@ -24,7 +24,7 @@ with (o_character) {
 
 show_particles(true, true, true, true);
 
-if (get_resource_count(RESOURCE_CURE) == 0) {
+if (get_resource_count(RESOURCE_CURE) == 1) {
     run_cutscene_cure_stolen();
 }
 
