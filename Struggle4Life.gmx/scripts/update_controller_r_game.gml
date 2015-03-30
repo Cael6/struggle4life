@@ -24,6 +24,15 @@ if (!room_transfering && state_is_battle() && !check_enemies_alive() && enemy_sp
                 instance_destroy();
             }
             instance_destroy();
+            
+            //Add new character position for next character
+            if (glb_available_chars[0] != noone) {
+                //Update character list
+                glb_available_chars[array_length_1d(glb_available_chars)] = char_id;
+            } else {
+               glb_available_chars[0] = char_id;
+            }
+
         }
     }
 }
