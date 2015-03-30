@@ -34,6 +34,10 @@ switch(code){
         glb_cheat_fuel = 999;
         break;
         
+    case "Hungry for Lobster":
+        glb_cheat_health = 9999;
+        break;
+        
     default:
         applied = false;
         c_log("No Cheat code: " + code, C_LOG__INFO);

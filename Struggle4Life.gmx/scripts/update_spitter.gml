@@ -1,4 +1,4 @@
-if (is_in_battle && state_is_battle()) {
+if (is_in_battle && state_is_battle() && !glb_pause && alive) {
     //look for character
     if (alive) {
         if (-1 == target) {
@@ -15,19 +15,23 @@ if (is_in_battle && state_is_battle()) {
         ) {
             move_towards_point(target.x, target.y, o_speed);
         } else {
-            speed = 0;
+            if (speed > 0) {
+                attacking = true;
+                sprite_index = attack_animation;
+                image_index = 0;
+                speed = 0;
+            }
             if (0 == weapon.curr_cooldown) {
-                with (weapon) {
-                    fire_weapon();
-                }
                 if (!target.alive) {
                     ai_find_target();
                 }
+                fire_spitter();
+                weapon.curr_cooldown = weapon.cooldown;
             }
         }
     }
 }
 
-if (!state_is_battle()) {
+if (!state_is_battle() || glb_pause) {
     speed = 0;
 }

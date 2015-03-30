@@ -4,6 +4,14 @@ with(o_weapon){
     instance_destroy()
 }
 
+with(o_truck) {
+    instance_destroy();
+}
+
+with (o_tooltip_helper) {
+    instance_destroy();
+}
+
 with(o_character) {
     instance_destroy()
 }
@@ -24,3 +32,5 @@ for (var i = 0; i < num; i += 1) {
     ds_map_destroy(info);
 }
 switch_bg_music(so_bg_menu);
+
+show_particles(true, true, false, false);

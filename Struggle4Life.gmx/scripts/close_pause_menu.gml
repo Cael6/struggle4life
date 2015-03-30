@@ -21,6 +21,13 @@ with(o_button_close_pause) {
     instance_destroy();
 }
 
+with(o_button_r_start) {
+    instance_destroy();
+}
+
 with(o_button_exit) {
     instance_destroy();
 }
+
+//Update pause flag
+glb_pause = false;

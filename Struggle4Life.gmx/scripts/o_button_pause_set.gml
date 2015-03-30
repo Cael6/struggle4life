@@ -3,5 +3,6 @@ set_o_button(
     BUTTON_WIDTH, 
     BUTTON_HEIGHT, 
     BUTTON_TEXT_COLOR, 
-    pause_menu
+    pause_menu,
+    so_menu_click
 );

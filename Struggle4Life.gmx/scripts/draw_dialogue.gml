@@ -17,6 +17,8 @@ draw_roundrect_ext(
 );
 */
 
+draw_sprite(s_dialogue, -1, x + DIALOGUE_WIDTH / 2, y + DIALOGUE_HEIGHT / 2); 
+
 //Draw Text
 draw_set_color(DIALOGUE_TEXT_COLOR);
 draw_set_alpha(DIALOGUE_TEXT_ALPHA);

@@ -37,6 +37,8 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
+        init_variables();
+        
         dialogue_add_option(dialogue, "Exit Game", exit_game, '1');
         dialogue_add_option(dialogue, "Main Menu", goto_r_start, '2');
         
@@ -91,6 +93,7 @@ switch (scenario_id) {
         
     case SCENARIO_ALLY_SNIPER:
     
+        
         var character = instance_create(0, 0, o_character);
         var sniper = instance_create(0, 0, o_sniper);
         
@@ -100,8 +103,7 @@ switch (scenario_id) {
             character,
             s_char_3,
             s_char_3_hover,
-            sniper,
-            string(instance_number(o_character))
+            sniper
         );
         
         character.x = character.battle_position_x;
@@ -189,8 +191,7 @@ switch (scenario_id) {
             character,
             s_char_2,
             s_char_2_hover,
-            shotgun,
-            string(instance_number(o_character))
+            shotgun
         );
         
         character.x = character.battle_position_x;
@@ -214,7 +215,7 @@ switch (scenario_id) {
     case SCENARIO_TUT_3_2:
     
         with (o_map_plot) {
-            if (order_id == 11) {
+            if (order_id == 18) {
                 ally = true;
                 scenario_id = SCENARIO_ALLY_SNIPER;
             }

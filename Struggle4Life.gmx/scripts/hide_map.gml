@@ -6,9 +6,10 @@ with (o_character) {
     visible = true;
 }
 
-with (o_resource) {
+with (o_truck) {
     visible = true;
 }
 
-
-goto_r_safe_zone();
+with (o_resource) {
+    visible = true;
+}

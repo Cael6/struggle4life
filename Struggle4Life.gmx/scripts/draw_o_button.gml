@@ -10,9 +10,11 @@ if (hover && enabled) {
     draw_set_color(self.text_color);
 }
 
-draw_set_alpha(base_alpha * 0.5);
-draw_roundrect_ext(x, y, x + width, y + height, scale * 10, scale * 10, true);
+//draw_set_alpha(base_alpha * 0.5);
+//draw_roundrect_ext(x, y, x + width, y + height, scale * 10, scale * 10, true);
 draw_set_alpha(base_alpha);
+
+draw_sprite(s_button, -1, x + width / 2, y + height / 2);
 
 
 draw_sprite_ext(s_eye_small, eye_get_sprite_index(), x, y, scale, scale, 0, c_white, base_alpha);

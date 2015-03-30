@@ -3,6 +3,8 @@ var start_x = 192;
 var start_y = 156;
 
 //menu options
+var title_x = 200;
+var title_y = 24;
 var label_x = 64;
 var label_y = 48;
 var input_x = 384;
@@ -24,8 +26,8 @@ with(rec){
             ROOM_HEIGHT,
             c_black,
             false,
-            0.5)
-    depth = 1000
+            0.8)
+    depth = 3
 }
 
 var rec = instance_create(0,0,o_rectangle);
@@ -36,8 +38,8 @@ with(rec){
             start_y - 32 + CHARACTER_MENU_REC_ADJ_Y + BUTTON_HEIGHT * 3,
             c_black,
             false,
-            0.5)
-    depth = 10
+            0.9)
+    depth = 2
 }
 
 var rec = instance_create(0,0,o_rectangle);
@@ -50,8 +52,18 @@ with(rec){
             true,
             1
             )
-    depth = 10
+    depth = 2
     draw_set_alpha(0.5)
+}
+
+//Top Label
+var optionLbl = instance_create(
+    start_x + title_x,
+    start_y + title_y,
+    o_label
+);
+with(optionLbl) {
+    update_o_label("Pause", BUTTON_WIDTH, BUTTON_HEIGHT, BUTTON_TEXT_COLOR);
 }
 
 //Music
@@ -92,18 +104,36 @@ with(soundBar){
 }
 
 //Continue Game
-var continueButton = instance_create(start_x, 
-                                  start_y + button_y,
-                                  o_button_close_pause
-                                  );
+var continueButton = instance_create(
+    start_x, 
+    start_y + button_y,
+    o_button_close_pause
+);
+
 with(continueButton) {
-     depth = 8
+     depth = 1
+}
+
+//Main Menu Button
+var mainButton = instance_create(
+    start_x + BUTTON_WIDTH + 32, 
+    start_y + button_y,
+    o_button_r_start
+);
+
+with(mainButton) {
+     depth = 1
 }
 //Exit button                              
-var exitButton = instance_create(start_x + BUTTON_WIDTH * 2, 
-                                 start_y + button_y,
-                                 o_button_exit
-                                 );
+var exitButton = instance_create(
+    start_x + BUTTON_WIDTH * 2 + 64, 
+    start_y + button_y,
+    o_button_exit
+);
+
 with(exitButton) {
-     depth = 8
+     depth = 1
 }
+
+//Set pause flag true
+glb_pause = true;

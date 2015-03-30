@@ -4,8 +4,9 @@ name = "shotgun";
 range = WEAPON_SHOTGUN_RANGE;
 check_collision = check_collision_shotgun;
 resource_type = RESOURCE_AMMO;
-damage = WEAPON_SHOTGUN_DAMAGE;
+damage = WEAPON_SHOTGUN_MIN_DAMAGE;
+max_damage = WEAPON_SHOTGUN_MAX_DAMAGE;
 radius = WEAPON_SHOTGUN_RADIUS;
 max_radius = WEAPON_SHOTGUN_RADIUS;
 
-fire_sound = so_ar_fire;
+fire_sound = so_shotgun;

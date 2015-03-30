@@ -4,8 +4,10 @@ hover = false;
 width = -1;
 height = -1;
 mb_left_action = false;
+double_click_action = false;
 mb_right_action = false;
 selected = false;
 enabled = true;
 click_start = false;
-
+sound = -1;
+first_click_time = -1;

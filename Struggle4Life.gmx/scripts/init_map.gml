@@ -10,9 +10,15 @@ with (o_character) {
     visible = false;
 }
 
+with (o_truck) {
+    visible = false;
+}
+
 with (o_resource) {
     visible = false;
 }
 
 view_xview[0] = glb_current_map_plot.x - 512;
 view_yview[0] = glb_current_map_plot.y - 378;
+
+show_particles(false, false, false, false);

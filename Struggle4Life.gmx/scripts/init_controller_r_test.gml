@@ -1,5 +1,3 @@
-var slice = instance_create(100, 100, o_9_slice);
-
-with (slice) {
-    set_9_slice(600, 900);
-}
+create_dust_cloud_black();
+create_dust_cloud_white();
+start_dust_cloud();

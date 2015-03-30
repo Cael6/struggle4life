@@ -17,3 +17,7 @@ height = sprite_get_height(body_sprite);
 //Can create here because weapons are static to infected.
 weapon = instance_create(0, 0, o_bruiser_fist);
 weapon.character = self.id;
+
+death_animation = s_bruiser_death;
+
+attack_animation = s_bruiser_attack;

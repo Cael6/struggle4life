@@ -7,9 +7,17 @@ if (click_start && mouse_check_button_released(mb_left)) {
         if (!mb_left_action) {
             //Mouse released and intersecting fire script
             execute_self_action();
+            if(sound > -1) {
+                play_sound_effect(sound, false);
+            }
+            click_start = false;
+            return true;
         } else {
             execute_action(self.mb_left_action);
+            click_start = false;
+            return true;
         }
     }
     click_start = false;
 }
+return false;

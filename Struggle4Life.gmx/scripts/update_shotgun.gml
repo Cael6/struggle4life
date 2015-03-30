@@ -6,3 +6,5 @@ var curr_range = distance_between_points(
 );
 var max_range = range * WEAPON_RANGE_DISTANCE;
 radius = max_radius * (curr_range / max_range);
+damage = WEAPON_SHOTGUN_MIN_DAMAGE 
+    + (WEAPON_SHOTGUN_MAX_DAMAGE - WEAPON_SHOTGUN_MIN_DAMAGE) * (1 - curr_range / max_range);

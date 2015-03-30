@@ -17,3 +17,7 @@ height = sprite_get_height(body_sprite);
 //Can create here on infected because their weapon is always the same.
 weapon = instance_create(0, 0, o_spitter_mouth);
 weapon.character = self.id;
+
+death_animation = s_spitter_death;
+
+attack_animation = s_spitter_attack;

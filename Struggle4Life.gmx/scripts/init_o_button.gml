@@ -13,3 +13,4 @@ base_height = BUTTON_HEIGHT;
 base_x = -1;
 base_y = -1;
 disabled_message = "";
+sound = -1;

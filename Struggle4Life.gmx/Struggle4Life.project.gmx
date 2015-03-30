@@ -9,6 +9,19 @@
     <sound>sound\so_bg_menu</sound>
     <sound>sound\so_bg_game</sound>
     <sound>sound\so_fire_sound</sound>
+    <sounds name="button">
+      <sound>sound\so_buttonn_embark</sound>
+      <sound>sound\so_button_map</sound>
+    </sounds>
+    <sound>sound\so_zone_selected</sound>
+    <sound>sound\so_menu_click</sound>
+    <sound>sound\so_menu_click2</sound>
+    <sound>sound\so_zombie_1</sound>
+    <sound>sound\so_truck</sound>
+    <sound>sound\so_pistol</sound>
+    <sound>sound\so_shotgun</sound>
+    <sound>sound\so_flamethrower</sound>
+    <sound>sound\so_sniper</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="controller_icons">
@@ -85,8 +98,13 @@
       <sprite>sprites\s_spitter</sprite>
       <sprite>sprites\s_spitter_hover</sprite>
       <sprite>sprites\s_runner_hover</sprite>
-      <sprite>sprites\s_b</sprite>
-      <sprite>sprites\sprite54</sprite>
+      <sprite>sprites\s_bruiser_death</sprite>
+      <sprite>sprites\s_spitter_death</sprite>
+      <sprite>sprites\s_spitter_attack</sprite>
+      <sprite>sprites\s_bruiser_attack</sprite>
+      <sprite>sprites\s_runner_death</sprite>
+      <sprite>sprites\s_runner_attack</sprite>
+      <sprite>sprites\s_spitter_projectile</sprite>
     </sprites>
     <sprites name="textbox">
       <sprite>sprites\s_textbox</sprite>
@@ -104,6 +122,7 @@
       <sprite>sprites\s_mouse_left_click</sprite>
       <sprite>sprites\s_mouse_right_click</sprite>
       <sprite>sprites\s_mouse_scroll</sprite>
+      <sprite>sprites\s_dialogue</sprite>
     </sprites>
     <sprite>sprites\s_fire</sprite>
     <sprite>sprites\s_map</sprite>
@@ -121,6 +140,31 @@
       <sprite>sprites\s_selected_plot</sprite>
       <sprite>sprites\s_map_locator</sprite>
     </sprites>
+    <sprites name="cutscene">
+      <sprites name="Intro">
+        <sprite>sprites\s_cutscene_intro_1</sprite>
+        <sprite>sprites\s_cutscene_intro_2</sprite>
+      </sprites>
+    </sprites>
+    <sprites name="truck">
+      <sprite>sprites\s_truck</sprite>
+      <sprite>sprites\s_truck_fire</sprite>
+    </sprites>
+    <sprites name="intro">
+      <sprite>sprites\s_struggle_soft_intro</sprite>
+      <sprite>sprites\s_struggle_4_life_intro</sprite>
+    </sprites>
+    <sprites name="tooltip">
+      <sprite>sprites\s_tooltip_no_ammo</sprite>
+      <sprite>sprites\s_tooltip_select_1</sprite>
+      <sprite>sprites\s_tooltip_select_2</sprite>
+      <sprite>sprites\s_tooltip_select_3</sprite>
+      <sprite>sprites\s_tooltip_flamethrower</sprite>
+      <sprite>sprites\s_tooltip_char_1_died</sprite>
+      <sprite>sprites\s_tooltip_char_2_died</sprite>
+      <sprite>sprites\s_tooltip_char_3_died</sprite>
+      <sprite>sprites\s_tooltip_area_clear</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_dna</background>
@@ -131,17 +175,30 @@
     <background>background\bg_map_1</background>
     <background>background\bg_safe_zone</background>
     <background>background\background8</background>
-    <background>background\bg_road__1</background>
+    <background>background\bg_road_1</background>
     <background>background\bg_road_2</background>
     <background>background\bg_road_3</background>
     <background>background\bg_road_4</background>
     <background>background\bg_road_5</background>
+    <background>background\bg_road_6</background>
+    <background>background\bg_road_7</background>
+    <background>background\bg_road_8</background>
+    <background>background\bg_road_9</background>
+    <background>background\bg_road_10</background>
+    <background>background\bg_road_11</background>
+    <background>background\bg_road_12</background>
+    <background>background\bg_road_13</background>
+    <background>background\bg_road_14</background>
+    <background>background\bg_road_15</background>
     <background>background\bg_black</background>
+    <background>background\bg_intro</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\init_variables.gml</script>
     <scripts name="Audio">
       <script>scripts\switch_bg_music.gml</script>
+      <script>scripts\replay_music.gml</script>
       <script>scripts\play_sound_effect.gml</script>
     </scripts>
     <scripts name="buttons">
@@ -171,8 +228,6 @@
           <script>scripts\update_o_button_back.gml</script>
           <script>scripts\update_o_button_back_guns.gml</script>
         </scripts>
-        <script>scripts\set_button_r_char_create.gml</script>
-        <script>scripts\left_click_o_button_startgame.gml</script>
         <script>scripts\set_o_button_startgame.gml</script>
       </scripts>
       <scripts name="r_game">
@@ -200,6 +255,12 @@
       <scripts name="load">
         <script>scripts\set_button_load.gml</script>
       </scripts>
+      <scripts name="r_cutscene">
+        <script>scripts\set_button_r_cutscene.gml</script>
+      </scripts>
+      <scripts name="start_game">
+        <script>scripts\set_button_start_game.gml</script>
+      </scripts>
     </scripts>
     <scripts name="common">
       <script>scripts\run_parent_event.gml</script>
@@ -212,6 +273,7 @@
       <script>scripts\check_keyboard_keypress.gml</script>
       <script>scripts\check_hover.gml</script>
       <script>scripts\check_left_click.gml</script>
+      <script>scripts\check_double_click.gml</script>
       <script>scripts\execute_action.gml</script>
       <script>scripts\run_action.gml</script>
       <script>scripts\order_objects_by_x_y.gml</script>
@@ -219,6 +281,8 @@
     </scripts>
     <scripts name="controllers">
       <script>scripts\init_room.gml</script>
+      <script>scripts\update_room.gml</script>
+      <script>scripts\draw_room.gml</script>
       <scripts name="r_credits">
         <script>scripts\init_controller_r_credits.gml</script>
         <script>scripts\update_controller_r_credits.gml</script>
@@ -263,6 +327,7 @@
         <script>scripts\update_controller_r_safe_zone.gml</script>
         <script>scripts\init_controller_r_safe_zone.gml</script>
         <script>scripts\draw_controller_r_safe_zone.gml</script>
+        <script>scripts\safe_zone_transfer_to_battle.gml</script>
       </scripts>
       <scripts name="Enemy Spawner">
         <script>scripts\init_enemy_spawner.gml</script>
@@ -274,8 +339,55 @@
         <script>scripts\spawn_spitters.gml</script>
         <script>scripts\spawn_bruisers.gml</script>
       </scripts>
+      <scripts name="cutscene">
+        <script>scripts\get_cutscene_init_by_id.gml</script>
+        <script>scripts\init_r_cutscene.gml</script>
+        <script>scripts\update_r_cutscene.gml</script>
+        <script>scripts\draw_r_cutscene.gml</script>
+        <scripts name="Intro">
+          <script>scripts\update_cutscene_intro.gml</script>
+          <script>scripts\init_cutscene_intro.gml</script>
+          <script>scripts\run_cutscene_intro.gml</script>
+        </scripts>
+        <scripts name="Acquire Cure">
+          <script>scripts\update_cutscene_acquire_cure.gml</script>
+          <script>scripts\init_cutscene_acquire_cure.gml</script>
+          <script>scripts\run_cutscene_acquire_cure.gml</script>
+        </scripts>
+        <scripts name="Cure Stolen">
+          <script>scripts\update_cutscene_cure_stolen.gml</script>
+          <script>scripts\init_cutscene_cure_stolen.gml</script>
+        </scripts>
+        <scripts name="Death">
+          <script>scripts\update_cutscene_death.gml</script>
+          <script>scripts\init_cutscene_death.gml</script>
+        </scripts>
+        <scripts name="Victory">
+          <script>scripts\update_cutscene_victory.gml</script>
+          <script>scripts\init_cutscene_victory.gml</script>
+        </scripts>
+        <scripts name="text object">
+          <script>scripts\init_cutscene_text.gml</script>
+          <script>scripts\update_cutscene_text.gml</script>
+          <script>scripts\draw_cutscene_text.gml</script>
+          <script>scripts\set_cutscene_text.gml</script>
+          <script>scripts\force_cutscene_text_to_final.gml</script>
+        </scripts>
+        <scripts name="image object">
+          <script>scripts\init_cutscene_image.gml</script>
+          <script>scripts\update_cutscene_image.gml</script>
+          <script>scripts\draw_cutscene_image.gml</script>
+          <script>scripts\set_cutscene_image.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="r_intro">
+        <script>scripts\draw_intro.gml</script>
+        <script>scripts\init_intro.gml</script>
+        <script>scripts\update_intro.gml</script>
+      </scripts>
     </scripts>
     <scripts name="game actions">
+      <script>scripts\start_game.gml</script>
       <script>scripts\move_ahead.gml</script>
       <script>scripts\move_to_next_level.gml</script>
       <script>scripts\get_scenario_dialogue.gml</script>
@@ -353,6 +465,7 @@
         <script>scripts\select_character.gml</script>
         <script>scripts\deselect_character.gml</script>
         <script>scripts\get_next_char_position.gml</script>
+        <script>scripts\find_char_by_char_id.gml</script>
       </scripts>
       <scripts name="weapon">
         <scripts name="assault">
@@ -421,6 +534,7 @@
         </scripts>
         <scripts name="fuel">
           <script>scripts\init_resource_fuel.gml</script>
+          <script>scripts\draw_resource_fuel.gml</script>
         </scripts>
         <script>scripts\init_resource.gml</script>
         <script>scripts\draw_resource.gml</script>
@@ -444,6 +558,12 @@
             <script>scripts\draw_spitter.gml</script>
             <script>scripts\init_spitter.gml</script>
             <script>scripts\update_spitter.gml</script>
+            <script>scripts\fire_spitter.gml</script>
+            <scripts name="projectile">
+              <script>scripts\init_spitter_projectile.gml</script>
+              <script>scripts\update_spitter_projectile.gml</script>
+              <script>scripts\draw_spitter_projectile.gml</script>
+            </scripts>
           </scripts>
           <script>scripts\init_infected.gml</script>
           <script>scripts\update_infected.gml</script>
@@ -483,6 +603,11 @@
           <script>scripts\stop_o_fire.gml</script>
         </scripts>
       </scripts>
+      <scripts name="truck">
+        <script>scripts\init_truck.gml</script>
+        <script>scripts\draw_truck.gml</script>
+        <script>scripts\update_truck.gml</script>
+      </scripts>
     </scripts>
     <scripts name="room change">
       <script>scripts\goto_r_credits.gml</script>
@@ -498,12 +623,12 @@
         <script>scripts\goto_r_main_map_with_adjust.gml</script>
       </scripts>
       <script>scripts\goto_r_map.gml</script>
+      <script>scripts\goto_r_cutscene.gml</script>
     </scripts>
     <scripts name="utils">
       <script>scripts\array_1d.gml</script>
       <script>scripts\array_2d.gml</script>
     </scripts>
-    <script>scripts\init_variables.gml</script>
     <scripts name="scenario">
       <script>scripts\init_scenario.gml</script>
       <script>scripts\update_scenario.gml</script>
@@ -531,6 +656,8 @@
       <script>scripts\draw_map_gui.gml</script>
       <script>scripts\connected_path.gml</script>
       <script>scripts\order_and_set_plots.gml</script>
+      <script>scripts\close_map_return_to_embark.gml</script>
+      <script>scripts\close_map_go_to_battle.gml</script>
       <script>scripts\hide_map.gml</script>
       <scripts name="Plots">
         <script>scripts\draw_plot.gml</script>
@@ -567,6 +694,39 @@
     <scripts name="cheat">
       <script>scripts\apply_cheat.gml</script>
     </scripts>
+    <scripts name="tooltip">
+      <script>scripts\init_tooltip_helper.gml</script>
+      <script>scripts\update_tooltip_helper.gml</script>
+      <script>scripts\draw_tooltip_helper.gml</script>
+      <script>scripts\th_queue_push.gml</script>
+      <script>scripts\th_queue_pop.gml</script>
+      <script>scripts\th_pop_specific.gml</script>
+      <scripts name="specific checks">
+        <script>scripts\check_select_1_tooltip.gml</script>
+        <script>scripts\check_select_2_tooltip.gml</script>
+        <script>scripts\check_select_3_tooltip.gml</script>
+        <script>scripts\check_1_dead_tooltip.gml</script>
+        <script>scripts\check_2_dead_tooltip.gml</script>
+        <script>scripts\check_3_dead_tooltip.gml</script>
+        <script>scripts\check_no_ammo_tooltip.gml</script>
+        <script>scripts\check_flamethrower_tooltip.gml</script>
+        <script>scripts\check_area_cleared_tooltip.gml</script>
+      </scripts>
+    </scripts>
+    <scripts name="Particle">
+      <script>scripts\create_dust_cloud_black.gml</script>
+      <script>scripts\create_dust_cloud_white.gml</script>
+      <script>scripts\create_ash.gml</script>
+      <script>scripts\create_ash_up.gml</script>
+      <script>scripts\create_particle_blood.gml</script>
+      <script>scripts\start_dust_cloud.gml</script>
+      <script>scripts\start_ash.gml</script>
+      <script>scripts\start_ash_up.gml</script>
+      <script>scripts\stop_dust_cloud.gml</script>
+      <script>scripts\stop_ash.gml</script>
+      <script>scripts\stop_ash_up.gml</script>
+      <script>scripts\show_particles.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_default_12</font>
@@ -576,6 +736,7 @@
     <font>fonts\f_cabin_sketch_lg</font>
     <font>fonts\f_default_sm</font>
     <font>fonts\font6</font>
+    <font>fonts\f_oswald_med</font>
   </fonts>
   <objects name="objects">
     <objects name="textbox">
@@ -594,6 +755,8 @@
       <object>objects\o_controller_r_main_map</object>
       <object>objects\o_controller_r_scenario</object>
       <object>objects\o_comtroller_r_safe_zone</object>
+      <object>objects\o_controller_r_cutscene</object>
+      <object>objects\o_controller_r_intro</object>
     </objects>
     <objects name="dialogue">
       <object>objects\o_dialogue</object>
@@ -608,7 +771,7 @@
       <object>objects\o_button_r_test</object>
       <object>objects\o_button_credits</object>
       <object>objects\o_button_r_battle</object>
-      <object>objects\o_button_char_create</object>
+      <object>objects\o_button_start_game</object>
       <object>objects\o_button_r_start</object>
       <object>objects\o_button_next</object>
       <object>objects\o_button_back</object>
@@ -617,6 +780,7 @@
       <object>objects\o_button_map_continue</object>
       <object>objects\o_button_embark</object>
       <object>objects\o_button_continue</object>
+      <object>objects\o_button_cutscene</object>
     </objects>
     <objects name="label">
       <objects name="character">
@@ -695,13 +859,21 @@
       <object>objects\o_slider</object>
       <object>objects\o_slider_head</object>
     </objects>
+    <objects name="cutscene">
+      <object>objects\o_cutscene_text</object>
+      <object>objects\o_cutscene_strip</object>
+    </objects>
+    <object>objects\o_truck</object>
+    <object>objects\o_tooltip_helper</object>
+    <object>objects\o_spitter_projectile</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\r_intro</room>
     <room>rooms\r_debug</room>
     <room>rooms\r_start</room>
-    <room>rooms\r_test</room>
     <room>rooms\r_credits</room>
     <room>rooms\r_char_create</room>
+    <room>rooms\r_test</room>
     <room>rooms\r_game</room>
     <room>rooms\r_main_map</room>
     <room>rooms\r_battle_map</room>
@@ -709,11 +881,9 @@
     <room>rooms\r_safe_zone</room>
     <room>rooms\r_map</room>
     <room>rooms\r_map_2</room>
+    <room>rooms\r_cutscene</room>
   </rooms>
-  <constants number="162">
-    <constant name="CHARACTER_MENU_REC_ADJ_Y">256</constant>
-    <constant name="CHARACTER_MENU_REC_ADJ_X">632</constant>
-    <constant name="MAP_PLOT_DISTANCE_THRESHOLD">250</constant>
+  <constants number="168">
     <constant name="ARROW_SIZE">40</constant>
     <constant name="BUTTON_FONT">f_default_sm</constant>
     <constant name="BUTTON_HEIGHT">40</constant>
@@ -729,6 +899,8 @@
     <constant name="C_LOG__WARN">3</constant>
     <constant name="C_LOG_LEVEL">C_LOG__ALL</constant>
     <constant name="CHARACTER_HEALTH">4</constant>
+    <constant name="CHARACTER_MENU_REC_ADJ_X">632</constant>
+    <constant name="CHARACTER_MENU_REC_ADJ_Y">256</constant>
     <constant name="CHARACTER_POSITION_BATTLE_X">32</constant>
     <constant name="CHARACTER_POSITION_BATTLE_Y">400</constant>
     <constant name="CHARACTER_POSITION_MAP_INTERVAL">64</constant>
@@ -746,7 +918,12 @@
     <constant name="CREDITS_TITLE_FONT">f_title</constant>
     <constant name="CREDITS_TITLE_LINE_SEP">40</constant>
     <constant name="CREDITS_TITLE">"Credits"</constant>
-    <constant name="DEBUG">true</constant>
+    <constant name="CUTSCENE_ACQUIRE_CURE">2</constant>
+    <constant name="CUTSCENE_CURE_STOLEN">3</constant>
+    <constant name="CUTSCENE_DEATH">4</constant>
+    <constant name="CUTSCENE_INTRO">1</constant>
+    <constant name="CUTSCENE_VICTORY">5</constant>
+    <constant name="DEBUG">false</constant>
     <constant name="DIALOGUE_BACKGROUND_ALPHA">1</constant>
     <constant name="DIALOGUE_BACKGROUND_COLOR">make_colour_rgb(22,22,22)</constant>
     <constant name="DIALOGUE_FONT">f_default_sm</constant>
@@ -761,71 +938,72 @@
     <constant name="DIALOGUE_TEXT_ALPHA">1</constant>
     <constant name="DIALOGUE_TEXT_COLOR">make_colour_rgb(250,250,250)</constant>
     <constant name="DIALOGUE_WIDTH">480</constant>
-    <constant name="ENEMY_TYPE_INFECTED_ALL">7</constant>
-    <constant name="ENEMY_TYPE_INFECTED_SPITTER_BRUISER">6</constant>
-    <constant name="ENEMY_TYPE_INFECTED_CRAWLER_BRUISER">5</constant>
-    <constant name="ENEMY_TYPE_INFECTED_CRAWLER_SPITTER">4</constant>
-    <constant name="ENEMY_TYPE_INFECTED_BRUISER">3</constant>
-    <constant name="ENEMY_TYPE_INFECTED_SPITTER">2</constant>
-    <constant name="ENEMY_TYPE_INFECTED_CRAWLER">1</constant>
     <constant name="ENEMY_BRUISER_ATTACK">4</constant>
     <constant name="ENEMY_BRUISER_HEALTH">10</constant>
-    <constant name="ENEMY_BRUISER_SPEED">1/3</constant>
+    <constant name="ENEMY_BRUISER_SPEED">1</constant>
+    <constant name="ENEMY_MOD_EASY">1</constant>
+    <constant name="ENEMY_MOD_HARD">3</constant>
+    <constant name="ENEMY_MOD_IMPOSSIBLE">4</constant>
+    <constant name="ENEMY_MOD_NORMAL">2</constant>
     <constant name="ENEMY_RUNNER_ATTACK">2</constant>
     <constant name="ENEMY_RUNNER_HEALTH">4</constant>
-    <constant name="ENEMY_RUNNER_SPEED">1</constant>
+    <constant name="ENEMY_RUNNER_SPEED">2</constant>
     <constant name="ENEMY_SPAWN_ALL">3</constant>
     <constant name="ENEMY_SPAWN_INFECTED">1</constant>
     <constant name="ENEMY_SPAWN_MARAUDERS">2</constant>
     <constant name="ENEMY_SPAWN_TURTORIAL">0</constant>
     <constant name="ENEMY_SPITTER_ATTACK">1</constant>
     <constant name="ENEMY_SPITTER_HEALTH">2</constant>
-    <constant name="ENEMY_MOD_IMPOSSIBLE">4</constant>
-    <constant name="ENEMY_MOD_HARD">3</constant>
-    <constant name="ENEMY_MOD_NORMAL">2</constant>
-    <constant name="ENEMY_MOD_EASY">1</constant>
-    <constant name="ENEMY_SPITTER_SPEED">1</constant>
+    <constant name="ENEMY_SPITTER_SPEED">1.5</constant>
+    <constant name="ENEMY_TYPE_INFECTED_ALL">7</constant>
+    <constant name="ENEMY_TYPE_INFECTED_BRUISER">3</constant>
+    <constant name="ENEMY_TYPE_INFECTED_CRAWLER_BRUISER">5</constant>
+    <constant name="ENEMY_TYPE_INFECTED_CRAWLER_SPITTER">4</constant>
+    <constant name="ENEMY_TYPE_INFECTED_CRAWLER">1</constant>
+    <constant name="ENEMY_TYPE_INFECTED_SPITTER_BRUISER">6</constant>
+    <constant name="ENEMY_TYPE_INFECTED_SPITTER">2</constant>
     <constant name="MAP_HEIGHT">300</constant>
     <constant name="MAP_LEAST_POINTS">16</constant>
     <constant name="MAP_MAX_DISTANCE_BETWEEN_CONNECTED_POINTS">100</constant>
     <constant name="MAP_MOST_POINTS">16</constant>
     <constant name="MAP_PADDING">20</constant>
+    <constant name="MAP_PLOT_DISTANCE_THRESHOLD">250</constant>
     <constant name="MAP_POINT_COLOR_INSIDE">make_color_rgb(250,250,250)</constant>
     <constant name="MAP_POINT_COLOR_OUTSIDE">make_color_rgb(60,60,250)</constant>
     <constant name="MAP_POINT_HEIGHT">10</constant>
     <constant name="MAP_POINT_WIDTH">10</constant>
     <constant name="MAP_WIDTH">500</constant>
     <constant name="RESOURCE_AMMO_START">6</constant>
-    <constant name="RESOURCE_AMMO_X">7</constant>
-    <constant name="RESOURCE_AMMO_Y">7</constant>
+    <constant name="RESOURCE_AMMO_X">900</constant>
+    <constant name="RESOURCE_AMMO_Y">200</constant>
     <constant name="RESOURCE_AMMO">1</constant>
     <constant name="RESOURCE_FUEL_START">4</constant>
-    <constant name="RESOURCE_FUEL_X">114</constant>
-    <constant name="RESOURCE_FUEL_Y">7</constant>
+    <constant name="RESOURCE_FUEL_X">900</constant>
+    <constant name="RESOURCE_FUEL_Y">250</constant>
     <constant name="RESOURCE_FUEL">2</constant>
     <constant name="RESOURCE_HEIGHT">40</constant>
     <constant name="RESOURCE_NONE">0</constant>
     <constant name="RESOURCE_WIDTH">100</constant>
     <constant name="ROOM_HEIGHT">768</constant>
     <constant name="ROOM_WIDTH">1024</constant>
+    <constant name="SCENARIO_ALLY_SNIPER">850</constant>
     <constant name="SCENARIO_COUNT">1</constant>
     <constant name="SCENARIO_GAME_OVER">1</constant>
     <constant name="SCENARIO_GAME_START">2</constant>
-    <constant name="SCENARIO_OVERRUN_BASE">5</constant>
     <constant name="SCENARIO_GAME_WIN">4</constant>
     <constant name="SCENARIO_LEVEL_FIRST">1</constant>
-    <constant name="SCENARIO_ALLY_SNIPER">850</constant>
     <constant name="SCENARIO_LEVEL_TUTORIAL">0</constant>
+    <constant name="SCENARIO_OVERRUN_BASE">5</constant>
     <constant name="SCENARIO_RANDOM_END">1001</constant>
     <constant name="SCENARIO_RANDOM_START">1000</constant>
     <constant name="SCENARIO_SAFE_ZONE">3</constant>
-    <constant name="SCENARIO_TUT_4_1">905</constant>
-    <constant name="SCENARIO_TUT_3_2">906</constant>
-    <constant name="SCENARIO_TUT_3_1">904</constant>
-    <constant name="SCENARIO_TUT_2_1">903</constant>
-    <constant name="SCENARIO_TUT_1_3">902</constant>
-    <constant name="SCENARIO_TUT_1_2">901</constant>
     <constant name="SCENARIO_TUT_1_1">900</constant>
+    <constant name="SCENARIO_TUT_1_2">901</constant>
+    <constant name="SCENARIO_TUT_1_3">902</constant>
+    <constant name="SCENARIO_TUT_2_1">903</constant>
+    <constant name="SCENARIO_TUT_3_1">904</constant>
+    <constant name="SCENARIO_TUT_3_2">906</constant>
+    <constant name="SCENARIO_TUT_4_1">905</constant>
     <constant name="SCENARIO_TUTORIAL_MOVE_AHEAD">1000</constant>
     <constant name="SCENARIO_TUTORIAL_ROOM1_1">1</constant>
     <constant name="SCENARIO_TUTORIAL_ROOM1_2">2</constant>
@@ -864,7 +1042,8 @@
     <constant name="WEAPON_RUNNER_DAMAGE">4</constant>
     <constant name="WEAPON_RUNNER_RANGE">-2</constant>
     <constant name="WEAPON_SHOTGUN_COOLDOWN">30</constant>
-    <constant name="WEAPON_SHOTGUN_DAMAGE">1</constant>
+    <constant name="WEAPON_SHOTGUN_MIN_DAMAGE">2</constant>
+    <constant name="WEAPON_SHOTGUN_MAX_DAMAGE">5</constant>
     <constant name="WEAPON_SHOTGUN_RADIUS">96</constant>
     <constant name="WEAPON_SHOTGUN_RANGE">2</constant>
     <constant name="WEAPON_SNIPER_COOLDOWN">60</constant>

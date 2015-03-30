@@ -1,4 +1,4 @@
-switch (instance_number(o_character)) {
+switch (char_id) {
     case 0:
         return array_1d(64, 192);
     case 1:

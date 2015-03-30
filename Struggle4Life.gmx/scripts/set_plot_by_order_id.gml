@@ -28,3 +28,6 @@ if (self.object_index == o_map_base_2) {
             break;
     }
 }
+
+//Note
+//HARD MODE: 

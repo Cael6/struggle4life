@@ -149,7 +149,7 @@
         <arguments>
           <argument>
             <kind>9</kind>
-            <script>run_parent_event</script>
+            <script>draw_resource_fuel</script>
           </argument>
           <argument>
             <kind>0</kind>
