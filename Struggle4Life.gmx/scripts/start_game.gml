@@ -21,6 +21,7 @@ character_1.state = CHARACTER_STATE_DISPLAY;
 //Make instances of ammo and fuel
 ammo = instance_create(0,0, o_resource_ammo);
 fuel = instance_create(0,0, o_resource_fuel);
+cure = instance_create(0,0, o_resource_cure);
 
 switch_bg_music(so_bg_game);
 

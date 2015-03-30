@@ -24,7 +24,9 @@ globalvar
           glb_game_bgs,
           glb_current_cutscene,
           glb_available_chars,
-          glb_safe_zone_night
+          glb_available_char_sprites,
+          glb_safe_zone_night,
+          glb_scenario_reward_value
           ;
 
 
@@ -73,4 +75,6 @@ glb_game_bgs = array_1d(
 );
 glb_current_cutscene = CUTSCENE_INTRO;
 glb_available_chars = array_1d(1, 2, 3);
+glb_available_char_sprites = array_1d(s_char_1, s_char_2, s_char_3, s_char_4, s_char_5);
 glb_safe_zone_night = false;
+glb_scenario_reward_value = 0;

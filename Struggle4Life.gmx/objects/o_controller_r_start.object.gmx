@@ -229,7 +229,7 @@
         <arguments>
           <argument>
             <kind>9</kind>
-            <script>run_parent_event</script>
+            <script>draw_controller_r_start</script>
           </argument>
           <argument>
             <kind>0</kind>

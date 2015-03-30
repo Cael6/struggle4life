@@ -8,6 +8,8 @@ if (self.object_index == o_map_base_2) {
         case 0:
             //First Point Base was overrun so return means sure death.
             scenario_id = SCENARIO_OVERRUN_BASE;
+            horde_sprite = s_map_horde_all;
+            hard = true;
             break;
         case 1:
             scenario_id = SCENARIO_TUT_1_1;
@@ -44,5 +46,4 @@ if (self.object_index == o_map_base_2) {
     }
     
 }
-
 

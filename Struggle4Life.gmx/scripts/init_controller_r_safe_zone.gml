@@ -24,4 +24,8 @@ with (o_character) {
 
 show_particles(true, true, true, true);
 
+if (get_resource_count(RESOURCE_CURE) == 0) {
+    run_cutscene_cure_stolen();
+}
+
 save_progress();

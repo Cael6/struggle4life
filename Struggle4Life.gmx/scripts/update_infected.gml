@@ -11,6 +11,9 @@ if (!alive) {
             //Just died.
             image_index = 0;
             sprite_index = death_animation;
+            with (weapon) {
+                instance_destroy();
+            }
         }
         if (image_number == image_index + 1) {
             image_index -= 1;

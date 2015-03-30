@@ -20,6 +20,10 @@ with(o_resource_ammo) {
     instance_destroy()
 }
 
+with(o_resource_cure) {
+    instance_destroy();
+}
+
 with(o_resource_fuel) {
     instance_destroy()
 }
@@ -34,3 +38,5 @@ for (var i = 0; i < num; i += 1) {
 switch_bg_music(so_bg_menu);
 
 show_particles(true, true, false, false);
+
+init_variables();

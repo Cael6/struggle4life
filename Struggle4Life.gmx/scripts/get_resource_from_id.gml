@@ -3,6 +3,8 @@ switch (argument0) {
         return o_resource_ammo;
     case RESOURCE_FUEL:
         return o_resource_fuel;
+    case RESOURCE_CURE: //cure
+        return o_resource_cure;
     case RESOURCE_NONE:
         return false;
 }

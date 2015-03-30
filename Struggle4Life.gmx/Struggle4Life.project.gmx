@@ -112,6 +112,7 @@
     <sprites name="resources">
       <sprite>sprites\s_resource_ammo</sprite>
       <sprite>sprites\s_resource_fuel</sprite>
+      <sprite>sprites\s_resource_cure</sprite>
     </sprites>
     <sprites name="UI">
       <sprite>sprites\s_slider</sprite>
@@ -153,6 +154,9 @@
         <sprite>sprites\s_cutscene_intro_1</sprite>
         <sprite>sprites\s_cutscene_intro_2</sprite>
       </sprites>
+      <sprite>sprites\s_cure_died</sprite>
+      <sprite>sprites\s_victory_1</sprite>
+      <sprite>sprites\s_victory_2</sprite>
     </sprites>
     <sprites name="truck">
       <sprite>sprites\s_truck</sprite>
@@ -173,6 +177,7 @@
       <sprite>sprites\s_tooltip_char_3_died</sprite>
       <sprite>sprites\s_tooltip_area_clear</sprite>
     </sprites>
+    <sprite>sprites\s_title</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_dna</background>
@@ -365,6 +370,7 @@
         <scripts name="Cure Stolen">
           <script>scripts\update_cutscene_cure_stolen.gml</script>
           <script>scripts\init_cutscene_cure_stolen.gml</script>
+          <script>scripts\run_cutscene_cure_stolen.gml</script>
         </scripts>
         <scripts name="Death">
           <script>scripts\update_cutscene_death.gml</script>
@@ -373,6 +379,7 @@
         <scripts name="Victory">
           <script>scripts\update_cutscene_victory.gml</script>
           <script>scripts\init_cutscene_victory.gml</script>
+          <script>scripts\run_cutscene_victory.gml</script>
         </scripts>
         <scripts name="text object">
           <script>scripts\init_cutscene_text.gml</script>
@@ -546,6 +553,10 @@
         <scripts name="fuel">
           <script>scripts\init_resource_fuel.gml</script>
           <script>scripts\draw_resource_fuel.gml</script>
+        </scripts>
+        <scripts name="cure">
+          <script>scripts\init_resource_cure.gml</script>
+          <script>scripts\draw_resource_cure.gml</script>
         </scripts>
         <script>scripts\init_resource.gml</script>
         <script>scripts\draw_resource.gml</script>
@@ -831,6 +842,7 @@
       <object>objects\o_resource</object>
       <object>objects\o_resource_ammo</object>
       <object>objects\o_resource_fuel</object>
+      <object>objects\o_resource_cure</object>
     </objects>
     <object>objects\o_object</object>
     <object>objects\o_character</object>
@@ -895,7 +907,8 @@
     <room>rooms\r_map_2</room>
     <room>rooms\r_cutscene</room>
   </rooms>
-  <constants number="186">
+  <constants number="188">
+    <constant name="SCENARIO_REWARD_ALL">0912309</constant>
     <constant name="ARROW_SIZE">40</constant>
     <constant name="BUTTON_FONT">f_default_sm</constant>
     <constant name="BUTTON_HEIGHT">40</constant>
@@ -925,7 +938,7 @@
     <constant name="CREDITS_TEXT_COLOR">make_color_rgb(250,250,250)</constant>
     <constant name="CREDITS_TEXT_FONT">f_oswald</constant>
     <constant name="CREDITS_TEXT_LINE_SEP">20</constant>
-    <constant name="CREDITS_TEXT">"Fonts:###Open Sans Font - Steve Matteson##Cabin Sketch Font - Pablo Impallari##Oswald Font -  Vernon Adams##Josefin slab -  Santiago Orozco####Example Code for line/circle intersections:##Hyomoto###Sounds:##Large Fireball Sound -  Mike Koenig##Pop Clip In Sound - Mike Koenig##Shotgun Blast Sound - Jim Rogers##50 Sniper Shot Sound - Liam ##M4A1 Single Sound - Kibblesbob###Music:##’Lost Frontier’ Kevin MacLeod (incompetech.com)##Licensed under Creative Commons: By Attribution 3.0##http://creativecommons.org/licenses/by/3.0/###’The Chamber’ Kevin MacLeod (incompetech.com)##Licensed under Creative Commons: By Attribution 3.0##http://creativecommons.org/licenses/by/3.0/"</constant>
+    <constant name="CREDITS_TEXT">"Fonts:###Team:##Caleb Doucet##Ivan Echavarria##Sho Gen##Alexander MacKenzie##Cameron Mosley##Jabari Thomas####This game was prepared for the final of MAAC 3602 Game Design II taught by Jeffrey Mundee####Resources:###Open Sans Font - Steve Matteson##Cabin Sketch Font - Pablo Impallari##Oswald Font -  Vernon Adams##Josefin slab -  Santiago Orozco####Example Code for line/circle intersections:##Hyomoto###Sounds:##Large Fireball Sound -  Mike Koenig##Pop Clip In Sound - Mike Koenig##Shotgun Blast Sound - Jim Rogers##50 Sniper Shot Sound - Liam ##M4A1 Single Sound - Kibblesbob##Pistol Shot - LeMudCrab###Music:##’Lost Frontier’ Kevin MacLeod (incompetech.com)##Licensed under Creative Commons: By Attribution 3.0##http://creativecommons.org/licenses/by/3.0/###’The Chamber’ Kevin MacLeod (incompetech.com)##Licensed under Creative Commons: By Attribution 3.0##http://creativecommons.org/licenses/by/3.0/ ##Flame sprite: xna resources packages ####Cheat Codes:##Come and beat me##Sonic the infected##Faster than light##I hate to wait##Give me more ammo##I am trigger happy##I came from Saudi##"</constant>
     <constant name="CREDITS_TITLE_COLOR">make_color_rgb(250,250,250)</constant>
     <constant name="CREDITS_TITLE_FONT">f_title</constant>
     <constant name="CREDITS_TITLE_LINE_SEP">40</constant>
@@ -935,7 +948,7 @@
     <constant name="CUTSCENE_DEATH">4</constant>
     <constant name="CUTSCENE_INTRO">1</constant>
     <constant name="CUTSCENE_VICTORY">5</constant>
-    <constant name="DEBUG">true</constant>
+    <constant name="DEBUG">false</constant>
     <constant name="DIALOGUE_BACKGROUND_ALPHA">1</constant>
     <constant name="DIALOGUE_BACKGROUND_COLOR">make_colour_rgb(22,22,22)</constant>
     <constant name="DIALOGUE_FONT">f_default_sm</constant>
@@ -1024,7 +1037,7 @@
     <constant name="SCENARIO_MAP_UPDATE_PLOT_3">34</constant>
     <constant name="SCENARIO_MAP_UPDATE_PLOT_4">46</constant>
     <constant name="SCENARIO_OVERRUN_BASE">5</constant>
-    <constant name="SCENARIO_RANDOM_END">1001</constant>
+    <constant name="SCENARIO_RANDOM_END">1000</constant>
     <constant name="SCENARIO_RANDOM_START">1000</constant>
     <constant name="SCENARIO_SAFE_ZONE">3</constant>
     <constant name="SCENARIO_TUT_1_1">900</constant>
@@ -1082,6 +1095,7 @@
     <constant name="WEAPON_SPITTER_COOLDOWN">120</constant>
     <constant name="WEAPON_SPITTER_DAMAGE">1</constant>
     <constant name="WEAPON_SPITTER_RANGE">1.5</constant>
+    <constant name="RESOURCE_CURE">5</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

@@ -27,4 +27,6 @@ if (instance_number(o_tooltip_helper) == 0) {
 
 show_particles(true, true, true, false);
 
+change_resource_amount(RESOURCE_CURE, -1);
+
 get_plot_scenario();

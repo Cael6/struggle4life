@@ -26,8 +26,8 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Dismiss Dialogue", destroy_dialogue, '1');
-        dialogue_add_option(dialogue, "Exit Game", exit_game, '2');
+        dialogue_add_option(dialogue, "Dismiss Dialogue", destroy_dialogue, 'Q');
+        dialogue_add_option(dialogue, "Exit Game", exit_game, 'W');
         
         break;
         
@@ -40,20 +40,13 @@ switch (scenario_id) {
         
         init_variables();
         
-        dialogue_add_option(dialogue, "Exit Game", exit_game, '1');
-        dialogue_add_option(dialogue, "Main Menu", goto_r_start, '2');
+        dialogue_add_option(dialogue, "Exit Game", exit_game, 'Q');
+        dialogue_add_option(dialogue, "Main Menu", goto_r_start, 'W');
         
         break;
     
     case SCENARIO_GAME_WIN:
-        
-        var dialogue_text = "Conguratation. You have successfully escaped from infected.";
-        with (dialogue) {
-            set_dialogue(dialogue_text);
-        }
-        
-        dialogue_add_option(dialogue, "Credits", goto_r_credits, '1');
-        dialogue_add_option(dialogue, "Main Menu", goto_r_start, '2');
+        run_cutscene_victory();
         
         break;
     
@@ -64,7 +57,7 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Continue", get_random_scenario, '1');
+        dialogue_add_option(dialogue, "Continue", get_random_scenario, 'Q');
         
         break;
         
@@ -76,7 +69,7 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Okay", goto_r_safe_zone, '1');
+        dialogue_add_option(dialogue, "Okay", goto_r_safe_zone, 'Q');
         
         break;
         
@@ -88,7 +81,10 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Let's do this!", start_battle, '1');
+        glb_safe_zone_scenario_id = SCENARIO_REWARD_ALL;
+        glb_scenario_reward_value = 40;
+        
+        dialogue_add_option(dialogue, "Let's do this!", start_battle, 'Q');
         
         break;
         
@@ -115,7 +111,7 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Welcome aboard", goto_r_safe_zone, '1');
+        dialogue_add_option(dialogue, "Welcome aboard", goto_r_safe_zone, 'Q');
         //Prevent infinite ally
         glb_current_map_plot.scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END);
         glb_current_map_plot.ally = false;
@@ -145,7 +141,7 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Welcome aboard", goto_r_safe_zone, '1');
+        dialogue_add_option(dialogue, "Welcome aboard", goto_r_safe_zone, 'Q');
         //Prevent infinite ally
         glb_current_map_plot.scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END);
         glb_current_map_plot.ally = false;
@@ -175,7 +171,7 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Welcome aboard", goto_r_safe_zone, '1');
+        dialogue_add_option(dialogue, "Welcome aboard", goto_r_safe_zone, 'Q');
         //Prevent infinite ally
         glb_current_map_plot.scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END);
         glb_current_map_plot.ally = false;
@@ -204,7 +200,7 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Let's do this!", start_battle, '1');
+        dialogue_add_option(dialogue, "Let's do this!", start_battle, 'Q');
         
         break;
         
@@ -221,7 +217,7 @@ switch (scenario_id) {
         glb_has_map = true;
         
         
-        dialogue_add_option(dialogue, "Continue", start_battle, '1');
+        dialogue_add_option(dialogue, "Continue", start_battle, 'Q');
         
         break;
         
@@ -234,7 +230,7 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Continue", destroy_dialogue, '1');
+        dialogue_add_option(dialogue, "Continue", destroy_dialogue, 'Q');
         
         glb_safe_zone_scenario_id = SCENARIO_SAFE_ZONE;
         
@@ -248,7 +244,10 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "I'm ready", start_battle, '1');
+        glb_safe_zone_scenario_id = SCENARIO_REWARD_ALL;
+        glb_scenario_reward_value = 5;
+        
+        dialogue_add_option(dialogue, "I'm ready", start_battle, 'Q');
         
         break;
         
@@ -269,15 +268,15 @@ switch (scenario_id) {
         character.x = character.battle_position_x;
         character.y = character.battle_position_y;
     
-        var dialogue_text = "You come across an ally, the first non-infected human you've seen in a few days.##He's in retreat from a few crawlers. You see he's carrying his own shotgun and you toss him some ammo and a modified pistol.##'Let's take these guys out!'";
-        set_enemy_spawner(6, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_CRAWLER, 150);
+        var dialogue_text = "You come across an ally, the first non-infected human you've seen in a few days.##He's in retreat from a few spitters. You see he's carrying his own shotgun and you toss him some ammo and a modified pistol.##'Let's take these guys out before they kill us with their projectile vommiting!'";
+        set_enemy_spawner(4, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_SPITTER, 150);
         with (dialogue) {
             set_dialogue(dialogue_text);
         }
         
         glb_safe_zone_scenario_id = SCENARIO_TUT_3_2;
         
-        dialogue_add_option(dialogue, "Ready!", start_battle, '1');
+        dialogue_add_option(dialogue, "Ready!", start_battle, 'Q');
         
         //Unset this scenario
         glb_current_map_plot.scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END);
@@ -295,19 +294,22 @@ switch (scenario_id) {
         
         glb_safe_zone_scenario_id = SCENARIO_SAFE_ZONE;
         
-        dialogue_add_option(dialogue, "Continue", destroy_dialogue, '1');
+        dialogue_add_option(dialogue, "Continue", destroy_dialogue, 'Q');
         
         break;
     
     case SCENARIO_TUT_4_1:
     
-        var dialogue_text = "";
-        set_enemy_spawner(6, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_CRAWLER, 150);
+        var dialogue_text = "As you travel to your next destination you feel the ground beneath your feet start to rumble. You know this can only mean one thing...###BRUISERS! Prepare for battl!";
+        set_enemy_spawner(2, ENEMY_MOD_NORMAL, ENEMY_TYPE_INFECTED_BRUISER, 150);
         with (dialogue) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Ready!", start_battle, '1');
+        glb_safe_zone_scenario_id = SCENARIO_REWARD_ALL;
+        glb_scenario_reward_value = 6;
+        
+        dialogue_add_option(dialogue, "Ready!", start_battle, 'Q');
         
         break;
     
@@ -323,13 +325,16 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "To Battle", start_battle, '1');
+        glb_safe_zone_scenario_id = SCENARIO_REWARD_ALL;
+        glb_scenario_reward_value = enemy_count;
+        
+        dialogue_add_option(dialogue, "To Battle", start_battle, 'Q');
         
         //Prevent infinite reward/enemy loop
         glb_current_map_plot.scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END);
         
         break;
-        
+        /*
     case SCENARIO_RANDOM_END:
         
         var reward = random_reward();
@@ -356,12 +361,12 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Continue", get_to_safe_zone, '1');
+        dialogue_add_option(dialogue, "Continue", get_to_safe_zone, 'Q');
         
         //Prevent infinite rewards
         glb_current_map_plot.scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END);
         
-        break;
+        break;*/
         
     case SCENARIO_HORDE_ALL_BATTLE:
         
@@ -374,7 +379,10 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "To Battle", start_battle, '1');
+        glb_safe_zone_scenario_id = SCENARIO_REWARD_ALL;
+        glb_scenario_reward_value = enemy_count;
+        
+        dialogue_add_option(dialogue, "To Battle", start_battle, 'Q');
         
         //Randomize event after beeting
         mapUpdateList = get_horde_map();
@@ -394,7 +402,11 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "To Battle", start_battle, '1');
+        
+        glb_safe_zone_scenario_id = SCENARIO_REWARD_ALL;
+        glb_scenario_reward_value = enemy_count;
+        
+        dialogue_add_option(dialogue, "To Battle", start_battle, 'Q');
         
         //Randomize event after beeting
         mapUpdateList = get_horde_map();
@@ -414,7 +426,12 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "To Battle", start_battle, '1');
+        
+        
+        glb_safe_zone_scenario_id = SCENARIO_REWARD_ALL;
+        glb_scenario_reward_value = enemy_count;
+        
+        dialogue_add_option(dialogue, "To Battle", start_battle, 'Q');
         
         //Randomize event after beeting
         mapUpdateList = get_horde_map();
@@ -434,7 +451,10 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "To Battle", start_battle, '1');
+        glb_safe_zone_scenario_id = SCENARIO_REWARD_ALL;
+        glb_scenario_reward_value = enemy_count;
+        
+        dialogue_add_option(dialogue, "To Battle", start_battle, 'Q');
         
         //Randomize event after beeting
         mapUpdateList = get_horde_map();
@@ -454,7 +474,11 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "To Battle", start_battle, '1');
+        
+        glb_safe_zone_scenario_id = SCENARIO_REWARD_ALL;
+        glb_scenario_reward_value = enemy_count;
+        
+        dialogue_add_option(dialogue, "To Battle", start_battle, 'Q');
         
         //Randomize event after beeting
         mapUpdateList = get_horde_map();
@@ -474,7 +498,11 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "To Battle", start_battle, '1');
+        
+        glb_safe_zone_scenario_id = SCENARIO_REWARD_ALL;
+        glb_scenario_reward_value = enemy_count;
+        
+        dialogue_add_option(dialogue, "To Battle", start_battle, 'Q');
         
         //Randomize event after beeting
         mapUpdateList = get_horde_map();
@@ -494,14 +522,53 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "To Battle", start_battle, '1');
+        glb_safe_zone_scenario_id = SCENARIO_REWARD_ALL;
+        glb_scenario_reward_value = enemy_count;
+        
+        dialogue_add_option(dialogue, "To Battle", start_battle, 'Q');
         
         //Randomize event after beeting
         mapUpdateList = get_horde_map();
         glb_current_map_plot.scenario_id = mapUpdateList[0];
         glb_current_map_plot.horde_sprite = mapUpdateList[1];
         
-        break;       
+        break;    
+        
+    case SCENARIO_REWARD_ALL:
+    
+        var reward = array_1d(irandom(ceil(glb_scenario_reward_value / 6)), irandom(floor(glb_scenario_reward_value / 18)));
+        var dialogue_text = "";
+        
+        
+        glb_safe_zone_scenario_id = SCENARIO_SAFE_ZONE;
+        if (reward[0] > 0 || reward[1] > 0) {
+            dialogue_text += "The party comes across a gun shop. You found a lot of extra resources.##";
+        } else {
+            get_scenario_dialogue(SCENARIO_SAFE_ZONE);
+            break;
+        }
+        
+        if (reward[0] > 0) {
+            dialogue_text += string(reward[0]) + " ammo#";
+        }
+        
+        if (reward[1] > 0) {
+            dialogue_text += string(reward[1]) + " fuel#";
+        }
+        
+        change_resource_amount(RESOURCE_AMMO, reward[0]);
+        change_resource_amount(RESOURCE_FUEL, reward[1]);
+        
+        with (dialogue) {
+            set_dialogue(dialogue_text);
+        }
+        
+        dialogue_add_option(dialogue, "Continue", get_to_safe_zone, 'Q');
+        
+        //Prevent infinite rewards
+        glb_current_map_plot.scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END);
+        
+        break;
                        
     case SCENARIO_REWARD_AMMO:
         
@@ -529,7 +596,7 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Continue", get_to_safe_zone, '1');
+        dialogue_add_option(dialogue, "Continue", get_to_safe_zone, 'Q');
         
         //Prevent infinite rewards
         glb_current_map_plot.scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END);
@@ -546,7 +613,7 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Continue", goto_r_safe_zone, '1');
+        dialogue_add_option(dialogue, "Continue", goto_r_safe_zone, 'Q');
         //Prevent infinite ally
         glb_current_map_plot.scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END);
         glb_current_map_plot.ally = false;
@@ -563,7 +630,7 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Continue", goto_r_safe_zone, '1');
+        dialogue_add_option(dialogue, "Continue", goto_r_safe_zone, 'Q');
         //Prevent infinite ally
         glb_current_map_plot.scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END);
         glb_current_map_plot.ally = false;
@@ -580,7 +647,7 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Continue", goto_r_safe_zone, '1');
+        dialogue_add_option(dialogue, "Continue", goto_r_safe_zone, 'Q');
         //Prevent infinite ally
         glb_current_map_plot.scenario_id = irandom_range(SCENARIO_RANDOM_START, SCENARIO_RANDOM_END);
         glb_current_map_plot.ally = false;
@@ -594,8 +661,8 @@ switch (scenario_id) {
             set_dialogue(dialogue_text);
         }
         
-        dialogue_add_option(dialogue, "Dismiss Dialogue", destroy_dialogue, '1');
-        dialogue_add_option(dialogue, "Exit Game", exit_game, '2');
+        dialogue_add_option(dialogue, "Dismiss Dialogue", destroy_dialogue, 'Q');
+        dialogue_add_option(dialogue, "Exit Game", exit_game, 'W');
         break;
 }
 

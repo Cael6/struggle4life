@@ -1,6 +1,10 @@
 if (is_in_battle && state_is_battle() && !glb_pause && alive) {
     //look for character
     if (alive) {
+        if (!target.alive) {
+            ai_find_target();
+        }
+        
         if (-1 == target) {
             ai_find_target();
         }
@@ -22,9 +26,6 @@ if (is_in_battle && state_is_battle() && !glb_pause && alive) {
                 speed = 0;
             }
             if (0 == weapon.curr_cooldown) {
-                if (!target.alive) {
-                    ai_find_target();
-                }
                 fire_spitter();
                 weapon.curr_cooldown = weapon.cooldown;
             }
